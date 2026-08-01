@@ -77,6 +77,131 @@ mermaid.initialize({ startOnLoad: true });</pre>
 Make sure that the <code>iconify/</code> directory is one level above this page. As an alternative,
 serve the folder with <code>npx serve .</code>.</p>
 
+<h2>A full platform architecture</h2>
+<p class="note">This diagram uses subgraphs for the boxes, <code>style</code> for the fill and the
+  border of each box, <code>stroke-dasharray</code> for a dashed border, and a class for the navy
+  bars. Every arrow joins a box border, not an icon, because the edge points at the subgraph and not
+  at a node inside it. Dagre chooses the arrangement, so the boxes do not sit exactly where a
+  hand-drawn diagram puts them. Boxes with no Databricks product, such as the data sources, are
+  plain labels.</p>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+  subgraph SRC["Data Sources"]
+    direction TB
+    s1["Data Warehouses"] ~~~ s2["On-Premises Systems"] ~~~ s3["SaaS Applications"]
+    s3 ~~~ s4["Machine and Application Logs"] ~~~ s5["Application Events"] ~~~ s6["Mobile and IoT Data"]
+  end
+
+  subgraph ING["Ingestion"]
+    direction TB
+    i1@{ icon: "databricks-color:auto-loader", label: "Batch Ingestion", pos: "b" }
+    i2@{ icon: "databricks-color:lakeflow-connect", label: "CDC Ingestion", pos: "b" }
+    i3@{ icon: "databricks-color:structured-streaming", label: "Streaming Ingestion", pos: "b" }
+    i1 ~~~ i2 ~~~ i3
+  end
+
+  subgraph DIP["Data Intelligence Platform"]
+    direction TB
+    ORCH["Orchestration"]
+    subgraph DE[" "]
+      de@{ icon: "databricks-color:lakeflow", label: "Data Engineering", pos: "b" }
+    end
+    subgraph AIML[" "]
+      ai@{ icon: "databricks-color:model-training", label: "AI and ML", pos: "b" }
+    end
+    subgraph MED[" "]
+      direction LR
+      raw[("RAW")] -.-> ods[("ODS")]
+      ods -.-> dim[("Dimensions")] -.-> mart[("Datamarts")]
+      ods -.-> fct[("Facts")] -.-> mart
+    end
+    subgraph SRV[" "]
+      sv@{ icon: "databricks-color:model-serving", label: "Serve", pos: "b" }
+    end
+    subgraph DSH[" "]
+      dh@{ icon: "databricks-color:ai-bi-dashboards", label: "Dashboards", pos: "b" }
+    end
+    subgraph QRY[" "]
+      qy@{ icon: "databricks-color:sql-warehouse", label: "Query", pos: "b" }
+    end
+    subgraph GEN[" "]
+      gn@{ icon: "databricks-color:genie", label: "Genie", pos: "b" }
+    end
+    subgraph LAKE["Unified, Open, Scalable Lakehouse Architecture"]
+      direction LR
+      subgraph GOV["Governance"]
+        gv@{ icon: "databricks-color:unity-catalog", label: "Unity Catalog", pos: "b" }
+      end
+      subgraph STO["Open Storage"]
+        direction LR
+        t1@{ icon: "databricks-color:delta-lake", label: "Delta Lake", pos: "b" }
+        t2@{ icon: "databricks-color:apache-iceberg", label: "Iceberg", pos: "b" }
+        t3["Parquet"]
+        t1 ~~~ t2 ~~~ t3
+      end
+    end
+  end
+
+  subgraph OUT[" "]
+    direction TB
+    o1@{ icon: "databricks-color:databricks-apps", label: "External Apps", pos: "b" }
+    o2@{ icon: "databricks-color:lakebase", label: "Operational Databases", pos: "b" }
+    o3@{ icon: "databricks-color:delta-sharing", label: "Data Sharing", pos: "b" }
+    o4["Business Users"]
+    o5["BI Reporting"]
+    o1 ~~~ o2 ~~~ o3 ~~~ o4 ~~~ o5
+  end
+
+  SRC --> ING
+  ING --> MED
+  ORCH ~~~ DE
+  ORCH ~~~ AIML
+  GOV ~~~ STO
+  SRV ~~~ LAKE
+  DE <--> MED
+  AIML <--> MED
+  MED --> SRV
+  MED --> DSH
+  MED --> QRY
+  MED --> GEN
+  SRV --> o1
+  SRV --> o2
+  DSH --> o3
+  GEN --> o4
+  QRY --> o5
+
+  classDef bar fill:#1B3139,stroke:#1B3139,color:#FFFFFF,font-weight:bold
+  classDef plain fill:#FFFFFF,stroke:#1B3139,stroke-width:1.5px,color:#1B3139
+  class ORCH bar
+  class s1,s2,s3,s4,s5,s6,t3,o4,o5 plain
+  style DIP  fill:#FFFFFF,stroke:#FF3621,stroke-width:4px
+  style SRC  fill:#FFFFFF,stroke:#1B3139,stroke-width:2px
+  style ING  fill:#FFFFFF,stroke:#1B3139,stroke-width:2px
+  style OUT  fill:#FFFFFF,stroke:#1B3139,stroke-width:2px
+  style LAKE fill:#FF3621,stroke:#FF3621,color:#FFFFFF
+  style MED  fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style DE   fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style AIML fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style SRV  fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style DSH  fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style QRY  fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style GEN  fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style GOV  fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style STO  fill:#FFFFFF,stroke:#1B3139,stroke-width:1px,stroke-dasharray:6 4
+  style raw  fill:#FFFFFF,stroke:#C82D4C,stroke-width:2px
+  style ods  fill:#FFFFFF,stroke:#90A5B1,stroke-width:2px
+  style dim  fill:#FFFFFF,stroke:#BA7B23,stroke-width:2px
+  style fct  fill:#FFFFFF,stroke:#BA7B23,stroke-width:2px
+  style mart fill:#FFFFFF,stroke:#BA7B23,stroke-width:2px
+  </pre>
+</div>
+
 <h2>Medallion pipeline</h2>
 
 <div class="panel">
