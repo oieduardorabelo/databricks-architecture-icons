@@ -736,9 +736,15 @@ const VARIANT_LABELS = [
 // The grid shows the PNG renders, so a thumbnail matches what most people drop
 // into a slide or a board. If sharp was not installed there is no PNG, and the
 // SVG stands in.
+// The four looks the grid can show. PNG where there is one, because the grid
+// draws 71 of them at once. Mono is the exception: it paints with
+// `currentColor`, which an <img> cannot resolve, so it is drawn as a CSS mask
+// and takes the text color of the page.
 const thumb = (p) => ({
-  flat: p.files.png ?? p.files.svg,
+  art: p.files.png ?? p.files.svg,
   tile: p.files.pngTile ?? p.files.svgTile,
+  outline: p.files.pngOutline ?? p.files.svgOutline,
+  mono: p.files.svgMono,
 });
 
 const fileLinks = (p) =>
@@ -764,7 +770,7 @@ const cards = byCategory
         ${c.products
           .map(
             (p) => `<figure class="card" data-name="${esc((p.name + ' ' + p.slug + ' ' + (p.aka ?? '') + ' ' + p.description).toLowerCase())}" data-slug="${p.slug}">
-          <div class="art"><img src="${thumb(p).flat}" alt="${esc(p.name)}" width="${CANVAS}" height="${CANVAS}" loading="lazy" decoding="async"><img class="tile" src="${thumb(p).tile}" alt="" width="${CANVAS}" height="${CANVAS}" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="${thumb(p).art}" data-art="${thumb(p).art}" data-tile="${thumb(p).tile}" data-outline="${thumb(p).outline}" alt="${esc(p.name)}" width="${CANVAS}" height="${CANVAS}" loading="lazy" decoding="async"><span class="mono" style="--mono:url(${thumb(p).mono})" aria-hidden="true"></span></div>
           <figcaption>
             <strong>${esc(p.name)}</strong>
             <code>${p.slug}</code>
@@ -890,6 +896,14 @@ fs.writeFileSync(
   .toolbar{position:sticky;top:0;z-index:9;background:var(--bg);
            border-bottom:1px solid var(--line);padding:16px 0}
   .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .bar2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+  .views{display:flex;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .views button{border:0;border-radius:0;padding:10px 14px;font-size:13px;
+                border-left:1px solid var(--line)}
+  .views button:first-child{border-left:0}
+  .views button[aria-pressed=true]{background:var(--lava);border-color:var(--lava);color:#fff}
+  .bar2 .spacer{margin-left:auto}
+  .view-note{font:400 12px/1.4 "DM Mono",ui-monospace,Menlo,monospace;color:var(--muted)}
   input[type=search]{flex:1;min-width:240px;padding:12px 16px;border:1px solid var(--line);
     border-radius:8px;background:var(--card);color:var(--fg);font-family:inherit;font-size:14px}
   input[type=search]:focus{outline:2px solid var(--lava);outline-offset:-1px;border-color:var(--lava)}
@@ -916,9 +930,11 @@ fs.writeFileSync(
   .card.hide{display:none}
   .art{position:relative;flex:0 0 48px;height:48px}
   .art img{width:48px;height:48px;display:block}
-  .art .tile{position:absolute;inset:0;opacity:0}
-  body.tiles .art img{opacity:0}
-  body.tiles .art .tile{opacity:1}
+  .art .mono{position:absolute;inset:0;display:none;background:currentColor;
+             -webkit-mask:var(--mono) center/48px 48px no-repeat;
+             mask:var(--mono) center/48px 48px no-repeat}
+  body[data-view=mono] .art img{visibility:hidden}
+  body[data-view=mono] .art .mono{display:block}
   figcaption{min-width:0}
   figcaption strong{display:block;font-size:16px;line-height:1.2;font-weight:700}
   figcaption code{display:inline-block;margin-top:4px;cursor:copy;color:var(--muted);
@@ -1010,8 +1026,16 @@ fs.writeFileSync(
 <div class="toolbar">
   <div class="wrap bar">
     <input type="search" id="q" placeholder="Search products, slugs, descriptions&hellip;" autocomplete="off" aria-label="Search products">
-    <button id="tiles">Tile view</button>
-    <button id="theme">Dark</button>
+  </div>
+  <div class="wrap bar2">
+    <div class="views" id="views" role="group" aria-label="Icon variant">
+      <button data-view="art" aria-pressed="true">Artwork</button>
+      <button data-view="mono" aria-pressed="false">Mono</button>
+      <button data-view="tile" aria-pressed="false">Tile</button>
+      <button data-view="outline" aria-pressed="false">Outline</button>
+    </div>
+    <span class="view-note" id="viewnote">svg/ &middot; png/</span>
+    <button id="theme" class="spacer">Dark</button>
   </div>
 </div>
 <main class="wrap">
@@ -1084,15 +1108,49 @@ ${cards}
     });
     empty.hidden = any;
   });
-  document.getElementById('tiles').addEventListener('click', e => {
-    document.body.classList.toggle('tiles');
-    e.target.classList.toggle('on');
+  // The grid can show any of the four looks. Mono is a CSS mask, so the <img>
+  // only carries the three that resolve on their own.
+  const VIEW_DIRS = {
+    art: 'svg/ \u00b7 png/',
+    mono: 'svg-mono/',
+    tile: 'svg-tile/ \u00b7 png-tile/',
+    outline: 'svg-outline/ \u00b7 png-outline/',
+  };
+  const viewNote = document.getElementById('viewnote');
+  function setView(v) {
+    document.body.dataset.view = v;
+    if (v !== 'mono') {
+      for (const img of document.querySelectorAll('.art img')) img.src = img.dataset[v];
+    }
+    for (const b of document.querySelectorAll('#views button')) {
+      b.setAttribute('aria-pressed', String(b.dataset.view === v));
+    }
+    viewNote.textContent = VIEW_DIRS[v];
+    try { localStorage.setItem('dbx-view', v); } catch {}
+  }
+  document.getElementById('views').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setView(b.dataset.view);
   });
-  document.getElementById('theme').addEventListener('click', e => {
-    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
-    e.target.textContent = dark ? 'Dark' : 'Light';
+  // ?view=tile makes a choice shareable; otherwise the last one is remembered.
+  const wantView = new URLSearchParams(location.search).get('view');
+  let startView = 'art';
+  try { startView = wantView || localStorage.getItem('dbx-view') || 'art'; } catch { startView = wantView || 'art'; }
+  setView(VIEW_DIRS[startView] ? startView : 'art');
+  // ?theme=dark makes a choice shareable, and the choice survives a reload.
+  const themeBtn = document.getElementById('theme');
+  function setTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'dark' ? 'Light' : 'Dark';
+    try { localStorage.setItem('dbx-theme', t); } catch {}
+  }
+  themeBtn.addEventListener('click', () => {
+    setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
+  const wantTheme = new URLSearchParams(location.search).get('theme');
+  let startTheme = 'light';
+  try { startTheme = wantTheme || localStorage.getItem('dbx-theme') || 'light'; } catch { startTheme = wantTheme || 'light'; }
+  setTheme(startTheme === 'dark' ? 'dark' : 'light');
   const toast = document.getElementById('toast');
   document.addEventListener('click', e => {
     if (e.target.tagName !== 'CODE') return;

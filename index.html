@@ -106,6 +106,14 @@
   .toolbar{position:sticky;top:0;z-index:9;background:var(--bg);
            border-bottom:1px solid var(--line);padding:16px 0}
   .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .bar2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+  .views{display:flex;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .views button{border:0;border-radius:0;padding:10px 14px;font-size:13px;
+                border-left:1px solid var(--line)}
+  .views button:first-child{border-left:0}
+  .views button[aria-pressed=true]{background:var(--lava);border-color:var(--lava);color:#fff}
+  .bar2 .spacer{margin-left:auto}
+  .view-note{font:400 12px/1.4 "DM Mono",ui-monospace,Menlo,monospace;color:var(--muted)}
   input[type=search]{flex:1;min-width:240px;padding:12px 16px;border:1px solid var(--line);
     border-radius:8px;background:var(--card);color:var(--fg);font-family:inherit;font-size:14px}
   input[type=search]:focus{outline:2px solid var(--lava);outline-offset:-1px;border-color:var(--lava)}
@@ -132,9 +140,11 @@
   .card.hide{display:none}
   .art{position:relative;flex:0 0 48px;height:48px}
   .art img{width:48px;height:48px;display:block}
-  .art .tile{position:absolute;inset:0;opacity:0}
-  body.tiles .art img{opacity:0}
-  body.tiles .art .tile{opacity:1}
+  .art .mono{position:absolute;inset:0;display:none;background:currentColor;
+             -webkit-mask:var(--mono) center/48px 48px no-repeat;
+             mask:var(--mono) center/48px 48px no-repeat}
+  body[data-view=mono] .art img{visibility:hidden}
+  body[data-view=mono] .art .mono{display:block}
   figcaption{min-width:0}
   figcaption strong{display:block;font-size:16px;line-height:1.2;font-weight:700}
   figcaption code{display:inline-block;margin-top:4px;cursor:copy;color:var(--muted);
@@ -229,8 +239,16 @@
 <div class="toolbar">
   <div class="wrap bar">
     <input type="search" id="q" placeholder="Search products, slugs, descriptions&hellip;" autocomplete="off" aria-label="Search products">
-    <button id="tiles">Tile view</button>
-    <button id="theme">Dark</button>
+  </div>
+  <div class="wrap bar2">
+    <div class="views" id="views" role="group" aria-label="Icon variant">
+      <button data-view="art" aria-pressed="true">Artwork</button>
+      <button data-view="mono" aria-pressed="false">Mono</button>
+      <button data-view="tile" aria-pressed="false">Tile</button>
+      <button data-view="outline" aria-pressed="false">Outline</button>
+    </div>
+    <span class="view-note" id="viewnote">svg/ &middot; png/</span>
+    <button id="theme" class="spacer">Dark</button>
   </div>
 </div>
 <main class="wrap">
@@ -243,7 +261,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="databricks databricks  the databricks logo mark. use it to label the platform boundary in an architecture diagram." data-slug="databricks">
-          <div class="art"><img src="icons/png/databricks.png" alt="Databricks" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/databricks.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/databricks.png" data-art="icons/png/databricks.png" data-tile="icons/png-tile/databricks.png" data-outline="icons/png-outline/databricks.png" alt="Databricks" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/databricks.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks</strong>
             <code>databricks</code>
@@ -253,7 +271,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="data intelligence platform data-intelligence-platform  the unified platform for data engineering, analytics, ai and governance on one lakehouse foundation." data-slug="data-intelligence-platform">
-          <div class="art"><img src="icons/png/data-intelligence-platform.png" alt="Data Intelligence Platform" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/data-intelligence-platform.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/data-intelligence-platform.png" data-art="icons/png/data-intelligence-platform.png" data-tile="icons/png-tile/data-intelligence-platform.png" data-outline="icons/png-outline/data-intelligence-platform.png" alt="Data Intelligence Platform" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/data-intelligence-platform.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Data Intelligence Platform</strong>
             <code>data-intelligence-platform</code>
@@ -263,7 +281,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakehouse architecture lakehouse  open architecture combining data lake economics with warehouse reliability and acid management." data-slug="lakehouse">
-          <div class="art"><img src="icons/png/lakehouse.png" alt="Lakehouse Architecture" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakehouse.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakehouse.png" data-art="icons/png/lakehouse.png" data-tile="icons/png-tile/lakehouse.png" data-outline="icons/png-outline/lakehouse.png" alt="Lakehouse Architecture" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakehouse.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakehouse Architecture</strong>
             <code>lakehouse</code>
@@ -273,7 +291,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="apache spark apache-spark  managed, autoscaling apache spark for large-scale batch, streaming and ml processing." data-slug="apache-spark">
-          <div class="art"><img src="icons/png/apache-spark.png" alt="Apache Spark" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/apache-spark.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/apache-spark.png" data-art="icons/png/apache-spark.png" data-tile="icons/png-tile/apache-spark.png" data-outline="icons/png-outline/apache-spark.png" alt="Apache Spark" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/apache-spark.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Apache Spark</strong>
             <code>apache-spark</code>
@@ -283,7 +301,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="photon photon  a native c++ vectorized query engine. it accelerates sql and dataframe work with no code changes." data-slug="photon">
-          <div class="art"><img src="icons/png/photon.png" alt="Photon" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/photon.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/photon.png" data-art="icons/png/photon.png" data-tile="icons/png-tile/photon.png" data-outline="icons/png-outline/photon.png" alt="Photon" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/photon.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Photon</strong>
             <code>photon</code>
@@ -293,7 +311,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="compute (clusters) compute-clusters  all-purpose and job compute resources that run notebooks, pipelines and jobs." data-slug="compute-clusters">
-          <div class="art"><img src="icons/png/compute-clusters.png" alt="Compute (Clusters)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/compute-clusters.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/compute-clusters.png" data-art="icons/png/compute-clusters.png" data-tile="icons/png-tile/compute-clusters.png" data-outline="icons/png-outline/compute-clusters.png" alt="Compute (Clusters)" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/compute-clusters.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Compute (Clusters)</strong>
             <code>compute-clusters</code>
@@ -303,7 +321,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="serverless compute serverless-compute  fully managed, versionless compute that starts in seconds and autoscales without cluster administration." data-slug="serverless-compute">
-          <div class="art"><img src="icons/png/serverless-compute.png" alt="Serverless Compute" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/serverless-compute.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/serverless-compute.png" data-art="icons/png/serverless-compute.png" data-tile="icons/png-tile/serverless-compute.png" data-outline="icons/png-outline/serverless-compute.png" alt="Serverless Compute" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/serverless-compute.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Serverless Compute</strong>
             <code>serverless-compute</code>
@@ -313,7 +331,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks runtime databricks-runtime  an optimized runtime image with spark, delta and ml libraries. the ml variant adds gpu frameworks and automl." data-slug="databricks-runtime">
-          <div class="art"><img src="icons/png/databricks-runtime.png" alt="Databricks Runtime" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/databricks-runtime.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/databricks-runtime.png" data-art="icons/png/databricks-runtime.png" data-tile="icons/png-tile/databricks-runtime.png" data-outline="icons/png-outline/databricks-runtime.png" alt="Databricks Runtime" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/databricks-runtime.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Runtime</strong>
             <code>databricks-runtime</code>
@@ -323,7 +341,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="real-time mode for apache spark spark-real-time-mode  structured streaming execution mode delivering millisecond latency for time-critical pipelines." data-slug="spark-real-time-mode">
-          <div class="art"><img src="icons/png/spark-real-time-mode.png" alt="Real-Time Mode for Apache Spark" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/spark-real-time-mode.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/spark-real-time-mode.png" data-art="icons/png/spark-real-time-mode.png" data-tile="icons/png-tile/spark-real-time-mode.png" data-outline="icons/png-outline/spark-real-time-mode.png" alt="Real-Time Mode for Apache Spark" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/spark-real-time-mode.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Real-Time Mode for Apache Spark</strong>
             <code>spark-real-time-mode</code>
@@ -333,7 +351,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="multicloud deployment multicloud  the same platform and governance model deployed across aws, azure and google cloud." data-slug="multicloud">
-          <div class="art"><img src="icons/png/multicloud.png" alt="Multicloud Deployment" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/multicloud.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/multicloud.png" data-art="icons/png/multicloud.png" data-tile="icons/png-tile/multicloud.png" data-outline="icons/png-outline/multicloud.png" alt="Multicloud Deployment" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/multicloud.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Multicloud Deployment</strong>
             <code>multicloud</code>
@@ -353,7 +371,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="lakeflow lakeflow  the unified data engineering suite covering ingestion, declarative transformation and orchestration." data-slug="lakeflow">
-          <div class="art"><img src="icons/png/lakeflow.png" alt="Lakeflow" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakeflow.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakeflow.png" data-art="icons/png/lakeflow.png" data-tile="icons/png-tile/lakeflow.png" data-outline="icons/png-outline/lakeflow.png" alt="Lakeflow" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakeflow.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakeflow</strong>
             <code>lakeflow</code>
@@ -363,7 +381,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakeflow connect lakeflow-connect  managed ingestion with 100+ connectors for saas applications, databases and cloud storage." data-slug="lakeflow-connect">
-          <div class="art"><img src="icons/png/lakeflow-connect.png" alt="Lakeflow Connect" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakeflow-connect.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakeflow-connect.png" data-art="icons/png/lakeflow-connect.png" data-tile="icons/png-tile/lakeflow-connect.png" data-outline="icons/png-outline/lakeflow-connect.png" alt="Lakeflow Connect" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakeflow-connect.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakeflow Connect</strong>
             <code>lakeflow-connect</code>
@@ -373,7 +391,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="zerobus ingest zerobus-ingest  broker-free streaming ingest over grpc, rest and opentelemetry with roughly five-second freshness." data-slug="zerobus-ingest">
-          <div class="art"><img src="icons/png/zerobus-ingest.png" alt="Zerobus Ingest" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/zerobus-ingest.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/zerobus-ingest.png" data-art="icons/png/zerobus-ingest.png" data-tile="icons/png-tile/zerobus-ingest.png" data-outline="icons/png-outline/zerobus-ingest.png" alt="Zerobus Ingest" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/zerobus-ingest.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Zerobus Ingest</strong>
             <code>zerobus-ingest</code>
@@ -383,7 +401,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="apache spark declarative pipelines spark-declarative-pipelines lakeflow declarative pipelines. formerly delta live tables (dlt) declarative batch and streaming etl with built-in data quality expectations, cdc and dependency management." data-slug="spark-declarative-pipelines">
-          <div class="art"><img src="icons/png/spark-declarative-pipelines.png" alt="Apache Spark Declarative Pipelines" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/spark-declarative-pipelines.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/spark-declarative-pipelines.png" data-art="icons/png/spark-declarative-pipelines.png" data-tile="icons/png-tile/spark-declarative-pipelines.png" data-outline="icons/png-outline/spark-declarative-pipelines.png" alt="Apache Spark Declarative Pipelines" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/spark-declarative-pipelines.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Apache Spark Declarative Pipelines</strong>
             <code>spark-declarative-pipelines</code>
@@ -393,7 +411,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakeflow jobs lakeflow-jobs formerly databricks workflows native orchestration for data, analytics and ai workflows, with control flow, retries and alerting." data-slug="lakeflow-jobs">
-          <div class="art"><img src="icons/png/lakeflow-jobs.png" alt="Lakeflow Jobs" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakeflow-jobs.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakeflow-jobs.png" data-art="icons/png/lakeflow-jobs.png" data-tile="icons/png-tile/lakeflow-jobs.png" data-outline="icons/png-outline/lakeflow-jobs.png" alt="Lakeflow Jobs" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakeflow-jobs.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakeflow Jobs</strong>
             <code>lakeflow-jobs</code>
@@ -403,7 +421,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakeflow designer lakeflow-designer  no-code, drag-and-drop pipeline authoring that generates governed, production-ready pipeline code." data-slug="lakeflow-designer">
-          <div class="art"><img src="icons/png/lakeflow-designer.png" alt="Lakeflow Designer" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakeflow-designer.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakeflow-designer.png" data-art="icons/png/lakeflow-designer.png" data-tile="icons/png-tile/lakeflow-designer.png" data-outline="icons/png-outline/lakeflow-designer.png" alt="Lakeflow Designer" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakeflow-designer.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakeflow Designer</strong>
             <code>lakeflow-designer</code>
@@ -413,7 +431,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="auto loader auto-loader  incrementally and idempotently ingests new files from cloud object storage as they arrive." data-slug="auto-loader">
-          <div class="art"><img src="icons/png/auto-loader.png" alt="Auto Loader" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/auto-loader.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/auto-loader.png" data-art="icons/png/auto-loader.png" data-tile="icons/png-tile/auto-loader.png" data-outline="icons/png-outline/auto-loader.png" alt="Auto Loader" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/auto-loader.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Auto Loader</strong>
             <code>auto-loader</code>
@@ -423,7 +441,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="structured streaming structured-streaming  the apache spark api for exactly-once stream processing in continuous, incremental pipelines." data-slug="structured-streaming">
-          <div class="art"><img src="icons/png/structured-streaming.png" alt="Structured Streaming" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/structured-streaming.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/structured-streaming.png" data-art="icons/png/structured-streaming.png" data-tile="icons/png-tile/structured-streaming.png" data-outline="icons/png-outline/structured-streaming.png" alt="Structured Streaming" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/structured-streaming.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Structured Streaming</strong>
             <code>structured-streaming</code>
@@ -433,7 +451,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakebridge lakebridge  migration tooling that profiles legacy warehouses, converts code to ansi sql and validates the results." data-slug="lakebridge">
-          <div class="art"><img src="icons/png/lakebridge.png" alt="Lakebridge" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakebridge.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakebridge.png" data-art="icons/png/lakebridge.png" data-tile="icons/png-tile/lakebridge.png" data-outline="icons/png-outline/lakebridge.png" alt="Lakebridge" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakebridge.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakebridge</strong>
             <code>lakebridge</code>
@@ -453,7 +471,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="delta lake delta-lake  open table format adding acid transactions, time travel and change data feed to object storage." data-slug="delta-lake">
-          <div class="art"><img src="icons/png/delta-lake.png" alt="Delta Lake" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/delta-lake.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/delta-lake.png" data-art="icons/png/delta-lake.png" data-tile="icons/png-tile/delta-lake.png" data-outline="icons/png-outline/delta-lake.png" alt="Delta Lake" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/delta-lake.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Delta Lake</strong>
             <code>delta-lake</code>
@@ -463,7 +481,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="apache iceberg apache-iceberg  first-class managed and foreign iceberg tables, readable and writable through unity and iceberg rest catalogs." data-slug="apache-iceberg">
-          <div class="art"><img src="icons/png/apache-iceberg.png" alt="Apache Iceberg" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/apache-iceberg.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/apache-iceberg.png" data-art="icons/png/apache-iceberg.png" data-tile="icons/png-tile/apache-iceberg.png" data-outline="icons/png-outline/apache-iceberg.png" alt="Apache Iceberg" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/apache-iceberg.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Apache Iceberg</strong>
             <code>apache-iceberg</code>
@@ -473,7 +491,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakehouse storage (managed tables) lakehouse-storage  self-optimizing managed delta and iceberg tables with automatic layout, compaction and caching." data-slug="lakehouse-storage">
-          <div class="art"><img src="icons/png/lakehouse-storage.png" alt="Lakehouse Storage (Managed Tables)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakehouse-storage.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakehouse-storage.png" data-art="icons/png/lakehouse-storage.png" data-tile="icons/png-tile/lakehouse-storage.png" data-outline="icons/png-outline/lakehouse-storage.png" alt="Lakehouse Storage (Managed Tables)" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakehouse-storage.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakehouse Storage (Managed Tables)</strong>
             <code>lakehouse-storage</code>
@@ -483,7 +501,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="liquid clustering liquid-clustering  partition-free, self-tuning data layout that adapts clustering keys to real query patterns." data-slug="liquid-clustering">
-          <div class="art"><img src="icons/png/liquid-clustering.png" alt="Liquid Clustering" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/liquid-clustering.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/liquid-clustering.png" data-art="icons/png/liquid-clustering.png" data-tile="icons/png-tile/liquid-clustering.png" data-outline="icons/png-outline/liquid-clustering.png" alt="Liquid Clustering" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/liquid-clustering.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Liquid Clustering</strong>
             <code>liquid-clustering</code>
@@ -493,7 +511,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="predictive optimization predictive-optimization  ai-driven background maintenance that runs optimize, vacuum and statistics where they pay off most." data-slug="predictive-optimization">
-          <div class="art"><img src="icons/png/predictive-optimization.png" alt="Predictive Optimization" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/predictive-optimization.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/predictive-optimization.png" data-art="icons/png/predictive-optimization.png" data-tile="icons/png-tile/predictive-optimization.png" data-outline="icons/png-outline/predictive-optimization.png" alt="Predictive Optimization" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/predictive-optimization.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Predictive Optimization</strong>
             <code>predictive-optimization</code>
@@ -503,7 +521,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakebase lakebase  serverless postgres oltp database with branching, scale-to-zero and native lakehouse sync for apps and agents." data-slug="lakebase">
-          <div class="art"><img src="icons/png/lakebase.png" alt="Lakebase" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakebase.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakebase.png" data-art="icons/png/lakebase.png" data-tile="icons/png-tile/lakebase.png" data-outline="icons/png-outline/lakebase.png" alt="Lakebase" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakebase.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakebase</strong>
             <code>lakebase</code>
@@ -523,7 +541,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="databricks lakehouse (data warehousing) data-warehousing  serverless data warehouse built on open table formats and governed by unity catalog." data-slug="data-warehousing">
-          <div class="art"><img src="icons/png/data-warehousing.png" alt="Databricks Lakehouse (Data Warehousing)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/data-warehousing.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/data-warehousing.png" data-art="icons/png/data-warehousing.png" data-tile="icons/png-tile/data-warehousing.png" data-outline="icons/png-outline/data-warehousing.png" alt="Databricks Lakehouse (Data Warehousing)" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/data-warehousing.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Lakehouse (Data Warehousing)</strong>
             <code>data-warehousing</code>
@@ -533,7 +551,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks sql databricks-sql  the sql surface of the lakehouse: warehouses, editor, queries, alerts and bi connectivity." data-slug="databricks-sql">
-          <div class="art"><img src="icons/png/databricks-sql.png" alt="Databricks SQL" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/databricks-sql.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/databricks-sql.png" data-art="icons/png/databricks-sql.png" data-tile="icons/png-tile/databricks-sql.png" data-outline="icons/png-outline/databricks-sql.png" alt="Databricks SQL" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/databricks-sql.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks SQL</strong>
             <code>databricks-sql</code>
@@ -543,7 +561,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="sql warehouse sql-warehouse  serverless, photon-powered sql compute endpoint for bi tools, dashboards and ad hoc queries." data-slug="sql-warehouse">
-          <div class="art"><img src="icons/png/sql-warehouse.png" alt="SQL Warehouse" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/sql-warehouse.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/sql-warehouse.png" data-art="icons/png/sql-warehouse.png" data-tile="icons/png-tile/sql-warehouse.png" data-outline="icons/png-outline/sql-warehouse.png" alt="SQL Warehouse" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/sql-warehouse.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>SQL Warehouse</strong>
             <code>sql-warehouse</code>
@@ -553,7 +571,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakehouse//rt lakehouse-rt  real-time warehouse tier serving millisecond queries at high concurrency directly on lake tables." data-slug="lakehouse-rt">
-          <div class="art"><img src="icons/png/lakehouse-rt.png" alt="Lakehouse//RT" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakehouse-rt.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakehouse-rt.png" data-art="icons/png/lakehouse-rt.png" data-tile="icons/png-tile/lakehouse-rt.png" data-outline="icons/png-outline/lakehouse-rt.png" alt="Lakehouse//RT" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakehouse-rt.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakehouse//RT</strong>
             <code>lakehouse-rt</code>
@@ -563,7 +581,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks ai/bi ai-bi  the built-in business intelligence experience spanning dashboards, genie spaces and semantics." data-slug="ai-bi">
-          <div class="art"><img src="icons/png/ai-bi.png" alt="Databricks AI/BI" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/ai-bi.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/ai-bi.png" data-art="icons/png/ai-bi.png" data-tile="icons/png-tile/ai-bi.png" data-outline="icons/png-outline/ai-bi.png" alt="Databricks AI/BI" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/ai-bi.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks AI/BI</strong>
             <code>ai-bi</code>
@@ -573,7 +591,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="ai/bi dashboards ai-bi-dashboards  dashboards with natural-language chart authoring and forecasting. publication needs no separate license." data-slug="ai-bi-dashboards">
-          <div class="art"><img src="icons/png/ai-bi-dashboards.png" alt="AI/BI Dashboards" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/ai-bi-dashboards.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/ai-bi-dashboards.png" data-art="icons/png/ai-bi-dashboards.png" data-tile="icons/png-tile/ai-bi-dashboards.png" data-outline="icons/png-outline/ai-bi-dashboards.png" alt="AI/BI Dashboards" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/ai-bi-dashboards.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>AI/BI Dashboards</strong>
             <code>ai-bi-dashboards</code>
@@ -583,7 +601,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakehouse federation lakehouse-federation  query and govern external systems such as snowflake, bigquery, postgres and mysql in place, without moving data." data-slug="lakehouse-federation">
-          <div class="art"><img src="icons/png/lakehouse-federation.png" alt="Lakehouse Federation" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakehouse-federation.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakehouse-federation.png" data-art="icons/png/lakehouse-federation.png" data-tile="icons/png-tile/lakehouse-federation.png" data-outline="icons/png-outline/lakehouse-federation.png" alt="Lakehouse Federation" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakehouse-federation.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakehouse Federation</strong>
             <code>lakehouse-federation</code>
@@ -603,7 +621,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="databricks genie genie  the agentic ai experience that answers questions and acts on governed enterprise data." data-slug="genie">
-          <div class="art"><img src="icons/png/genie.png" alt="Databricks Genie" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/genie.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/genie.png" data-art="icons/png/genie.png" data-tile="icons/png-tile/genie.png" data-outline="icons/png-outline/genie.png" alt="Databricks Genie" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/genie.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Genie</strong>
             <code>genie</code>
@@ -613,7 +631,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="genie one genie-one  ai coworker hub where business users ask questions, get grounded answers and trigger agentic actions." data-slug="genie-one">
-          <div class="art"><img src="icons/png/genie-one.png" alt="Genie One" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/genie-one.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/genie-one.png" data-art="icons/png/genie-one.png" data-tile="icons/png-tile/genie-one.png" data-outline="icons/png-outline/genie-one.png" alt="Genie One" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/genie-one.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Genie One</strong>
             <code>genie-one</code>
@@ -623,7 +641,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="genie agents genie-agents formerly ai/bi genie spaces governed natural-language analytics spaces that answer business questions over curated data." data-slug="genie-agents">
-          <div class="art"><img src="icons/png/genie-agents.png" alt="Genie Agents" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/genie-agents.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/genie-agents.png" data-art="icons/png/genie-agents.png" data-tile="icons/png-tile/genie-agents.png" data-outline="icons/png-outline/genie-agents.png" alt="Genie Agents" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/genie-agents.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Genie Agents</strong>
             <code>genie-agents</code>
@@ -633,7 +651,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="genie code genie-code  agentic coding partner for data teams that builds pipelines, dashboards, notebooks and ml workflows." data-slug="genie-code">
-          <div class="art"><img src="icons/png/genie-code.png" alt="Genie Code" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/genie-code.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/genie-code.png" data-art="icons/png/genie-code.png" data-tile="icons/png-tile/genie-code.png" data-outline="icons/png-outline/genie-code.png" alt="Genie Code" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/genie-code.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Genie Code</strong>
             <code>genie-code</code>
@@ -643,7 +661,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="genie deep research genie-deep-research  multi-step research agent that investigates a question across governed data and returns a cited report." data-slug="genie-deep-research">
-          <div class="art"><img src="icons/png/genie-deep-research.png" alt="Genie Deep Research" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/genie-deep-research.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/genie-deep-research.png" data-art="icons/png/genie-deep-research.png" data-tile="icons/png-tile/genie-deep-research.png" data-outline="icons/png-outline/genie-deep-research.png" alt="Genie Deep Research" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/genie-deep-research.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Genie Deep Research</strong>
             <code>genie-deep-research</code>
@@ -653,7 +671,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="agent bricks agent-bricks  platform for building, evaluating and governing enterprise ai agents grounded in your own data." data-slug="agent-bricks">
-          <div class="art"><img src="icons/png/agent-bricks.png" alt="Agent Bricks" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/agent-bricks.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/agent-bricks.png" data-art="icons/png/agent-bricks.png" data-tile="icons/png-tile/agent-bricks.png" data-outline="icons/png-outline/agent-bricks.png" alt="Agent Bricks" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/agent-bricks.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Agent Bricks</strong>
             <code>agent-bricks</code>
@@ -663,7 +681,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks ai search ai-search formerly databricks vector search / mosaic ai vector search managed hybrid vector and bm25 search with auto-syncing indexes and built-in reranking." data-slug="ai-search">
-          <div class="art"><img src="icons/png/ai-search.png" alt="Databricks AI Search" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/ai-search.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/ai-search.png" data-art="icons/png/ai-search.png" data-tile="icons/png-tile/ai-search.png" data-outline="icons/png-outline/ai-search.png" alt="Databricks AI Search" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/ai-search.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks AI Search</strong>
             <code>ai-search</code>
@@ -673,7 +691,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="unity ai gateway unity-ai-gateway  single control plane for model, mcp and agent access with guardrails, rate limits, budgets and audit." data-slug="unity-ai-gateway">
-          <div class="art"><img src="icons/png/unity-ai-gateway.png" alt="Unity AI Gateway" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/unity-ai-gateway.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/unity-ai-gateway.png" data-art="icons/png/unity-ai-gateway.png" data-tile="icons/png-tile/unity-ai-gateway.png" data-outline="icons/png-outline/unity-ai-gateway.png" alt="Unity AI Gateway" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/unity-ai-gateway.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Unity AI Gateway</strong>
             <code>unity-ai-gateway</code>
@@ -683,7 +701,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="document intelligence document-intelligence  sql-native parsing, extraction and classification that turns pdfs and images into governed structured data." data-slug="document-intelligence">
-          <div class="art"><img src="icons/png/document-intelligence.png" alt="Document Intelligence" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/document-intelligence.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/document-intelligence.png" data-art="icons/png/document-intelligence.png" data-tile="icons/png-tile/document-intelligence.png" data-outline="icons/png-outline/document-intelligence.png" alt="Document Intelligence" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/document-intelligence.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Document Intelligence</strong>
             <code>document-intelligence</code>
@@ -693,7 +711,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks model serving model-serving formerly mosaic ai model serving unified serverless endpoints for custom ml models, foundation models and agents, plus batch inference." data-slug="model-serving">
-          <div class="art"><img src="icons/png/model-serving.png" alt="Databricks Model Serving" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/model-serving.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/model-serving.png" data-art="icons/png/model-serving.png" data-tile="icons/png-tile/model-serving.png" data-outline="icons/png-outline/model-serving.png" alt="Databricks Model Serving" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/model-serving.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Model Serving</strong>
             <code>model-serving</code>
@@ -703,7 +721,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks model training model-training  managed fine-tuning and custom model training on serverless h100 gpus, without moving data." data-slug="model-training">
-          <div class="art"><img src="icons/png/model-training.png" alt="Databricks Model Training" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/model-training.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/model-training.png" data-art="icons/png/model-training.png" data-tile="icons/png-tile/model-training.png" data-outline="icons/png-outline/model-training.png" alt="Databricks Model Training" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/model-training.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Model Training</strong>
             <code>model-training</code>
@@ -713,7 +731,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="managed mlflow mlflow  hosted mlflow for experiment tracking, genai tracing, evaluation and the unity catalog model registry." data-slug="mlflow">
-          <div class="art"><img src="icons/png/mlflow.png" alt="Managed MLflow" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/mlflow.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/mlflow.png" data-art="icons/png/mlflow.png" data-tile="icons/png-tile/mlflow.png" data-outline="icons/png-outline/mlflow.png" alt="Managed MLflow" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/mlflow.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Managed MLflow</strong>
             <code>mlflow</code>
@@ -723,7 +741,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks feature store feature-store  governed feature registry with batch and low-latency online serving, and training/serving consistency." data-slug="feature-store">
-          <div class="art"><img src="icons/png/feature-store.png" alt="Databricks Feature Store" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/feature-store.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/feature-store.png" data-art="icons/png/feature-store.png" data-tile="icons/png-tile/feature-store.png" data-outline="icons/png-outline/feature-store.png" alt="Databricks Feature Store" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/feature-store.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Feature Store</strong>
             <code>feature-store</code>
@@ -733,7 +751,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="ai functions ai-functions  sql functions such as ai_query, ai_classify and ai_extract that call models directly inside queries." data-slug="ai-functions">
-          <div class="art"><img src="icons/png/ai-functions.png" alt="AI Functions" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/ai-functions.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/ai-functions.png" data-art="icons/png/ai-functions.png" data-tile="icons/png-tile/ai-functions.png" data-outline="icons/png-outline/ai-functions.png" alt="AI Functions" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/ai-functions.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>AI Functions</strong>
             <code>ai-functions</code>
@@ -743,7 +761,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks automl automl  glass-box automated training that produces baseline models plus the editable notebooks that built them." data-slug="automl">
-          <div class="art"><img src="icons/png/automl.png" alt="Databricks AutoML" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/automl.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/automl.png" data-art="icons/png/automl.png" data-tile="icons/png-tile/automl.png" data-outline="icons/png-outline/automl.png" alt="Databricks AutoML" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/automl.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks AutoML</strong>
             <code>automl</code>
@@ -753,7 +771,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="customerlake customerlake  agentic customer data platform with identity resolution, customer 360 and marketing agents, native to the lakehouse." data-slug="customerlake">
-          <div class="art"><img src="icons/png/customerlake.png" alt="CustomerLake" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/customerlake.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/customerlake.png" data-art="icons/png/customerlake.png" data-tile="icons/png-tile/customerlake.png" data-outline="icons/png-outline/customerlake.png" alt="CustomerLake" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/customerlake.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>CustomerLake</strong>
             <code>customerlake</code>
@@ -773,7 +791,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="unity catalog unity-catalog  unified governance for data, models, agents and mcp servers across clouds, under one permission model." data-slug="unity-catalog">
-          <div class="art"><img src="icons/png/unity-catalog.png" alt="Unity Catalog" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/unity-catalog.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/unity-catalog.png" data-art="icons/png/unity-catalog.png" data-tile="icons/png-tile/unity-catalog.png" data-outline="icons/png-outline/unity-catalog.png" alt="Unity Catalog" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/unity-catalog.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Unity Catalog</strong>
             <code>unity-catalog</code>
@@ -783,7 +801,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="unity catalog semantics unity-catalog-semantics  central semantic layer of metric views and business definitions that grounds bi tools and ai agents." data-slug="unity-catalog-semantics">
-          <div class="art"><img src="icons/png/unity-catalog-semantics.png" alt="Unity Catalog Semantics" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/unity-catalog-semantics.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/unity-catalog-semantics.png" data-art="icons/png/unity-catalog-semantics.png" data-tile="icons/png-tile/unity-catalog-semantics.png" data-outline="icons/png-outline/unity-catalog-semantics.png" alt="Unity Catalog Semantics" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/unity-catalog-semantics.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Unity Catalog Semantics</strong>
             <code>unity-catalog-semantics</code>
@@ -793,7 +811,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="data &amp; ai lineage data-lineage  automatic column-level lineage across tables, dashboards, models and agents for impact analysis and audit." data-slug="data-lineage">
-          <div class="art"><img src="icons/png/data-lineage.png" alt="Data &amp; AI Lineage" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/data-lineage.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/data-lineage.png" data-art="icons/png/data-lineage.png" data-tile="icons/png-tile/data-lineage.png" data-outline="icons/png-outline/data-lineage.png" alt="Data &amp; AI Lineage" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/data-lineage.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Data &amp; AI Lineage</strong>
             <code>data-lineage</code>
@@ -803,7 +821,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="attribute-based access control abac  tag- and attribute-driven policies that enforce row, column and object permissions at scale." data-slug="abac">
-          <div class="art"><img src="icons/png/abac.png" alt="Attribute-Based Access Control" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/abac.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/abac.png" data-art="icons/png/abac.png" data-tile="icons/png-tile/abac.png" data-outline="icons/png-outline/abac.png" alt="Attribute-Based Access Control" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/abac.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Attribute-Based Access Control</strong>
             <code>abac</code>
@@ -813,7 +831,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="data quality monitoring data-quality-monitoring formerly lakehouse monitoring automated profiling, freshness checks and anomaly detection over tables and inference logs." data-slug="data-quality-monitoring">
-          <div class="art"><img src="icons/png/data-quality-monitoring.png" alt="Data Quality Monitoring" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/data-quality-monitoring.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/data-quality-monitoring.png" data-art="icons/png/data-quality-monitoring.png" data-tile="icons/png-tile/data-quality-monitoring.png" data-outline="icons/png-outline/data-quality-monitoring.png" alt="Data Quality Monitoring" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/data-quality-monitoring.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Data Quality Monitoring</strong>
             <code>data-quality-monitoring</code>
@@ -823,7 +841,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="lakewatch lakewatch  open agentic siem for petabyte-scale security logs, detection-as-code and ai-assisted threat hunting." data-slug="lakewatch">
-          <div class="art"><img src="icons/png/lakewatch.png" alt="Lakewatch" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/lakewatch.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/lakewatch.png" data-art="icons/png/lakewatch.png" data-tile="icons/png-tile/lakewatch.png" data-outline="icons/png-outline/lakewatch.png" alt="Lakewatch" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/lakewatch.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Lakewatch</strong>
             <code>lakewatch</code>
@@ -833,7 +851,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="system tables system-tables  built-in analytical tables exposing billing, usage, lineage, audit and job history for observability." data-slug="system-tables">
-          <div class="art"><img src="icons/png/system-tables.png" alt="System Tables" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/system-tables.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/system-tables.png" data-art="icons/png/system-tables.png" data-tile="icons/png-tile/system-tables.png" data-outline="icons/png-outline/system-tables.png" alt="System Tables" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/system-tables.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>System Tables</strong>
             <code>system-tables</code>
@@ -843,7 +861,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="enterprise security enterprise-security  network isolation, customer-managed keys, private connectivity and compliance controls for the workspace." data-slug="enterprise-security">
-          <div class="art"><img src="icons/png/enterprise-security.png" alt="Enterprise Security" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/enterprise-security.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/enterprise-security.png" data-art="icons/png/enterprise-security.png" data-tile="icons/png-tile/enterprise-security.png" data-outline="icons/png-outline/enterprise-security.png" alt="Enterprise Security" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/enterprise-security.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Enterprise Security</strong>
             <code>enterprise-security</code>
@@ -863,7 +881,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="delta sharing delta-sharing  an open protocol for live, zero-copy data sharing across clouds, platforms and organizations." data-slug="delta-sharing">
-          <div class="art"><img src="icons/png/delta-sharing.png" alt="Delta Sharing" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/delta-sharing.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/delta-sharing.png" data-art="icons/png/delta-sharing.png" data-tile="icons/png-tile/delta-sharing.png" data-outline="icons/png-outline/delta-sharing.png" alt="Delta Sharing" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/delta-sharing.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Delta Sharing</strong>
             <code>delta-sharing</code>
@@ -873,7 +891,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="opensharing opensharing  linux foundation standard extending governed sharing to data, models and agents across engines and clouds." data-slug="opensharing">
-          <div class="art"><img src="icons/png/opensharing.png" alt="OpenSharing" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/opensharing.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/opensharing.png" data-art="icons/png/opensharing.png" data-tile="icons/png-tile/opensharing.png" data-outline="icons/png-outline/opensharing.png" alt="OpenSharing" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/opensharing.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>OpenSharing</strong>
             <code>opensharing</code>
@@ -883,7 +901,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks marketplace marketplace  open exchange for datasets, models, notebooks, dashboards and solution accelerators." data-slug="marketplace">
-          <div class="art"><img src="icons/png/marketplace.png" alt="Databricks Marketplace" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/marketplace.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/marketplace.png" data-art="icons/png/marketplace.png" data-tile="icons/png-tile/marketplace.png" data-outline="icons/png-outline/marketplace.png" alt="Databricks Marketplace" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/marketplace.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Marketplace</strong>
             <code>marketplace</code>
@@ -893,7 +911,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks clean rooms clean-rooms  privacy-safe multi-party collaboration on shared data with no raw-data access, across clouds." data-slug="clean-rooms">
-          <div class="art"><img src="icons/png/clean-rooms.png" alt="Databricks Clean Rooms" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/clean-rooms.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/clean-rooms.png" data-art="icons/png/clean-rooms.png" data-tile="icons/png-tile/clean-rooms.png" data-outline="icons/png-outline/clean-rooms.png" alt="Databricks Clean Rooms" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/clean-rooms.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Clean Rooms</strong>
             <code>clean-rooms</code>
@@ -903,7 +921,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="partner connect partner-connect  guided setup that wires validated ingestion, bi and governance partner tools into your workspace." data-slug="partner-connect">
-          <div class="art"><img src="icons/png/partner-connect.png" alt="Partner Connect" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/partner-connect.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/partner-connect.png" data-art="icons/png/partner-connect.png" data-tile="icons/png-tile/partner-connect.png" data-outline="icons/png-outline/partner-connect.png" alt="Partner Connect" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/partner-connect.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Partner Connect</strong>
             <code>partner-connect</code>
@@ -923,7 +941,7 @@
       </h2>
       <div class="grid">
         <figure class="card" data-name="databricks apps databricks-apps  serverless hosting for python data and ai apps built with streamlit, dash or gradio, with unity catalog auth." data-slug="databricks-apps">
-          <div class="art"><img src="icons/png/databricks-apps.png" alt="Databricks Apps" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/databricks-apps.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/databricks-apps.png" data-art="icons/png/databricks-apps.png" data-tile="icons/png-tile/databricks-apps.png" data-outline="icons/png-outline/databricks-apps.png" alt="Databricks Apps" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/databricks-apps.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Apps</strong>
             <code>databricks-apps</code>
@@ -933,7 +951,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks notebooks notebooks  collaborative multi-language notebooks with built-in visualisation, versioning and ai assistance." data-slug="notebooks">
-          <div class="art"><img src="icons/png/notebooks.png" alt="Databricks Notebooks" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/notebooks.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/notebooks.png" data-art="icons/png/notebooks.png" data-tile="icons/png-tile/notebooks.png" data-outline="icons/png-outline/notebooks.png" alt="Databricks Notebooks" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/notebooks.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Notebooks</strong>
             <code>notebooks</code>
@@ -943,7 +961,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks workspace workspace  a collaborative environment. it groups the notebooks, queries, dashboards, jobs and files of each team." data-slug="workspace">
-          <div class="art"><img src="icons/png/workspace.png" alt="Databricks Workspace" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/workspace.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/workspace.png" data-art="icons/png/workspace.png" data-tile="icons/png-tile/workspace.png" data-outline="icons/png-outline/workspace.png" alt="Databricks Workspace" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/workspace.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Workspace</strong>
             <code>workspace</code>
@@ -953,7 +971,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="git folders (repos) git-folders  workspace folders backed by git for branch-based development and ci/cd." data-slug="git-folders">
-          <div class="art"><img src="icons/png/git-folders.png" alt="Git Folders (Repos)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/git-folders.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/git-folders.png" data-art="icons/png/git-folders.png" data-tile="icons/png-tile/git-folders.png" data-outline="icons/png-outline/git-folders.png" alt="Git Folders (Repos)" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/git-folders.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Git Folders (Repos)</strong>
             <code>git-folders</code>
@@ -963,7 +981,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks asset bundles asset-bundles  infrastructure-as-code packaging of jobs, pipelines and apps for repeatable multi-environment deploys." data-slug="asset-bundles">
-          <div class="art"><img src="icons/png/asset-bundles.png" alt="Databricks Asset Bundles" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/asset-bundles.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/asset-bundles.png" data-art="icons/png/asset-bundles.png" data-tile="icons/png-tile/asset-bundles.png" data-outline="icons/png-outline/asset-bundles.png" alt="Databricks Asset Bundles" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/asset-bundles.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Asset Bundles</strong>
             <code>asset-bundles</code>
@@ -973,7 +991,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks cli databricks-cli  command-line client for workspaces, jobs, compute, unity catalog and bundle deployment." data-slug="databricks-cli">
-          <div class="art"><img src="icons/png/databricks-cli.png" alt="Databricks CLI" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/databricks-cli.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/databricks-cli.png" data-art="icons/png/databricks-cli.png" data-tile="icons/png-tile/databricks-cli.png" data-outline="icons/png-outline/databricks-cli.png" alt="Databricks CLI" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/databricks-cli.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks CLI</strong>
             <code>databricks-cli</code>
@@ -983,7 +1001,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks connect databricks-connect  run local dataframe code against remote databricks compute from any ide or application." data-slug="databricks-connect">
-          <div class="art"><img src="icons/png/databricks-connect.png" alt="Databricks Connect" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/databricks-connect.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/databricks-connect.png" data-art="icons/png/databricks-connect.png" data-tile="icons/png-tile/databricks-connect.png" data-outline="icons/png-outline/databricks-connect.png" alt="Databricks Connect" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/databricks-connect.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Connect</strong>
             <code>databricks-connect</code>
@@ -993,7 +1011,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="ide integrations ide-integrations  official vs code and pycharm extensions for editing, syncing, running and debugging on databricks." data-slug="ide-integrations">
-          <div class="art"><img src="icons/png/ide-integrations.png" alt="IDE Integrations" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/ide-integrations.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/ide-integrations.png" data-art="icons/png/ide-integrations.png" data-tile="icons/png-tile/ide-integrations.png" data-outline="icons/png-outline/ide-integrations.png" alt="IDE Integrations" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/ide-integrations.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>IDE Integrations</strong>
             <code>ide-integrations</code>
@@ -1003,7 +1021,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="rest api &amp; sdks rest-api  programmatic control of every platform resource, with official python, java, go and javascript sdks." data-slug="rest-api">
-          <div class="art"><img src="icons/png/rest-api.png" alt="REST API &amp; SDKs" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/rest-api.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/rest-api.png" data-art="icons/png/rest-api.png" data-tile="icons/png-tile/rest-api.png" data-outline="icons/png-outline/rest-api.png" alt="REST API &amp; SDKs" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/rest-api.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>REST API &amp; SDKs</strong>
             <code>rest-api</code>
@@ -1013,7 +1031,7 @@
           </figcaption>
         </figure>
         <figure class="card" data-name="databricks terraform provider terraform-provider  official terraform provider for declaring workspaces, compute, unity catalog objects and permissions." data-slug="terraform-provider">
-          <div class="art"><img src="icons/png/terraform-provider.png" alt="Databricks Terraform Provider" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="icons/png-tile/terraform-provider.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <div class="art"><img src="icons/png/terraform-provider.png" data-art="icons/png/terraform-provider.png" data-tile="icons/png-tile/terraform-provider.png" data-outline="icons/png-outline/terraform-provider.png" alt="Databricks Terraform Provider" width="48" height="48" loading="lazy" decoding="async"><span class="mono" style="--mono:url(icons/svg-mono/terraform-provider.svg)" aria-hidden="true"></span></div>
           <figcaption>
             <strong>Databricks Terraform Provider</strong>
             <code>terraform-provider</code>
@@ -1092,15 +1110,49 @@
     });
     empty.hidden = any;
   });
-  document.getElementById('tiles').addEventListener('click', e => {
-    document.body.classList.toggle('tiles');
-    e.target.classList.toggle('on');
+  // The grid can show any of the four looks. Mono is a CSS mask, so the <img>
+  // only carries the three that resolve on their own.
+  const VIEW_DIRS = {
+    art: 'svg/ · png/',
+    mono: 'svg-mono/',
+    tile: 'svg-tile/ · png-tile/',
+    outline: 'svg-outline/ · png-outline/',
+  };
+  const viewNote = document.getElementById('viewnote');
+  function setView(v) {
+    document.body.dataset.view = v;
+    if (v !== 'mono') {
+      for (const img of document.querySelectorAll('.art img')) img.src = img.dataset[v];
+    }
+    for (const b of document.querySelectorAll('#views button')) {
+      b.setAttribute('aria-pressed', String(b.dataset.view === v));
+    }
+    viewNote.textContent = VIEW_DIRS[v];
+    try { localStorage.setItem('dbx-view', v); } catch {}
+  }
+  document.getElementById('views').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setView(b.dataset.view);
   });
-  document.getElementById('theme').addEventListener('click', e => {
-    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
-    e.target.textContent = dark ? 'Dark' : 'Light';
+  // ?view=tile makes a choice shareable; otherwise the last one is remembered.
+  const wantView = new URLSearchParams(location.search).get('view');
+  let startView = 'art';
+  try { startView = wantView || localStorage.getItem('dbx-view') || 'art'; } catch { startView = wantView || 'art'; }
+  setView(VIEW_DIRS[startView] ? startView : 'art');
+  // ?theme=dark makes a choice shareable, and the choice survives a reload.
+  const themeBtn = document.getElementById('theme');
+  function setTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'dark' ? 'Light' : 'Dark';
+    try { localStorage.setItem('dbx-theme', t); } catch {}
+  }
+  themeBtn.addEventListener('click', () => {
+    setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
+  const wantTheme = new URLSearchParams(location.search).get('theme');
+  let startTheme = 'light';
+  try { startTheme = wantTheme || localStorage.getItem('dbx-theme') || 'light'; } catch { startTheme = wantTheme || 'light'; }
+  setTheme(startTheme === 'dark' ? 'dark' : 'light');
   const toast = document.getElementById('toast');
   document.addEventListener('click', e => {
     if (e.target.tagName !== 'CODE') return;
