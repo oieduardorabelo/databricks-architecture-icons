@@ -526,7 +526,7 @@ fresh('drawio');
   // returns a parse error and the import fails with no useful message.
   fs.writeFileSync(
     out('drawio', 'databricks-architecture-icons.xml'),
-    `<mxlibrary>${escapeXmlText(JSON.stringify(shapes))}</mxlibrary>\n`,
+    `<mxlibrary title="${PROJECT.name}">${escapeXmlText(JSON.stringify(shapes))}</mxlibrary>\n`,
   );
 }
 
@@ -769,6 +769,18 @@ fs.writeFileSync(
   .hero nav a.primary{background:var(--lava);border-color:var(--lava);color:#fff}
   .hero nav a.primary:hover{background:#BD2B26;border-color:#BD2B26;color:#fff}
 
+  .uses-head{margin:28px 0 10px;font:500 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace;
+             text-transform:uppercase;letter-spacing:.12em;color:#90A5B1}
+  .uses{display:flex;flex-wrap:wrap;gap:12px}
+  a.use{display:flex;align-items:center;gap:14px;min-width:280px;flex:1 1 280px;max-width:420px;
+        padding:14px 18px;border:1px solid #143D4A;border-radius:12px;text-decoration:none;
+        color:var(--oat-light)}
+  a.use:hover{border-color:var(--lava)}
+  a.use img{width:32px;height:32px;flex:none}
+  a.use b{display:block;font-family:"DM Sans",sans-serif;font-size:15px;line-height:1.3;
+          color:var(--oat-light)}
+  a.use span{font:400 12px/1.45 "DM Mono",ui-monospace,Menlo,monospace;color:#90A5B1}
+
   .more{margin:24px 0 0;border-top:1px solid #143D4A;padding:16px 0 0}
   .more summary{cursor:pointer;font:500 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace;
                 letter-spacing:.12em;text-transform:uppercase;color:#90A5B1;list-style:none}
@@ -877,11 +889,19 @@ fs.writeFileSync(
     <nav>
       <a class="primary" href="${downloads.find((d) => d.group === 'all').file}" download>Download all
         &middot; ${fmtBytes(downloads.find((d) => d.group === 'all').bytes)}</a>
-      <a href="examples/mermaid-architecture.html">Mermaid demo</a>
-      <a href="${esc(DRAWIO_OPEN_URL)}" target="_blank" rel="noreferrer">Open in draw.io</a>
-      <a href="${PROJECT.repository}" target="_blank" rel="noreferrer">GitHub</a>
       <a href="#provenance">Where these come from</a>
     </nav>
+    <p class="uses-head">Available in</p>
+    <div class="uses">
+      <a class="use" href="examples/mermaid-architecture.html">
+        <img src="integrations/mermaid.svg" alt="" width="32" height="32">
+        <span><b>Mermaid</b>Two icon packs, and setup you can paste</span>
+      </a>
+      <a class="use" href="${esc(DRAWIO_OPEN_URL)}" target="_blank" rel="noreferrer">
+        <img src="integrations/drawio.svg" alt="" width="32" height="32">
+        <span><b>draw.io</b>Three shape libraries and three templates</span>
+      </a>
+    </div>
     <details class="more">
       <summary>More downloads and draw.io templates</summary>
       <div class="dl-row">
@@ -947,6 +967,8 @@ ${cards}
       contrast of the white glyph on each tile. If one value is less than 3:1, the build fails.</p>
 
     <h4>Trademarks, and what this project is not</h4>
+    <p>Mermaid and draw.io are the marks of their own projects. This site shows them only to name
+      the tool that each link opens.</p>
     <p>Databricks, the Databricks logo and the product names are trademarks of Databricks,&nbsp;Inc.
       Apache Spark and Apache Iceberg are trademarks of the Apache Software Foundation. This is an
       independent reference from public documentation. Databricks does not sponsor or endorse it. This

@@ -500,7 +500,7 @@ function library() {
   }
   /* The JSON sits in the text of the element, so `<`, `>` and `&` must be escaped.
      Without that the file is not well-formed XML and draw.io refuses to open it. */
-  return `<mxlibrary>${escText(JSON.stringify(entries))}</mxlibrary>\n`;
+  return `<mxlibrary title="Databricks Brand Styles">${escText(JSON.stringify(entries))}</mxlibrary>\n`;
 }
 
 /* ------------------------------------------------------------- validation */
@@ -649,7 +649,7 @@ function templateLibrary() {
     ['Standard template — 14 nodes, every shape', tier2(), 1600, 900],
     ['Complex template — 42 nodes, five zones', tier3(), 2560, 1440],
   ].map(([title, xml, w, h]) => ({ xml: model(xml), w, h, title }));
-  return `<mxlibrary>${escText(JSON.stringify(entries))}</mxlibrary>\n`;
+  return `<mxlibrary title="Databricks Templates">${escText(JSON.stringify(entries))}</mxlibrary>\n`;
 }
 
 /** Every file that belongs in `drawio/`, keyed by file name. */
