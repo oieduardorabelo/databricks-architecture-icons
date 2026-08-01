@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48" fill="none" role="img" aria-label="Agent Bricks (tile)">
+<title>Agent Bricks (tile)</title>
+<rect width="48" height="48" rx="10" fill="#98102A"/>
+<g transform="translate(24 24) scale(0.82) translate(-24 -24)"><g transform="translate(2 2) scale(1)"><rect x="5.5" y="30.25" width="16.5" height="8.25" fill="#FFFFFF"/>
+<rect x="5.5" y="13.75" width="16.5" height="8.25" fill="#FFFFFF"/>
+<rect x="22" y="22" width="16.5" height="8.25" fill="#FFFFFF" opacity="0.45"/>
+<rect x="22" y="5.5" width="16.5" height="8.25" fill="#FFFFFF" opacity="0.45"/></g></g>
+</svg>

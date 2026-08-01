@@ -1,0 +1,14 @@
+{
+  "name": "databricks-architecture-icons-build",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Build script for the Databricks Architecture Icons set.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  },
+  "comment": "sharp is only needed to render the PNG variants. Without it the build still emits every SVG, the catalog and index.html."
+}

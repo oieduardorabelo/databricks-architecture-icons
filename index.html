@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Databricks Architecture Icons</title>
+<meta name="description" content="Icons for architecture diagrams, built from official Databricks artwork. Build architecture diagrams for 71 Databricks products. SVG files, PNG files and an Iconify pack for Mermaid. An unofficial community resource.">
+<meta property="og:title" content="Databricks Architecture Icons">
+<meta property="og:description" content="Icons for architecture diagrams, built from official Databricks artwork. 71 products, official Databricks artwork.">
+<meta property="og:image" content="https://oieduardorabelo.github.io/databricks-architecture-icons/preview.png">
+<meta property="og:url" content="https://oieduardorabelo.github.io/databricks-architecture-icons/">
+<link rel="canonical" href="https://oieduardorabelo.github.io/databricks-architecture-icons/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Neutral favicon: a Lava 600 tile. The Databricks mark is deliberately not
+     used as this site's icon, to avoid implying an official association. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%23FF3621'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* Palette and type follow the published Databricks brand guidelines:
+     primary colours Lava 600 / Navy 800 / Oat / White, extended greys for
+     text and rules, DM Sans as the primary typeface and DM Mono for code.
+     Sizes sit on an 8px scale (4 or 2 below 20px), body line-height 150%,
+     headlines 120%, as the type guidance asks. */
+  :root{
+    --lava:#FF3621; --navy800:#1B3139; --navy900:#0B2026;
+    --navy700:#143D4A; --oat-light:#F9F7F4; --oat-medium:#EEEDE9;
+    --gray-text:#5A6F77; --gray-lines:#DCE0E2;
+    --bg:var(--oat-light); --fg:var(--navy800); --card:#FFFFFF;
+    --line:var(--gray-lines); --muted:var(--gray-text);
+  }
+  [data-theme=dark]{
+    --bg:var(--navy900); --fg:var(--oat-light); --card:var(--navy800);
+    --line:var(--navy700); --muted:#90A5B1;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:16px/1.5 "DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 32px}
+  a{color:var(--lava)}
+
+  /* Navy is a primary large-area background in the guidelines; Lava is the pop. */
+  .topbar{background:var(--lava);color:#fff;padding:8px 0;font-size:14px;line-height:1.5}
+  .topbar .wrap{display:flex;align-items:center;justify-content:center;gap:6px}
+  .topbar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+  .topbar a:hover{color:var(--oat-medium)}
+  .hero{background:var(--navy800);color:var(--oat-light);padding:56px 0 48px}
+  .eyebrow{margin:0 0 16px;font:500 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace;
+           letter-spacing:.12em;text-transform:uppercase;color:#90A5B1}
+  .eyebrow b{color:var(--lava);font-weight:500}
+  .hero h1{margin:0;font-size:40px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
+  .hero .lede{margin:16px 0 0;max-width:64ch;font-size:16px;line-height:1.5;color:#C4CCD6}
+  .stats{margin:24px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .stats li{font:500 12px/1 "DM Mono",ui-monospace,Menlo,monospace;letter-spacing:.04em;
+            padding:8px 12px;border:1px solid #143D4A;border-radius:8px;color:#C4CCD6}
+  .hero nav{margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+  .hero nav a{font-size:14px;text-decoration:none;color:var(--oat-light);
+              border:1px solid #143D4A;border-radius:8px;padding:8px 16px}
+  .hero nav a:hover{border-color:var(--lava);color:var(--lava)}
+  .hero nav a.primary{background:var(--lava);border-color:var(--lava);color:#fff}
+  .hero nav a.primary:hover{background:#BD2B26;border-color:#BD2B26;color:#fff}
+
+  .downloads{margin:32px 0 0;padding:24px 0 0;border-top:1px solid #143D4A}
+  .dl-head{margin:0 0 12px;font:500 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace;
+           letter-spacing:.12em;text-transform:uppercase;color:#90A5B1}
+  .dl-row{display:flex;flex-wrap:wrap;gap:8px}
+  a.dl{display:flex;flex-direction:column;gap:2px;min-width:140px;padding:12px 16px;
+       border:1px solid #143D4A;border-radius:8px;color:var(--oat-light);text-decoration:none}
+  a.dl:hover{border-color:var(--lava)}
+  a.dl b{font-size:14px;line-height:1.2;font-weight:700}
+  a.dl span{font:400 12px/1.4 "DM Mono",ui-monospace,Menlo,monospace;color:#90A5B1}
+  a.dl.primary{background:var(--lava);border-color:var(--lava)}
+  a.dl.primary:hover{background:#BD2B26;border-color:#BD2B26}
+  a.dl.primary span{color:#FFDBD5}
+  .dl-note{margin:12px 0 0;font-size:12px;line-height:1.5;color:#90A5B1}
+  h2 a.zip{margin-left:8px;font:400 12px/1 "DM Mono",ui-monospace,Menlo,monospace;
+           letter-spacing:.04em;text-transform:none;font-weight:400;text-decoration:none;
+           color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+  h2 a.zip:hover{border-color:var(--lava);color:var(--lava)}
+
+  .toolbar{position:sticky;top:0;z-index:9;background:var(--bg);
+           border-bottom:1px solid var(--line);padding:16px 0}
+  .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  input[type=search]{flex:1;min-width:240px;padding:12px 16px;border:1px solid var(--line);
+    border-radius:8px;background:var(--card);color:var(--fg);font-family:inherit;font-size:14px}
+  input[type=search]:focus{outline:2px solid var(--lava);outline-offset:-1px;border-color:var(--lava)}
+  button{padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:var(--card);
+         color:var(--fg);cursor:pointer;font-family:inherit;font-size:14px}
+  button:hover{border-color:var(--lava)}
+  button.on{background:var(--lava);border-color:var(--lava);color:#fff}
+
+  main{padding:40px 0 80px}
+  .cat{margin-bottom:48px}
+  h2{display:flex;align-items:center;gap:8px;margin:0 0 16px;font-size:12px;line-height:1.2;
+     font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block;flex:0 0 auto}
+  .hex{font:400 12px/1.2 "DM Mono",ui-monospace,Menlo,monospace;color:var(--muted);
+       letter-spacing:.04em;text-transform:none;font-weight:400}
+  .count{margin-left:auto;color:var(--muted);font-size:12px;letter-spacing:0;font-weight:400}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(304px,1fr));gap:16px}
+  .card{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;
+        padding:16px;display:flex;gap:16px;transition:border-color .15s,transform .15s}
+  .card:hover{border-color:var(--lava);transform:translateY(-2px)}
+  .card.hide{display:none}
+  .art{position:relative;flex:0 0 48px;height:48px}
+  .art img{width:48px;height:48px;display:block}
+  .art .tile{position:absolute;inset:0;opacity:0}
+  body.tiles .art img{opacity:0}
+  body.tiles .art .tile{opacity:1}
+  figcaption{min-width:0}
+  figcaption strong{display:block;font-size:16px;line-height:1.2;font-weight:700}
+  figcaption code{display:inline-block;margin-top:4px;cursor:copy;color:var(--muted);
+                  font:400 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace}
+  figcaption code:hover{color:var(--lava)}
+  figcaption p{margin:8px 0 0;font-size:14px;line-height:1.5;color:var(--muted)}
+  figcaption .aka{font-style:italic}
+  .files{display:flex;flex-wrap:wrap;gap:4px;margin-top:12px}
+  .files a{font:400 12px/1 "DM Mono",ui-monospace,Menlo,monospace;padding:6px 8px;
+           border:1px solid var(--line);border-radius:6px;color:var(--muted);
+           text-decoration:none;white-space:nowrap}
+  .files a:hover{border-color:var(--lava);color:var(--lava)}
+  .files a.src{border-style:dashed}
+  .files a.docs{color:var(--lava);border-color:transparent}
+  .files a.docs:hover{border-color:var(--lava)}
+  .empty{color:var(--muted);padding:40px 0}
+
+  footer{background:var(--navy800);color:#C4CCD6;padding:64px 0;font-size:14px;line-height:1.5}
+  footer h3{margin:0 0 16px;font-size:20px;line-height:1.2;font-weight:700;color:var(--oat-light)}
+  footer h4{margin:32px 0 8px;font-size:14px;line-height:1.2;font-weight:700;color:var(--oat-light)}
+  footer p{margin:0 0 16px;max-width:78ch}
+  footer a{color:#8ACAFF}
+  footer a:hover{color:var(--lava)}
+  footer code{font:400 13px/1.5 "DM Mono",ui-monospace,Menlo,monospace;color:var(--oat-light)}
+  footer .rule{height:1px;background:#143D4A;border:0;margin:40px 0}
+  footer .fine{color:#90A5B1;font-size:12px;line-height:1.5}
+
+  #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(32px);
+    background:var(--navy800);color:#fff;padding:12px 16px;border-radius:8px;font-size:14px;
+    opacity:0;transition:.2s;pointer-events:none;border:1px solid var(--lava)}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media (max-width:640px){ .hero h1{font-size:32px} .wrap{padding:0 16px} }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">Made with <span aria-hidden="true">&hearts;</span> by
+    <a href="https://github.com/oieduardorabelo" target="_blank" rel="noreferrer">@oieduardorabelo</a>
+  </div>
+</div>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><b>Unofficial</b> &middot; community resource &middot; not affiliated with Databricks</p>
+    <h1>Databricks Architecture Icons</h1>
+    <p class="lede">An architecture diagram shows the design, the deployment and the topology of a
+      system. These icons give each Databricks product one mark at one canvas size. Every mark is
+      official Databricks artwork. Nothing in this set is redrawn.</p>
+    <p class="lede">Use the icons in a diagram, a presentation, a document or a poster.</p>
+    <ul class="stats">
+      <li>71 products</li>
+      <li>8 categories</li>
+      <li>48&times;48 SVG</li>
+      <li>256px PNG</li>
+      <li>Iconify pack for Mermaid</li>
+    </ul>
+    <nav>
+      <a class="primary" href="#provenance">Where these come from</a>
+      <a href="README.md">README</a>
+      <a href="CATALOG.md">Catalog</a>
+      <a href="catalog.json">catalog.json</a>
+      <a href="https://github.com/oieduardorabelo/databricks-architecture-icons" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="examples/mermaid-architecture.html">Mermaid demo</a>
+      <a href="examples/mermaid-architecture.html#every-icon">Every icon in Mermaid</a>
+    </nav>
+    <section class="downloads">
+      <h2 class="dl-head">Download the icons</h2>
+      <div class="dl-row">
+        <a class="dl" href="zips/databricks-architecture-icons-svg.zip" download>
+          <b>svg/</b>
+          <span>71 files &middot; 92 KB</span>
+        </a>
+        <a class="dl" href="zips/databricks-architecture-icons-svg-mono.zip" download>
+          <b>svg-mono/</b>
+          <span>71 files &middot; 93 KB</span>
+        </a>
+        <a class="dl" href="zips/databricks-architecture-icons-svg-tile.zip" download>
+          <b>svg-tile/</b>
+          <span>71 files &middot; 96 KB</span>
+        </a>
+        <a class="dl" href="zips/databricks-architecture-icons-png.zip" download>
+          <b>png/</b>
+          <span>71 files &middot; 401 KB</span>
+        </a>
+        <a class="dl" href="zips/databricks-architecture-icons-png-tile.zip" download>
+          <b>png-tile/</b>
+          <span>71 files &middot; 528 KB</span>
+        </a>
+        <a class="dl" href="zips/databricks-architecture-icons-logos.zip" download>
+          <b>logos/</b>
+          <span>8 files &middot; 22 KB</span>
+        </a>
+        <a class="dl primary" href="zips/databricks-architecture-icons-all.zip" download>
+          <b>Everything</b>
+          <span>370 files &middot; 1.5 MB</span>
+        </a>
+      </div>
+      <p class="dl-note">The archive for a category is on the heading of that category, below. Each
+        archive holds SVG files and PNG files.</p>
+      <p class="dl-note works">Works with Mermaid, Miro, Lucidchart, draw.io, Excalidraw, Figma,
+        PowerPoint, Keynote and Google Slides.</p>
+    </section>
+  </div>
+</header>
+<div class="toolbar">
+  <div class="wrap bar">
+    <input type="search" id="q" placeholder="Search products, slugs, descriptions&hellip;" autocomplete="off" aria-label="Search products">
+    <button id="tiles">Tile view</button>
+    <button id="theme">Dark</button>
+  </div>
+</div>
+<main class="wrap">
+
+    <section class="cat" data-cat="platform">
+      <h2><span class="dot" style="background:#FF3621"></span>Platform & Compute
+        <span class="hex">#FF3621</span>
+        <span class="count">10</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-platform.zip" download title="Every variant of the Platform &amp; Compute icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="databricks databricks  the databricks logo mark. use it to label the platform boundary in an architecture diagram." data-slug="databricks">
+          <div class="art"><img src="png/databricks.png" alt="Databricks" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/databricks.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks</strong>
+            <code>databricks</code>
+            <p>The Databricks logo mark. Use it to label the platform boundary in an architecture diagram.</p>
+            
+            <nav class="files"><a href="svg/databricks.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/databricks.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/databricks.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/databricks.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/databricks.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/Databricks-Logo-Icon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-05/Databricks-Logo-Icon.svg">Source</a><a href="https://www.databricks.com/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="data intelligence platform data-intelligence-platform  the unified platform for data engineering, analytics, ai and governance on one lakehouse foundation." data-slug="data-intelligence-platform">
+          <div class="art"><img src="png/data-intelligence-platform.png" alt="Data Intelligence Platform" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/data-intelligence-platform.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Data Intelligence Platform</strong>
+            <code>data-intelligence-platform</code>
+            <p>The unified platform for data engineering, analytics, AI and governance on one lakehouse foundation.</p>
+            
+            <nav class="files"><a href="svg/data-intelligence-platform.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/data-intelligence-platform.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/data-intelligence-platform.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/data-intelligence-platform.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/data-intelligence-platform.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-data-intelligence-platform.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-01/icon-data-intelligence-platform.svg">Source</a><a href="https://www.databricks.com/product/data-intelligence-platform" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakehouse architecture lakehouse  open architecture combining data lake economics with warehouse reliability and acid management." data-slug="lakehouse">
+          <div class="art"><img src="png/lakehouse.png" alt="Lakehouse Architecture" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakehouse.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakehouse Architecture</strong>
+            <code>lakehouse</code>
+            <p>Open architecture combining data lake economics with warehouse reliability and ACID management.</p>
+            
+            <nav class="files"><a href="svg/lakehouse.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakehouse.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakehouse.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakehouse.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakehouse.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-delta-lakehouse.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-06/primary-icon-orange-delta-lakehouse.svg">Source</a><a href="https://www.databricks.com/product/data-lakehouse" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="apache spark apache-spark  managed, autoscaling apache spark for large-scale batch, streaming and ml processing." data-slug="apache-spark">
+          <div class="art"><img src="png/apache-spark.png" alt="Apache Spark" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/apache-spark.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Apache Spark</strong>
+            <code>apache-spark</code>
+            <p>Managed, autoscaling Apache Spark for large-scale batch, streaming and ML processing.</p>
+            
+            <nav class="files"><a href="svg/apache-spark.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/apache-spark.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/apache-spark.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/apache-spark.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/apache-spark.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/logo-apache-spark.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-01/logo-apache-spark.svg">Source</a><a href="https://www.databricks.com/product/spark" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="photon photon  a native c++ vectorized query engine. it accelerates sql and dataframe work with no code changes." data-slug="photon">
+          <div class="art"><img src="png/photon.png" alt="Photon" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/photon.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Photon</strong>
+            <code>photon</code>
+            <p>A native C++ vectorized query engine. It accelerates SQL and DataFrame work with no code changes.</p>
+            
+            <nav class="files"><a href="svg/photon.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/photon.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/photon.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/photon.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/photon.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-photon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-03/icon-orange-photon.svg">Source</a><a href="https://www.databricks.com/product/photon" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="compute (clusters) compute-clusters  all-purpose and job compute resources that run notebooks, pipelines and jobs." data-slug="compute-clusters">
+          <div class="art"><img src="png/compute-clusters.png" alt="Compute (Clusters)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/compute-clusters.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Compute (Clusters)</strong>
+            <code>compute-clusters</code>
+            <p>All-purpose and job compute resources that run notebooks, pipelines and jobs.</p>
+            
+            <nav class="files"><a href="svg/compute-clusters.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/compute-clusters.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/compute-clusters.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/compute-clusters.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/compute-clusters.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/clusterIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-05/clusterIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/compute/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="serverless compute serverless-compute  fully managed, versionless compute that starts in seconds and autoscales without cluster administration." data-slug="serverless-compute">
+          <div class="art"><img src="png/serverless-compute.png" alt="Serverless Compute" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/serverless-compute.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Serverless Compute</strong>
+            <code>serverless-compute</code>
+            <p>Fully managed, versionless compute that starts in seconds and autoscales without cluster administration.</p>
+            
+            <nav class="files"><a href="svg/serverless-compute.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/serverless-compute.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/serverless-compute.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/serverless-compute.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/serverless-compute.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-scale.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-scale.svg">Source</a><a href="https://www.databricks.com/product/serverless-compute" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks runtime databricks-runtime  an optimized runtime image with spark, delta and ml libraries. the ml variant adds gpu frameworks and automl." data-slug="databricks-runtime">
+          <div class="art"><img src="png/databricks-runtime.png" alt="Databricks Runtime" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/databricks-runtime.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Runtime</strong>
+            <code>databricks-runtime</code>
+            <p>An optimized runtime image with Spark, Delta and ML libraries. The ML variant adds GPU frameworks and AutoML.</p>
+            
+            <nav class="files"><a href="svg/databricks-runtime.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/databricks-runtime.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/databricks-runtime.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/databricks-runtime.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/databricks-runtime.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-runtime.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-01/primary-icon-orange-runtime.svg">Source</a><a href="https://www.databricks.com/product/machine-learning-runtime" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="real-time mode for apache spark spark-real-time-mode  structured streaming execution mode delivering millisecond latency for time-critical pipelines." data-slug="spark-real-time-mode">
+          <div class="art"><img src="png/spark-real-time-mode.png" alt="Real-Time Mode for Apache Spark" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/spark-real-time-mode.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Real-Time Mode for Apache Spark</strong>
+            <code>spark-real-time-mode</code>
+            <p>Structured Streaming execution mode delivering millisecond latency for time-critical pipelines.</p>
+            
+            <nav class="files"><a href="svg/spark-real-time-mode.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/spark-real-time-mode.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/spark-real-time-mode.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/spark-real-time-mode.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/spark-real-time-mode.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-speed.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-05/primary-icon-orange-speed.svg">Source</a><a href="https://www.databricks.com/product/data-engineering/spark-real-time-mode" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="multicloud deployment multicloud  the same platform and governance model deployed across aws, azure and google cloud." data-slug="multicloud">
+          <div class="art"><img src="png/multicloud.png" alt="Multicloud Deployment" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/multicloud.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Multicloud Deployment</strong>
+            <code>multicloud</code>
+            <p>The same platform and governance model deployed across AWS, Azure and Google Cloud.</p>
+            
+            <nav class="files"><a href="svg/multicloud.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/multicloud.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/multicloud.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/multicloud.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/multicloud.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-multicloud.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-05/primary-icon-orange-multicloud.svg">Source</a><a href="https://www.databricks.com/product/data-intelligence-platform" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cat" data-cat="engineering">
+      <h2><span class="dot" style="background:#2272B4"></span>Data Engineering
+        <span class="hex">#2272B4</span>
+        <span class="count">9</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-engineering.zip" download title="Every variant of the Data Engineering icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="lakeflow lakeflow  the unified data engineering suite covering ingestion, declarative transformation and orchestration." data-slug="lakeflow">
+          <div class="art"><img src="png/lakeflow.png" alt="Lakeflow" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakeflow.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakeflow</strong>
+            <code>lakeflow</code>
+            <p>The unified data engineering suite covering ingestion, declarative transformation and orchestration.</p>
+            
+            <nav class="files"><a href="svg/lakeflow.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakeflow.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakeflow.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakeflow.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakeflow.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-lakeflow.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-01/icon-lakeflow.svg">Source</a><a href="https://www.databricks.com/product/data-engineering" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakeflow connect lakeflow-connect  managed ingestion with 100+ connectors for saas applications, databases and cloud storage." data-slug="lakeflow-connect">
+          <div class="art"><img src="png/lakeflow-connect.png" alt="Lakeflow Connect" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakeflow-connect.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakeflow Connect</strong>
+            <code>lakeflow-connect</code>
+            <p>Managed ingestion with 100+ connectors for SaaS applications, databases and cloud storage.</p>
+            
+            <nav class="files"><a href="svg/lakeflow-connect.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakeflow-connect.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakeflow-connect.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakeflow-connect.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakeflow-connect.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-connectors.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-09/primary-icon-orange-connectors.svg">Source</a><a href="https://www.databricks.com/product/data-engineering/lakeflow-connect" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="zerobus ingest zerobus-ingest  broker-free streaming ingest over grpc, rest and opentelemetry with roughly five-second freshness." data-slug="zerobus-ingest">
+          <div class="art"><img src="png/zerobus-ingest.png" alt="Zerobus Ingest" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/zerobus-ingest.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Zerobus Ingest</strong>
+            <code>zerobus-ingest</code>
+            <p>Broker-free streaming ingest over gRPC, REST and OpenTelemetry with roughly five-second freshness.</p>
+            
+            <nav class="files"><a href="svg/zerobus-ingest.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/zerobus-ingest.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/zerobus-ingest.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/zerobus-ingest.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/zerobus-ingest.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-input-ingest_.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-04/primary-icon-orange-input-ingest_.svg">Source</a><a href="https://www.databricks.com/product/data-engineering/lakeflow-connect/zerobus-ingest" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="apache spark declarative pipelines spark-declarative-pipelines lakeflow declarative pipelines. formerly delta live tables (dlt) declarative batch and streaming etl with built-in data quality expectations, cdc and dependency management." data-slug="spark-declarative-pipelines">
+          <div class="art"><img src="png/spark-declarative-pipelines.png" alt="Apache Spark Declarative Pipelines" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/spark-declarative-pipelines.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Apache Spark Declarative Pipelines</strong>
+            <code>spark-declarative-pipelines</code>
+            <p>Declarative batch and streaming ETL with built-in data quality expectations, CDC and dependency management.</p>
+            <p class="aka">Lakeflow Declarative Pipelines. Formerly Delta Live Tables (DLT)</p>
+            <nav class="files"><a href="svg/spark-declarative-pipelines.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/spark-declarative-pipelines.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/spark-declarative-pipelines.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/spark-declarative-pipelines.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/spark-declarative-pipelines.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-lakeflow-pipelines.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-02/primary-icon-orange-lakeflow-pipelines.svg">Source</a><a href="https://www.databricks.com/product/data-engineering/spark-declarative-pipelines" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakeflow jobs lakeflow-jobs formerly databricks workflows native orchestration for data, analytics and ai workflows, with control flow, retries and alerting." data-slug="lakeflow-jobs">
+          <div class="art"><img src="png/lakeflow-jobs.png" alt="Lakeflow Jobs" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakeflow-jobs.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakeflow Jobs</strong>
+            <code>lakeflow-jobs</code>
+            <p>Native orchestration for data, analytics and AI workflows, with control flow, retries and alerting.</p>
+            <p class="aka">formerly Databricks Workflows</p>
+            <nav class="files"><a href="svg/lakeflow-jobs.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakeflow-jobs.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakeflow-jobs.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakeflow-jobs.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakeflow-jobs.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-automation-orchestration.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-automation-orchestration.svg">Source</a><a href="https://www.databricks.com/product/data-engineering/lakeflow-jobs" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakeflow designer lakeflow-designer  no-code, drag-and-drop pipeline authoring that generates governed, production-ready pipeline code." data-slug="lakeflow-designer">
+          <div class="art"><img src="png/lakeflow-designer.png" alt="Lakeflow Designer" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakeflow-designer.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakeflow Designer</strong>
+            <code>lakeflow-designer</code>
+            <p>No-code, drag-and-drop pipeline authoring that generates governed, production-ready pipeline code.</p>
+            
+            <nav class="files"><a href="svg/lakeflow-designer.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakeflow-designer.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakeflow-designer.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakeflow-designer.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakeflow-designer.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/dagicon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-05/dagicon.svg">Source</a><a href="https://www.databricks.com/product/data-engineering/lakeflow-designer" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="auto loader auto-loader  incrementally and idempotently ingests new files from cloud object storage as they arrive." data-slug="auto-loader">
+          <div class="art"><img src="png/auto-loader.png" alt="Auto Loader" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/auto-loader.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Auto Loader</strong>
+            <code>auto-loader</code>
+            <p>Incrementally and idempotently ingests new files from cloud object storage as they arrive.</p>
+            
+            <nav class="files"><a href="svg/auto-loader.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/auto-loader.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/auto-loader.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/auto-loader.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/auto-loader.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-access-connector.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/primary-icon-orange-access-connector.svg">Source</a><a href="https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="structured streaming structured-streaming  the apache spark api for exactly-once stream processing in continuous, incremental pipelines." data-slug="structured-streaming">
+          <div class="art"><img src="png/structured-streaming.png" alt="Structured Streaming" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/structured-streaming.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Structured Streaming</strong>
+            <code>structured-streaming</code>
+            <p>The Apache Spark API for exactly-once stream processing in continuous, incremental pipelines.</p>
+            
+            <nav class="files"><a href="svg/structured-streaming.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/structured-streaming.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/structured-streaming.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/structured-streaming.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/structured-streaming.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/streamIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/streamIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/structured-streaming/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakebridge lakebridge  migration tooling that profiles legacy warehouses, converts code to ansi sql and validates the results." data-slug="lakebridge">
+          <div class="art"><img src="png/lakebridge.png" alt="Lakebridge" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakebridge.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakebridge</strong>
+            <code>lakebridge</code>
+            <p>Migration tooling that profiles legacy warehouses, converts code to ANSI SQL and validates the results.</p>
+            
+            <nav class="files"><a href="svg/lakebridge.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakebridge.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakebridge.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakebridge.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakebridge.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-reserved-keywords-parser.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-03/icon-orange-reserved-keywords-parser.svg">Source</a><a href="https://www.databricks.com/solutions/migration" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cat" data-cat="storage">
+      <h2><span class="dot" style="background:#00875C"></span>Storage & Databases
+        <span class="hex">#00875C</span>
+        <span class="count">6</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-storage.zip" download title="Every variant of the Storage &amp; Databases icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="delta lake delta-lake  open table format adding acid transactions, time travel and change data feed to object storage." data-slug="delta-lake">
+          <div class="art"><img src="png/delta-lake.png" alt="Delta Lake" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/delta-lake.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Delta Lake</strong>
+            <code>delta-lake</code>
+            <p>Open table format adding ACID transactions, time travel and change data feed to object storage.</p>
+            
+            <nav class="files"><a href="svg/delta-lake.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/delta-lake.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/delta-lake.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/delta-lake.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/delta-lake.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange_delta-lake.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-03/icon-orange_delta-lake.svg">Source</a><a href="https://www.databricks.com/product/delta-lake-on-databricks" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="apache iceberg apache-iceberg  first-class managed and foreign iceberg tables, readable and writable through unity and iceberg rest catalogs." data-slug="apache-iceberg">
+          <div class="art"><img src="png/apache-iceberg.png" alt="Apache Iceberg" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/apache-iceberg.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Apache Iceberg</strong>
+            <code>apache-iceberg</code>
+            <p>First-class managed and foreign Iceberg tables, readable and writable through Unity and Iceberg REST catalogs.</p>
+            
+            <nav class="files"><a href="svg/apache-iceberg.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/apache-iceberg.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/apache-iceberg.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/apache-iceberg.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/apache-iceberg.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/logo-color-apache-iceberg.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-12/logo-color-apache-iceberg.svg">Source</a><a href="https://www.databricks.com/product/lakehouse-storage" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakehouse storage (managed tables) lakehouse-storage  self-optimizing managed delta and iceberg tables with automatic layout, compaction and caching." data-slug="lakehouse-storage">
+          <div class="art"><img src="png/lakehouse-storage.png" alt="Lakehouse Storage (Managed Tables)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakehouse-storage.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakehouse Storage (Managed Tables)</strong>
+            <code>lakehouse-storage</code>
+            <p>Self-optimizing managed Delta and Iceberg tables with automatic layout, compaction and caching.</p>
+            
+            <nav class="files"><a href="svg/lakehouse-storage.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakehouse-storage.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakehouse-storage.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakehouse-storage.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakehouse-storage.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-Delta-Table.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-02/icon-orange-Delta-Table.svg">Source</a><a href="https://www.databricks.com/product/lakehouse-storage" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="liquid clustering liquid-clustering  partition-free, self-tuning data layout that adapts clustering keys to real query patterns." data-slug="liquid-clustering">
+          <div class="art"><img src="png/liquid-clustering.png" alt="Liquid Clustering" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/liquid-clustering.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Liquid Clustering</strong>
+            <code>liquid-clustering</code>
+            <p>Partition-free, self-tuning data layout that adapts clustering keys to real query patterns.</p>
+            
+            <nav class="files"><a href="svg/liquid-clustering.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/liquid-clustering.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/liquid-clustering.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/liquid-clustering.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/liquid-clustering.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/layerIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-05/layerIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/delta/clustering" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="predictive optimization predictive-optimization  ai-driven background maintenance that runs optimize, vacuum and statistics where they pay off most." data-slug="predictive-optimization">
+          <div class="art"><img src="png/predictive-optimization.png" alt="Predictive Optimization" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/predictive-optimization.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Predictive Optimization</strong>
+            <code>predictive-optimization</code>
+            <p>AI-driven background maintenance that runs OPTIMIZE, VACUUM and statistics where they pay off most.</p>
+            
+            <nav class="files"><a href="svg/predictive-optimization.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/predictive-optimization.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/predictive-optimization.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/predictive-optimization.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/predictive-optimization.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/gearOutlinedIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-08/gearOutlinedIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/optimizations/predictive-optimization" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakebase lakebase  serverless postgres oltp database with branching, scale-to-zero and native lakehouse sync for apps and agents." data-slug="lakebase">
+          <div class="art"><img src="png/lakebase.png" alt="Lakebase" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakebase.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakebase</strong>
+            <code>lakebase</code>
+            <p>Serverless Postgres OLTP database with branching, scale-to-zero and native lakehouse sync for apps and agents.</p>
+            
+            <nav class="files"><a href="svg/lakebase.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakebase.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakebase.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakebase.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakebase.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-lakebase.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-01/icon-lakebase.svg">Source</a><a href="https://www.databricks.com/product/lakebase" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cat" data-cat="analytics">
+      <h2><span class="dot" style="background:#1B5162"></span>Analytics & BI
+        <span class="hex">#1B5162</span>
+        <span class="count">7</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-analytics.zip" download title="Every variant of the Analytics &amp; BI icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="databricks lakehouse (data warehousing) data-warehousing  serverless data warehouse built on open table formats and governed by unity catalog." data-slug="data-warehousing">
+          <div class="art"><img src="png/data-warehousing.png" alt="Databricks Lakehouse (Data Warehousing)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/data-warehousing.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Lakehouse (Data Warehousing)</strong>
+            <code>data-warehousing</code>
+            <p>Serverless data warehouse built on open table formats and governed by Unity Catalog.</p>
+            
+            <nav class="files"><a href="svg/data-warehousing.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/data-warehousing.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/data-warehousing.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/data-warehousing.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/data-warehousing.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-data-warehouse.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-03/primary-icon-orange-data-warehouse.svg">Source</a><a href="https://www.databricks.com/product/databricks-lakehouse" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks sql databricks-sql  the sql surface of the lakehouse: warehouses, editor, queries, alerts and bi connectivity." data-slug="databricks-sql">
+          <div class="art"><img src="png/databricks-sql.png" alt="Databricks SQL" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/databricks-sql.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks SQL</strong>
+            <code>databricks-sql</code>
+            <p>The SQL surface of the lakehouse: warehouses, editor, queries, alerts and BI connectivity.</p>
+            
+            <nav class="files"><a href="svg/databricks-sql.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/databricks-sql.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/databricks-sql.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/databricks-sql.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/databricks-sql.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-databricks-sql.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-01/icon-databricks-sql.svg">Source</a><a href="https://www.databricks.com/product/databricks-sql" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="sql warehouse sql-warehouse  serverless, photon-powered sql compute endpoint for bi tools, dashboards and ad hoc queries." data-slug="sql-warehouse">
+          <div class="art"><img src="png/sql-warehouse.png" alt="SQL Warehouse" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/sql-warehouse.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>SQL Warehouse</strong>
+            <code>sql-warehouse</code>
+            <p>Serverless, Photon-powered SQL compute endpoint for BI tools, dashboards and ad hoc queries.</p>
+            
+            <nav class="files"><a href="svg/sql-warehouse.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/sql-warehouse.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/sql-warehouse.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/sql-warehouse.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/sql-warehouse.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/TableLightningIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/TableLightningIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/compute/sql-warehouse/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakehouse//rt lakehouse-rt  real-time warehouse tier serving millisecond queries at high concurrency directly on lake tables." data-slug="lakehouse-rt">
+          <div class="art"><img src="png/lakehouse-rt.png" alt="Lakehouse//RT" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakehouse-rt.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakehouse//RT</strong>
+            <code>lakehouse-rt</code>
+            <p>Real-time warehouse tier serving millisecond queries at high concurrency directly on lake tables.</p>
+            
+            <nav class="files"><a href="svg/lakehouse-rt.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakehouse-rt.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakehouse-rt.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakehouse-rt.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakehouse-rt.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-lakehouse-rt.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/icon-lakehouse-rt.svg">Source</a><a href="https://www.databricks.com/product/lakehouse/real-time-lakehouse" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks ai/bi ai-bi  the built-in business intelligence experience spanning dashboards, genie spaces and semantics." data-slug="ai-bi">
+          <div class="art"><img src="png/ai-bi.png" alt="Databricks AI/BI" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/ai-bi.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks AI/BI</strong>
+            <code>ai-bi</code>
+            <p>The built-in business intelligence experience spanning dashboards, Genie spaces and semantics.</p>
+            
+            <nav class="files"><a href="svg/ai-bi.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/ai-bi.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/ai-bi.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/ai-bi.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/ai-bi.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-ai-bi.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-01/icon-ai-bi.svg">Source</a><a href="https://www.databricks.com/product/business-intelligence" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="ai/bi dashboards ai-bi-dashboards  dashboards with natural-language chart authoring and forecasting. publication needs no separate license." data-slug="ai-bi-dashboards">
+          <div class="art"><img src="png/ai-bi-dashboards.png" alt="AI/BI Dashboards" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/ai-bi-dashboards.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>AI/BI Dashboards</strong>
+            <code>ai-bi-dashboards</code>
+            <p>Dashboards with natural-language chart authoring and forecasting. Publication needs no separate license.</p>
+            
+            <nav class="files"><a href="svg/ai-bi-dashboards.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/ai-bi-dashboards.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/ai-bi-dashboards.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/ai-bi-dashboards.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/ai-bi-dashboards.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/dashboardIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-01/dashboardIcon.svg">Source</a><a href="https://www.databricks.com/product/business-intelligence/ai-bi-dashboards" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakehouse federation lakehouse-federation  query and govern external systems such as snowflake, bigquery, postgres and mysql in place, without moving data." data-slug="lakehouse-federation">
+          <div class="art"><img src="png/lakehouse-federation.png" alt="Lakehouse Federation" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakehouse-federation.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakehouse Federation</strong>
+            <code>lakehouse-federation</code>
+            <p>Query and govern external systems such as Snowflake, BigQuery, Postgres and MySQL in place, without moving data.</p>
+            
+            <nav class="files"><a href="svg/lakehouse-federation.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakehouse-federation.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakehouse-federation.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakehouse-federation.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakehouse-federation.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-Network-Data-Sources.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-03/icon-orange-Network-Data-Sources.svg">Source</a><a href="https://docs.databricks.com/aws/en/query-federation/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cat" data-cat="ai">
+      <h2><span class="dot" style="background:#98102A"></span>AI & Agents
+        <span class="hex">#98102A</span>
+        <span class="count">16</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-ai.zip" download title="Every variant of the AI &amp; Agents icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="databricks genie genie  the agentic ai experience that answers questions and acts on governed enterprise data." data-slug="genie">
+          <div class="art"><img src="png/genie.png" alt="Databricks Genie" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/genie.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Genie</strong>
+            <code>genie</code>
+            <p>The agentic AI experience that answers questions and acts on governed enterprise data.</p>
+            
+            <nav class="files"><a href="svg/genie.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/genie.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/genie.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/genie.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/genie.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-genie.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-05/icon-genie.svg">Source</a><a href="https://www.databricks.com/product/business-intelligence" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="genie one genie-one  ai coworker hub where business users ask questions, get grounded answers and trigger agentic actions." data-slug="genie-one">
+          <div class="art"><img src="png/genie-one.png" alt="Genie One" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/genie-one.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Genie One</strong>
+            <code>genie-one</code>
+            <p>AI coworker hub where business users ask questions, get grounded answers and trigger agentic actions.</p>
+            
+            <nav class="files"><a href="svg/genie-one.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/genie-one.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/genie-one.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/genie-one.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/genie-one.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-genie-one-16x16.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/icon-genie-one-16x16.svg">Source</a><a href="https://www.databricks.com/product/genie/one" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="genie agents genie-agents formerly ai/bi genie spaces governed natural-language analytics spaces that answer business questions over curated data." data-slug="genie-agents">
+          <div class="art"><img src="png/genie-agents.png" alt="Genie Agents" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/genie-agents.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Genie Agents</strong>
+            <code>genie-agents</code>
+            <p>Governed natural-language analytics spaces that answer business questions over curated data.</p>
+            <p class="aka">formerly AI/BI Genie spaces</p>
+            <nav class="files"><a href="svg/genie-agents.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/genie-agents.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/genie-agents.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/genie-agents.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/genie-agents.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/speechBubbleIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-02/speechBubbleIcon.svg">Source</a><a href="https://www.databricks.com/product/genie/agents" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="genie code genie-code  agentic coding partner for data teams that builds pipelines, dashboards, notebooks and ml workflows." data-slug="genie-code">
+          <div class="art"><img src="png/genie-code.png" alt="Genie Code" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/genie-code.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Genie Code</strong>
+            <code>genie-code</code>
+            <p>Agentic coding partner for data teams that builds pipelines, dashboards, notebooks and ML workflows.</p>
+            
+            <nav class="files"><a href="svg/genie-code.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/genie-code.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/genie-code.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/genie-code.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/genie-code.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/GenieCodeIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-03/GenieCodeIcon.svg">Source</a><a href="https://www.databricks.com/product/genie/code" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="genie deep research genie-deep-research  multi-step research agent that investigates a question across governed data and returns a cited report." data-slug="genie-deep-research">
+          <div class="art"><img src="png/genie-deep-research.png" alt="Genie Deep Research" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/genie-deep-research.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Genie Deep Research</strong>
+            <code>genie-deep-research</code>
+            <p>Multi-step research agent that investigates a question across governed data and returns a cited report.</p>
+            
+            <nav class="files"><a href="svg/genie-deep-research.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/genie-deep-research.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/genie-deep-research.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/genie-deep-research.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/genie-deep-research.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/GenieDeepResearchIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-02/GenieDeepResearchIcon.svg">Source</a><a href="https://www.databricks.com/product/genie/one" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="agent bricks agent-bricks  platform for building, evaluating and governing enterprise ai agents grounded in your own data." data-slug="agent-bricks">
+          <div class="art"><img src="png/agent-bricks.png" alt="Agent Bricks" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/agent-bricks.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Agent Bricks</strong>
+            <code>agent-bricks</code>
+            <p>Platform for building, evaluating and governing enterprise AI agents grounded in your own data.</p>
+            
+            <nav class="files"><a href="svg/agent-bricks.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/agent-bricks.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/agent-bricks.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/agent-bricks.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/agent-bricks.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-mosaic-ai-bricks.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-01/icon-mosaic-ai-bricks.svg">Source</a><a href="https://www.databricks.com/product/artificial-intelligence/agent-bricks" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks ai search ai-search formerly databricks vector search / mosaic ai vector search managed hybrid vector and bm25 search with auto-syncing indexes and built-in reranking." data-slug="ai-search">
+          <div class="art"><img src="png/ai-search.png" alt="Databricks AI Search" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/ai-search.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks AI Search</strong>
+            <code>ai-search</code>
+            <p>Managed hybrid vector and BM25 search with auto-syncing indexes and built-in reranking.</p>
+            <p class="aka">formerly Databricks Vector Search / Mosaic AI Vector Search</p>
+            <nav class="files"><a href="svg/ai-search.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/ai-search.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/ai-search.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/ai-search.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/ai-search.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/SearchDataIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-11/SearchDataIcon.svg">Source</a><a href="https://www.databricks.com/product/artificial-intelligence/ai-search" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="unity ai gateway unity-ai-gateway  single control plane for model, mcp and agent access with guardrails, rate limits, budgets and audit." data-slug="unity-ai-gateway">
+          <div class="art"><img src="png/unity-ai-gateway.png" alt="Unity AI Gateway" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/unity-ai-gateway.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Unity AI Gateway</strong>
+            <code>unity-ai-gateway</code>
+            <p>Single control plane for model, MCP and agent access with guardrails, rate limits, budgets and audit.</p>
+            
+            <nav class="files"><a href="svg/unity-ai-gateway.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/unity-ai-gateway.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/unity-ai-gateway.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/unity-ai-gateway.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/unity-ai-gateway.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-authentication-service.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-10/primary-icon-orange-authentication-service.svg">Source</a><a href="https://www.databricks.com/product/artificial-intelligence/unity-ai-gateway" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="document intelligence document-intelligence  sql-native parsing, extraction and classification that turns pdfs and images into governed structured data." data-slug="document-intelligence">
+          <div class="art"><img src="png/document-intelligence.png" alt="Document Intelligence" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/document-intelligence.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Document Intelligence</strong>
+            <code>document-intelligence</code>
+            <p>SQL-native parsing, extraction and classification that turns PDFs and images into governed structured data.</p>
+            
+            <nav class="files"><a href="svg/document-intelligence.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/document-intelligence.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/document-intelligence.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/document-intelligence.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/document-intelligence.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-Data-Parser-Normalizer-ETL-ELT.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-02/icon-orange-Data-Parser-Normalizer-ETL-ELT.svg">Source</a><a href="https://www.databricks.com/product/artificial-intelligence/document-intelligence" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks model serving model-serving formerly mosaic ai model serving unified serverless endpoints for custom ml models, foundation models and agents, plus batch inference." data-slug="model-serving">
+          <div class="art"><img src="png/model-serving.png" alt="Databricks Model Serving" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/model-serving.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Model Serving</strong>
+            <code>model-serving</code>
+            <p>Unified serverless endpoints for custom ML models, foundation models and agents, plus batch inference.</p>
+            <p class="aka">formerly Mosaic AI Model Serving</p>
+            <nav class="files"><a href="svg/model-serving.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/model-serving.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/model-serving.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/model-serving.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/model-serving.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/CloudModelIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-05/CloudModelIcon.svg">Source</a><a href="https://www.databricks.com/product/model-serving" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks model training model-training  managed fine-tuning and custom model training on serverless h100 gpus, without moving data." data-slug="model-training">
+          <div class="art"><img src="png/model-training.png" alt="Databricks Model Training" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/model-training.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Model Training</strong>
+            <code>model-training</code>
+            <p>Managed fine-tuning and custom model training on serverless H100 GPUs, without moving data.</p>
+            
+            <nav class="files"><a href="svg/model-training.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/model-training.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/model-training.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/model-training.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/model-training.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/modelsIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-10/modelsIcon.svg">Source</a><a href="https://www.databricks.com/product/machine-learning/mosaic-ai-training" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="managed mlflow mlflow  hosted mlflow for experiment tracking, genai tracing, evaluation and the unity catalog model registry." data-slug="mlflow">
+          <div class="art"><img src="png/mlflow.png" alt="Managed MLflow" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/mlflow.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Managed MLflow</strong>
+            <code>mlflow</code>
+            <p>Hosted MLflow for experiment tracking, GenAI tracing, evaluation and the Unity Catalog model registry.</p>
+            
+            <nav class="files"><a href="svg/mlflow.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/mlflow.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/mlflow.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/mlflow.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/mlflow.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-Full-Lifecycle-Machine-Learning.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-01/icon-orange-Full-Lifecycle-Machine-Learning.svg">Source</a><a href="https://www.databricks.com/product/managed-mlflow" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks feature store feature-store  governed feature registry with batch and low-latency online serving, and training/serving consistency." data-slug="feature-store">
+          <div class="art"><img src="png/feature-store.png" alt="Databricks Feature Store" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/feature-store.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Feature Store</strong>
+            <code>feature-store</code>
+            <p>Governed feature registry with batch and low-latency online serving, and training/serving consistency.</p>
+            
+            <nav class="files"><a href="svg/feature-store.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/feature-store.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/feature-store.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/feature-store.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/feature-store.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-cache-sync-reduction.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-10/primary-icon-orange-cache-sync-reduction.svg">Source</a><a href="https://www.databricks.com/product/feature-store" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="ai functions ai-functions  sql functions such as ai_query, ai_classify and ai_extract that call models directly inside queries." data-slug="ai-functions">
+          <div class="art"><img src="png/ai-functions.png" alt="AI Functions" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/ai-functions.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>AI Functions</strong>
+            <code>ai-functions</code>
+            <p>SQL functions such as ai_query, ai_classify and ai_extract that call models directly inside queries.</p>
+            
+            <nav class="files"><a href="svg/ai-functions.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/ai-functions.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/ai-functions.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/ai-functions.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/ai-functions.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-built-in-functions.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-08/primary-icon-orange-built-in-functions.svg">Source</a><a href="https://docs.databricks.com/aws/en/large-language-models/ai-functions" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks automl automl  glass-box automated training that produces baseline models plus the editable notebooks that built them." data-slug="automl">
+          <div class="art"><img src="png/automl.png" alt="Databricks AutoML" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/automl.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks AutoML</strong>
+            <code>automl</code>
+            <p>Glass-box automated training that produces baseline models plus the editable notebooks that built them.</p>
+            
+            <nav class="files"><a href="svg/automl.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/automl.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/automl.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/automl.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/automl.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-machine-learning.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2024-02/primary-icon-orange-machine-learning.svg">Source</a><a href="https://www.databricks.com/product/automl" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="customerlake customerlake  agentic customer data platform with identity resolution, customer 360 and marketing agents, native to the lakehouse." data-slug="customerlake">
+          <div class="art"><img src="png/customerlake.png" alt="CustomerLake" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/customerlake.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>CustomerLake</strong>
+            <code>customerlake</code>
+            <p>Agentic customer data platform with identity resolution, Customer 360 and marketing agents, native to the lakehouse.</p>
+            
+            <nav class="files"><a href="svg/customerlake.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/customerlake.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/customerlake.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/customerlake.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/customerlake.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-customerlake.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/icon-customerlake.svg">Source</a><a href="https://www.databricks.com/product/customerlake-cdp" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cat" data-cat="governance">
+      <h2><span class="dot" style="background:#1B3139"></span>Governance & Security
+        <span class="hex">#1B3139</span>
+        <span class="count">8</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-governance.zip" download title="Every variant of the Governance &amp; Security icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="unity catalog unity-catalog  unified governance for data, models, agents and mcp servers across clouds, under one permission model." data-slug="unity-catalog">
+          <div class="art"><img src="png/unity-catalog.png" alt="Unity Catalog" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/unity-catalog.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Unity Catalog</strong>
+            <code>unity-catalog</code>
+            <p>Unified governance for data, models, agents and MCP servers across clouds, under one permission model.</p>
+            
+            <nav class="files"><a href="svg/unity-catalog.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/unity-catalog.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/unity-catalog.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/unity-catalog.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/unity-catalog.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-unity-catalog.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-01/icon-unity-catalog.svg">Source</a><a href="https://www.databricks.com/product/unity-catalog" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="unity catalog semantics unity-catalog-semantics  central semantic layer of metric views and business definitions that grounds bi tools and ai agents." data-slug="unity-catalog-semantics">
+          <div class="art"><img src="png/unity-catalog-semantics.png" alt="Unity Catalog Semantics" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/unity-catalog-semantics.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Unity Catalog Semantics</strong>
+            <code>unity-catalog-semantics</code>
+            <p>Central semantic layer of metric views and business definitions that grounds BI tools and AI agents.</p>
+            
+            <nav class="files"><a href="svg/unity-catalog-semantics.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/unity-catalog-semantics.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/unity-catalog-semantics.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/unity-catalog-semantics.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/unity-catalog-semantics.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-context-enrichment.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-context-enrichment.svg">Source</a><a href="https://www.databricks.com/product/unity-catalog/business-semantics" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="data &amp; ai lineage data-lineage  automatic column-level lineage across tables, dashboards, models and agents for impact analysis and audit." data-slug="data-lineage">
+          <div class="art"><img src="png/data-lineage.png" alt="Data &amp; AI Lineage" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/data-lineage.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Data &amp; AI Lineage</strong>
+            <code>data-lineage</code>
+            <p>Automatic column-level lineage across tables, dashboards, models and agents for impact analysis and audit.</p>
+            
+            <nav class="files"><a href="svg/data-lineage.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/data-lineage.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/data-lineage.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/data-lineage.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/data-lineage.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-data-lineage.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-data-lineage.svg">Source</a><a href="https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="attribute-based access control abac  tag- and attribute-driven policies that enforce row, column and object permissions at scale." data-slug="abac">
+          <div class="art"><img src="png/abac.png" alt="Attribute-Based Access Control" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/abac.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Attribute-Based Access Control</strong>
+            <code>abac</code>
+            <p>Tag- and attribute-driven policies that enforce row, column and object permissions at scale.</p>
+            
+            <nav class="files"><a href="svg/abac.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/abac.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/abac.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/abac.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/abac.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/lockOutlinedIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-01/lockOutlinedIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/data-governance/unity-catalog/abac/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="data quality monitoring data-quality-monitoring formerly lakehouse monitoring automated profiling, freshness checks and anomaly detection over tables and inference logs." data-slug="data-quality-monitoring">
+          <div class="art"><img src="png/data-quality-monitoring.png" alt="Data Quality Monitoring" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/data-quality-monitoring.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Data Quality Monitoring</strong>
+            <code>data-quality-monitoring</code>
+            <p>Automated profiling, freshness checks and anomaly detection over tables and inference logs.</p>
+            <p class="aka">formerly Lakehouse Monitoring</p>
+            <nav class="files"><a href="svg/data-quality-monitoring.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/data-quality-monitoring.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/data-quality-monitoring.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/data-quality-monitoring.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/data-quality-monitoring.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-Observable-Metrics_0.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-02/icon-orange-Observable-Metrics_0.svg">Source</a><a href="https://www.databricks.com/product/machine-learning/lakehouse-monitoring" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="lakewatch lakewatch  open agentic siem for petabyte-scale security logs, detection-as-code and ai-assisted threat hunting." data-slug="lakewatch">
+          <div class="art"><img src="png/lakewatch.png" alt="Lakewatch" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/lakewatch.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Lakewatch</strong>
+            <code>lakewatch</code>
+            <p>Open agentic SIEM for petabyte-scale security logs, detection-as-code and AI-assisted threat hunting.</p>
+            
+            <nav class="files"><a href="svg/lakewatch.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/lakewatch.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/lakewatch.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/lakewatch.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/lakewatch.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/icon-orange-SIEM.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-02/icon-orange-SIEM.svg">Source</a><a href="https://www.databricks.com/product/lakewatch" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="system tables system-tables  built-in analytical tables exposing billing, usage, lineage, audit and job history for observability." data-slug="system-tables">
+          <div class="art"><img src="png/system-tables.png" alt="System Tables" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/system-tables.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>System Tables</strong>
+            <code>system-tables</code>
+            <p>Built-in analytical tables exposing billing, usage, lineage, audit and job history for observability.</p>
+            
+            <nav class="files"><a href="svg/system-tables.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/system-tables.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/system-tables.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/system-tables.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/system-tables.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/visibleIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-02/visibleIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/admin/system-tables/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="enterprise security enterprise-security  network isolation, customer-managed keys, private connectivity and compliance controls for the workspace." data-slug="enterprise-security">
+          <div class="art"><img src="png/enterprise-security.png" alt="Enterprise Security" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/enterprise-security.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Enterprise Security</strong>
+            <code>enterprise-security</code>
+            <p>Network isolation, customer-managed keys, private connectivity and compliance controls for the workspace.</p>
+            
+            <nav class="files"><a href="svg/enterprise-security.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/enterprise-security.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/enterprise-security.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/enterprise-security.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/enterprise-security.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-enterprise-security.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-06/primary-icon-orange-enterprise-security.svg">Source</a><a href="https://www.databricks.com/trust/security-features" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cat" data-cat="sharing">
+      <h2><span class="dot" style="background:#BA7B23"></span>Sharing & Collaboration
+        <span class="hex">#BA7B23</span>
+        <span class="count">5</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-sharing.zip" download title="Every variant of the Sharing &amp; Collaboration icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="delta sharing delta-sharing  an open protocol for live, zero-copy data sharing across clouds, platforms and organizations." data-slug="delta-sharing">
+          <div class="art"><img src="png/delta-sharing.png" alt="Delta Sharing" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/delta-sharing.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Delta Sharing</strong>
+            <code>delta-sharing</code>
+            <p>An open protocol for live, zero-copy data sharing across clouds, platforms and organizations.</p>
+            
+            <nav class="files"><a href="svg/delta-sharing.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/delta-sharing.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/delta-sharing.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/delta-sharing.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/delta-sharing.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/shareIcon-orange.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-01/shareIcon-orange.svg">Source</a><a href="https://www.databricks.com/product/delta-sharing" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="opensharing opensharing  linux foundation standard extending governed sharing to data, models and agents across engines and clouds." data-slug="opensharing">
+          <div class="art"><img src="png/opensharing.png" alt="OpenSharing" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/opensharing.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>OpenSharing</strong>
+            <code>opensharing</code>
+            <p>Linux Foundation standard extending governed sharing to data, models and agents across engines and clouds.</p>
+            
+            <nav class="files"><a href="svg/opensharing.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/opensharing.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/opensharing.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/opensharing.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/opensharing.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-open-source.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-03/primary-icon-orange-open-source.svg">Source</a><a href="https://www.databricks.com/product/opensharing" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks marketplace marketplace  open exchange for datasets, models, notebooks, dashboards and solution accelerators." data-slug="marketplace">
+          <div class="art"><img src="png/marketplace.png" alt="Databricks Marketplace" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/marketplace.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Marketplace</strong>
+            <code>marketplace</code>
+            <p>Open exchange for datasets, models, notebooks, dashboards and solution accelerators.</p>
+            
+            <nav class="files"><a href="svg/marketplace.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/marketplace.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/marketplace.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/marketplace.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/marketplace.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/dataMarketplaceIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/dataMarketplaceIcon.svg">Source</a><a href="https://www.databricks.com/product/marketplace" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks clean rooms clean-rooms  privacy-safe multi-party collaboration on shared data with no raw-data access, across clouds." data-slug="clean-rooms">
+          <div class="art"><img src="png/clean-rooms.png" alt="Databricks Clean Rooms" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/clean-rooms.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Clean Rooms</strong>
+            <code>clean-rooms</code>
+            <p>Privacy-safe multi-party collaboration on shared data with no raw-data access, across clouds.</p>
+            
+            <nav class="files"><a href="svg/clean-rooms.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/clean-rooms.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/clean-rooms.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/clean-rooms.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/clean-rooms.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-collaborate.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-collaborate.svg">Source</a><a href="https://www.databricks.com/product/collaboration/clean-rooms" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="partner connect partner-connect  guided setup that wires validated ingestion, bi and governance partner tools into your workspace." data-slug="partner-connect">
+          <div class="art"><img src="png/partner-connect.png" alt="Partner Connect" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/partner-connect.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Partner Connect</strong>
+            <code>partner-connect</code>
+            <p>Guided setup that wires validated ingestion, BI and governance partner tools into your workspace.</p>
+            
+            <nav class="files"><a href="svg/partner-connect.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/partner-connect.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/partner-connect.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/partner-connect.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/partner-connect.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-partner-connect.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-06/primary-icon-orange-partner-connect.svg">Source</a><a href="https://www.databricks.com/partnerconnect" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cat" data-cat="devtools">
+      <h2><span class="dot" style="background:#618794"></span>Developer Tools & Apps
+        <span class="hex">#618794</span>
+        <span class="count">10</span>
+        <a class="zip" href="zips/databricks-architecture-icons-category-devtools.zip" download title="Every variant of the Developer Tools &amp; Apps icons">ZIP</a>
+      </h2>
+      <div class="grid">
+        <figure class="card" data-name="databricks apps databricks-apps  serverless hosting for python data and ai apps built with streamlit, dash or gradio, with unity catalog auth." data-slug="databricks-apps">
+          <div class="art"><img src="png/databricks-apps.png" alt="Databricks Apps" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/databricks-apps.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Apps</strong>
+            <code>databricks-apps</code>
+            <p>Serverless hosting for Python data and AI apps built with Streamlit, Dash or Gradio, with Unity Catalog auth.</p>
+            
+            <nav class="files"><a href="svg/databricks-apps.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/databricks-apps.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/databricks-apps.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/databricks-apps.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/databricks-apps.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/appsIcon-orange.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-06/appsIcon-orange.svg">Source</a><a href="https://www.databricks.com/product/databricks-apps" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks notebooks notebooks  collaborative multi-language notebooks with built-in visualisation, versioning and ai assistance." data-slug="notebooks">
+          <div class="art"><img src="png/notebooks.png" alt="Databricks Notebooks" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/notebooks.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Notebooks</strong>
+            <code>notebooks</code>
+            <p>Collaborative multi-language notebooks with built-in visualisation, versioning and AI assistance.</p>
+            
+            <nav class="files"><a href="svg/notebooks.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/notebooks.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/notebooks.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/notebooks.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/notebooks.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/notebookIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-03/notebookIcon.svg">Source</a><a href="https://www.databricks.com/product/collaborative-notebooks" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks workspace workspace  a collaborative environment. it groups the notebooks, queries, dashboards, jobs and files of each team." data-slug="workspace">
+          <div class="art"><img src="png/workspace.png" alt="Databricks Workspace" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/workspace.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Workspace</strong>
+            <code>workspace</code>
+            <p>A collaborative environment. It groups the notebooks, queries, dashboards, jobs and files of each team.</p>
+            
+            <nav class="files"><a href="svg/workspace.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/workspace.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/workspace.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/workspace.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/workspace.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/workspacesIcon-orange.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-01/workspacesIcon-orange.svg">Source</a><a href="https://docs.databricks.com/aws/en/workspace/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="git folders (repos) git-folders  workspace folders backed by git for branch-based development and ci/cd." data-slug="git-folders">
+          <div class="art"><img src="png/git-folders.png" alt="Git Folders (Repos)" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/git-folders.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Git Folders (Repos)</strong>
+            <code>git-folders</code>
+            <p>Workspace folders backed by Git for branch-based development and CI/CD.</p>
+            
+            <nav class="files"><a href="svg/git-folders.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/git-folders.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/git-folders.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/git-folders.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/git-folders.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/FolderBranchIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/FolderBranchIcon.svg">Source</a><a href="https://www.databricks.com/product/repos" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks asset bundles asset-bundles  infrastructure-as-code packaging of jobs, pipelines and apps for repeatable multi-environment deploys." data-slug="asset-bundles">
+          <div class="art"><img src="png/asset-bundles.png" alt="Databricks Asset Bundles" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/asset-bundles.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Asset Bundles</strong>
+            <code>asset-bundles</code>
+            <p>Infrastructure-as-code packaging of jobs, pipelines and apps for repeatable multi-environment deploys.</p>
+            
+            <nav class="files"><a href="svg/asset-bundles.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/asset-bundles.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/asset-bundles.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/asset-bundles.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/asset-bundles.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/briefcaseOutlinedIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-06/briefcaseOutlinedIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/dev-tools/bundles/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks cli databricks-cli  command-line client for workspaces, jobs, compute, unity catalog and bundle deployment." data-slug="databricks-cli">
+          <div class="art"><img src="png/databricks-cli.png" alt="Databricks CLI" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/databricks-cli.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks CLI</strong>
+            <code>databricks-cli</code>
+            <p>Command-line client for workspaces, jobs, compute, Unity Catalog and bundle deployment.</p>
+            
+            <nav class="files"><a href="svg/databricks-cli.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/databricks-cli.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/databricks-cli.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/databricks-cli.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/databricks-cli.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/runIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-03/runIcon.svg">Source</a><a href="https://docs.databricks.com/aws/en/dev-tools/cli/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks connect databricks-connect  run local dataframe code against remote databricks compute from any ide or application." data-slug="databricks-connect">
+          <div class="art"><img src="png/databricks-connect.png" alt="Databricks Connect" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/databricks-connect.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Connect</strong>
+            <code>databricks-connect</code>
+            <p>Run local DataFrame code against remote Databricks compute from any IDE or application.</p>
+            
+            <nav class="files"><a href="svg/databricks-connect.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/databricks-connect.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/databricks-connect.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/databricks-connect.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/databricks-connect.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-unified.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2023-07/primary-icon-orange-unified.svg">Source</a><a href="https://docs.databricks.com/aws/en/dev-tools/databricks-connect/" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="ide integrations ide-integrations  official vs code and pycharm extensions for editing, syncing, running and debugging on databricks." data-slug="ide-integrations">
+          <div class="art"><img src="png/ide-integrations.png" alt="IDE Integrations" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/ide-integrations.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>IDE Integrations</strong>
+            <code>ide-integrations</code>
+            <p>Official VS Code and PyCharm extensions for editing, syncing, running and debugging on Databricks.</p>
+            
+            <nav class="files"><a href="svg/ide-integrations.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/ide-integrations.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/ide-integrations.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/ide-integrations.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/ide-integrations.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/codeIcon.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-05/codeIcon.svg">Source</a><a href="https://www.databricks.com/product/data-science/ide-integrations" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="rest api &amp; sdks rest-api  programmatic control of every platform resource, with official python, java, go and javascript sdks." data-slug="rest-api">
+          <div class="art"><img src="png/rest-api.png" alt="REST API &amp; SDKs" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/rest-api.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>REST API &amp; SDKs</strong>
+            <code>rest-api</code>
+            <p>Programmatic control of every platform resource, with official Python, Java, Go and JavaScript SDKs.</p>
+            
+            <nav class="files"><a href="svg/rest-api.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/rest-api.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/rest-api.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/rest-api.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/rest-api.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-webhook.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-webhook.svg">Source</a><a href="https://docs.databricks.com/api/workspace/introduction" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+        <figure class="card" data-name="databricks terraform provider terraform-provider  official terraform provider for declaring workspaces, compute, unity catalog objects and permissions." data-slug="terraform-provider">
+          <div class="art"><img src="png/terraform-provider.png" alt="Databricks Terraform Provider" width="48" height="48" loading="lazy" decoding="async"><img class="tile" src="png-tile/terraform-provider.png" alt="" width="48" height="48" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <strong>Databricks Terraform Provider</strong>
+            <code>terraform-provider</code>
+            <p>Official Terraform provider for declaring workspaces, compute, Unity Catalog objects and permissions.</p>
+            
+            <nav class="files"><a href="svg/terraform-provider.svg" target="_blank" rel="noreferrer">SVG</a><a href="svg-mono/terraform-provider.svg" target="_blank" rel="noreferrer">Mono</a><a href="svg-tile/terraform-provider.svg" target="_blank" rel="noreferrer">Tile</a><a href="png/terraform-provider.png" target="_blank" rel="noreferrer">PNG</a><a href="png-tile/terraform-provider.png" target="_blank" rel="noreferrer">PNG tile</a><a href="sources/primary-icon-orange-automation.svg" target="_blank" rel="noreferrer" class="src" title="Built from https://www.databricks.com/sites/default/files/2026-05/primary-icon-orange-automation.svg">Source</a><a href="https://registry.terraform.io/providers/databricks/databricks/latest/docs" target="_blank" rel="noreferrer" class="docs">Docs &nearr;</a></nav>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  <p class="empty" id="empty" hidden>No products match that search.</p>
+</main>
+<footer id="provenance">
+  <div class="wrap">
+    <h3>Where these icons come from, and the terms</h3>
+    <p>Every icon in this library is an official Databricks SVG file. Nothing is redrawn, traced or
+      approximated. The files come from Databricks URLs. These are the named product marks and the Lava
+      line-icon set on databricks.com. The <code>sources/</code> directory holds each original file next
+      to a <a href="sources/MANIFEST.md">manifest</a> that gives its source URL. Two marks are
+      different: Apache Spark and Apache Iceberg are project logos of the Apache Software Foundation.</p>
+
+    <h4>What the build changes</h4>
+    <p>The build applies four mechanical transforms and makes no other change. It fits each source
+      file into a padded 48&times;48 canvas and keeps the aspect ratio. It adds the product
+      slug to each internal id, each <code>url(#&hellip;)</code> reference and each CSS class. Then icons
+      can share a page, and their gradients and clip paths do not collide.</p>
+    <p>The build also recolors the mono and tile variants. It keeps the three Databricks color roles
+      separate: foreground, light tint and white plate. If it joins these roles, a mark becomes a blob.
+      Last, it removes a full-bleed white background plate, because such a plate looks like an opaque box
+      on a dark diagram. The <code>svg/</code> directory holds the published artwork with the fit step and
+      the namespace step only.</p>
+
+    <h4>Color and type</h4>
+    <p>The category colors are exact values from the Databricks primary palette and extended palette.
+      This page uses DM Sans and DM Mono on the 8px type scale from the guidelines. Databricks gives this
+      purpose for the extended palette: &ldquo;a functional need for additional shades of color to
+      enhance the comprehension of a message or to provide additional clarity through visual
+      hierarchy&rdquo;. A color code on a diagram layer has this purpose. The build calculates the
+      contrast of the white glyph on each tile. If one value is less than 3:1, the build fails.</p>
+
+    <h4>Trademarks, and what this project is not</h4>
+    <p>Databricks, the Databricks logo and the product names are trademarks of Databricks,&nbsp;Inc.
+      Apache Spark and Apache Iceberg are trademarks of the Apache Software Foundation. This is an
+      independent reference from public documentation. Databricks does not sponsor or endorse it. This
+      site does not use the Databricks logo as its own logo or favicon.</p>
+    <p>The Databricks logo mark is unaltered. The build never sends it to the recolor step, because
+      <a href="https://brandguides.brandfolder.com/databricks-extended-brand-guidelines/logo">the brand
+      guidelines</a> give the instruction &ldquo;don't recolor the logo&rdquo;. A label on a Databricks
+      product in a technical diagram is a descriptive use. Before you use these assets commercially or in
+      public material, read the
+      <a href="https://brandguides.brandfolder.com/databricks-extended-brand-guidelines">brand
+      guidelines</a> and speak to Databricks.</p>
+
+    <hr class="rule">
+    <p class="fine">The product names, the descriptions and the groups come from research on
+      databricks.com and docs.databricks.com. They show the published information at build time.
+      Databricks changes product names often. Make sure that a name is current before you publish a
+      diagram. The <a href="README.md">README</a> explains how to add a product to this set.</p>
+  </div>
+</footer>
+<div id="toast"></div>
+<script>
+  const q = document.getElementById('q');
+  const cards = [...document.querySelectorAll('.card')];
+  const cats = [...document.querySelectorAll('.cat')];
+  const empty = document.getElementById('empty');
+  q.addEventListener('input', () => {
+    const t = q.value.trim().toLowerCase();
+    cards.forEach(c => c.classList.toggle('hide', t && !c.dataset.name.includes(t)));
+    let any = false;
+    cats.forEach(s => {
+      const vis = [...s.querySelectorAll('.card')].some(c => !c.classList.contains('hide'));
+      s.hidden = !vis; any = any || vis;
+    });
+    empty.hidden = any;
+  });
+  document.getElementById('tiles').addEventListener('click', e => {
+    document.body.classList.toggle('tiles');
+    e.target.classList.toggle('on');
+  });
+  document.getElementById('theme').addEventListener('click', e => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+    e.target.textContent = dark ? 'Dark' : 'Light';
+  });
+  const toast = document.getElementById('toast');
+  document.addEventListener('click', e => {
+    if (e.target.tagName !== 'CODE') return;
+    navigator.clipboard.writeText(e.target.textContent).then(() => {
+      toast.textContent = 'Copied ' + e.target.textContent;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1300);
+    });
+  });
+</script>
+</body>
+</html>

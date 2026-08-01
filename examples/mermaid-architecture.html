@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Databricks Architecture Icons · Mermaid</title>
+<style>
+  .topbar{margin:-32px -32px 32px;background:#FF3621;color:#fff;padding:8px 32px;
+          font-size:14px;line-height:1.5;text-align:center}
+  .topbar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+  .topbar a:hover{color:#EEEDE9}
+  body{margin:0;padding:32px;background:#F9F7F4;color:#1B3139;
+       font:15px/1.6 "DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  h1{font-size:20px;margin:0 0 4px} h1 b{color:#FF3621}
+  p.sub{margin:0 0 28px;color:#5b6b73;font-size:13px}
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:.07em;margin:34px 0 10px}
+  .panel{background:#fff;border:1px solid #dcd8d1;border-radius:14px;padding:22px;overflow:auto}
+  pre{background:#1B3139;color:#e8eef0;padding:16px;border-radius:10px;overflow:auto;font-size:12.5px}
+  /* once Mermaid swaps the source for an <svg>, drop the code-block styling */
+  pre.mermaid{background:none;color:inherit;padding:0;text-align:center}
+  code{font-family:ui-monospace,Menlo,monospace}
+  .note{font-size:13px;color:#5b6b73}
+  h2 .dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:8px}
+  h2 .n{margin-left:auto;font-weight:400;color:#5A6F77;font-size:12px}
+  h2.cat{display:flex;align-items:center;font-size:12px;line-height:1.2;font-weight:700;
+         text-transform:uppercase;letter-spacing:.12em;margin:32px 0 12px}
+  pre.mermaid .nodeLabel{font-size:12px;line-height:1.35;overflow-wrap:anywhere;
+                         max-width:120px;display:inline-block}
+  .steps{margin:0 0 16px;padding-left:20px;font-size:14px;line-height:1.6}
+  .steps li{margin-bottom:4px}
+  pre.code{background:#1B3139;color:#e8eef0;padding:16px;border-radius:10px;overflow:auto;
+           font:13px/1.6 "DM Mono",ui-monospace,Menlo,monospace;margin:0 0 16px}
+  .warn{margin:0 0 24px;padding:12px 16px;border:1px solid #FF3621;border-left-width:4px;
+        border-radius:8px;background:#fff;font-size:13px;color:#1B3139}
+</style>
+</head>
+<body>
+<div class="topbar">Made with <span aria-hidden="true">&hearts;</span> by
+  <a href="https://github.com/oieduardorabelo" target="_blank" rel="noreferrer">@oieduardorabelo</a>
+</div>
+<h1>Databricks <b>Architecture Icons</b> · Mermaid</h1>
+<p class="sub">Architecture diagrams with official Databricks artwork.
+<a href="#every-icon">Every icon</a> &middot;
+<a href="../index.html">Back to the library</a> &middot;
+<a href="../README.md">README</a></p>
+
+<h2>Add the icons to your Mermaid diagrams</h2>
+<ol class="steps">
+  <li>Copy <code>iconify/databricks-color.json</code> into your project. Serve it as a static file.</li>
+  <li>Register the pack before you render a diagram.</li>
+  <li>Write each icon id as <code>databricks-color:&lt;slug&gt;</code>.
+      <a href="../CATALOG.md">CATALOG.md</a> lists every slug.</li>
+</ol>
+<pre class="code">import mermaid from 'mermaid';
+
+mermaid.registerIconPacks([
+  {
+    name: 'databricks-color',
+    loader: () =&gt; fetch('/icons/databricks-color.json').then((r) =&gt; r.json()),
+  },
+]);
+
+mermaid.initialize({ startOnLoad: true });</pre>
+<pre class="code">architecture-beta
+    service wh(databricks-color:sql-warehouse)[SQL Warehouse]
+    service gold(databricks-color:lakehouse-storage)[Managed Tables]
+    gold:R --&gt; L:wh</pre>
+<p class="note">The pack <code>databricks-color</code> keeps the Databricks Lava artwork. The pack
+  <code>databricks</code> holds the same icons in one color. That pack inherits
+  <code>currentColor</code>, so Mermaid gives the icons the text color of the diagram. Use it for a
+  dark theme.</p>
+<p class="note">A browser blocks <code>fetch()</code> on <code>file://</code>. If your page must run
+  from disk, load <code>iconify/databricks.js</code> with a classic script tag instead. It sets
+  <code>window.databricksColorIconPack</code> and <code>window.databricksIconPack</code>. This page
+  uses that method.</p>
+<p id="packfail" class="warn" hidden>The icon pack did not load. Mermaid draws a “?” for each icon.
+Make sure that the <code>iconify/</code> directory is one level above this page. As an alternative,
+serve the folder with <code>npx serve .</code>.</p>
+
+<h2>Medallion pipeline</h2>
+
+<div class="panel">
+  <pre class="mermaid" id="diagram-1">
+architecture-beta
+    group ingest(databricks-color:lakeflow)[Ingest]
+    group lake(databricks-color:unity-catalog)[Governed Lakehouse]
+    group serve(databricks-color:ai-bi)[Serve]
+
+    service crm(databricks-color:lakeflow-connect)[Lakeflow Connect] in ingest
+    service events(databricks-color:zerobus-ingest)[Zerobus Ingest] in ingest
+
+    service bronze(databricks-color:delta-lake)[Delta Lake] in lake
+    service etl(databricks-color:spark-declarative-pipelines)[Declarative Pipelines] in lake
+    service gold(databricks-color:lakehouse-storage)[Managed Tables] in lake
+
+    service wh(databricks-color:sql-warehouse)[SQL Warehouse] in serve
+    service dash(databricks-color:ai-bi-dashboards)[Dashboards] in serve
+    service genie(databricks-color:genie-agents)[Genie Agents] in serve
+
+    crm:R --> L:bronze
+    events:R --> B:bronze
+
+    bronze:R --> L:etl
+    etl:R --> L:gold
+    gold:R --> L:wh
+    wh:R --> L:dash
+    wh:B --> T:genie
+  </pre>
+</div>
+
+<h2>Agent application</h2>
+<div class="panel">
+  <pre class="mermaid" id="diagram-2">
+architecture-beta
+    group app(databricks-color:databricks-apps)[Application]
+    group ai(databricks-color:agent-bricks)[Agent Runtime]
+    group data(databricks-color:unity-catalog)[Governed Data]
+
+    service ui(databricks-color:databricks-apps)[Databricks App] in app
+    service oltp(databricks-color:lakebase)[Lakebase] in app
+
+    service agent(databricks-color:agent-bricks)[Agent Bricks] in ai
+    service gw(databricks-color:unity-ai-gateway)[Unity AI Gateway] in ai
+    service serving(databricks-color:model-serving)[Model Serving] in ai
+    service search(databricks-color:ai-search)[AI Search] in ai
+
+    service docs(databricks-color:document-intelligence)[Document Intelligence] in data
+    service tables(databricks-color:lakehouse-storage)[Managed Tables] in data
+    service mlflow(databricks-color:mlflow)[Managed MLflow] in data
+
+    ui:R --> L:agent
+    ui:B --> T:oltp
+    agent:R --> L:gw
+    gw:R --> L:serving
+    agent:B --> T:search
+    docs:R --> L:search
+    tables:T --> B:search
+    serving:B --> T:mlflow
+  </pre>
+</div>
+
+<h2>Flowchart with icon nodes</h2>
+<p class="note">
+  The <code>architecture-beta</code> type has no edge labels and little layout control. A flowchart
+  uses the same icon pack through the <code>@{ icon: … }</code> node shape. This shape needs Mermaid
+  11.3 or later. A flowchart gives you edge labels, subgraphs and every layout direction.
+</p>
+<div class="panel">
+  <pre class="mermaid" id="diagram-3">
+flowchart LR
+    src@{ icon: "databricks-color:lakeflow-connect", form: "square", label: "Lakeflow Connect", pos: "b" }
+    dlt@{ icon: "databricks-color:spark-declarative-pipelines", form: "square", label: "Declarative Pipelines", pos: "b" }
+    tbl@{ icon: "databricks-color:lakehouse-storage", form: "square", label: "Managed Tables", pos: "b" }
+    uc@{ icon: "databricks-color:unity-catalog", form: "square", label: "Unity Catalog", pos: "b" }
+    bi@{ icon: "databricks-color:ai-bi-dashboards", form: "square", label: "AI/BI Dashboards", pos: "b" }
+
+    src -->|"CDC, hourly"| dlt
+    dlt -->|"expectations"| tbl
+    tbl --> bi
+    uc -. "lineage + ABAC" .-> tbl
+  </pre>
+</div>
+
+<!-- A classic script, not a module: it loads from file:// as well as from a
+     server. It sets window.databricksIconPack and adds no dependency. -->
+<h2 id="every-icon">Every icon</h2>
+<p class="note">All icons from the <code>databricks-color</code> pack, drawn by Mermaid. Each one must
+  show the Databricks Lava artwork. A gray box or a &ldquo;?&rdquo; means that the pack did not load.
+  The build generates this section from the catalog, so it always covers every icon.</p>
+<!-- ALL-ICONS:START -->
+<h2 class="cat"><span class="dot" style="background:#FF3621"></span>Platform &amp; Compute<span class="n">10</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    platform0@{ icon: "databricks-color:databricks", form: "square", label: "databricks", pos: "b" }
+    platform1@{ icon: "databricks-color:data-intelligence-platform", form: "square", label: "data-intelligence-platform", pos: "b" }
+    platform2@{ icon: "databricks-color:lakehouse", form: "square", label: "lakehouse", pos: "b" }
+    platform3@{ icon: "databricks-color:apache-spark", form: "square", label: "apache-spark", pos: "b" }
+    platform4@{ icon: "databricks-color:photon", form: "square", label: "photon", pos: "b" }
+    platform5@{ icon: "databricks-color:compute-clusters", form: "square", label: "compute-clusters", pos: "b" }
+    platform6@{ icon: "databricks-color:serverless-compute", form: "square", label: "serverless-compute", pos: "b" }
+    platform7@{ icon: "databricks-color:databricks-runtime", form: "square", label: "databricks-runtime", pos: "b" }
+    platform8@{ icon: "databricks-color:spark-real-time-mode", form: "square", label: "spark-real-time-mode", pos: "b" }
+    platform9@{ icon: "databricks-color:multicloud", form: "square", label: "multicloud", pos: "b" }
+
+    platform0 ~~~ platform1 ~~~ platform2 ~~~ platform3 ~~~ platform4 ~~~ platform5
+    platform6 ~~~ platform7 ~~~ platform8 ~~~ platform9
+  </pre>
+</div>
+<h2 class="cat"><span class="dot" style="background:#2272B4"></span>Data Engineering<span class="n">9</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    engineering0@{ icon: "databricks-color:lakeflow", form: "square", label: "lakeflow", pos: "b" }
+    engineering1@{ icon: "databricks-color:lakeflow-connect", form: "square", label: "lakeflow-connect", pos: "b" }
+    engineering2@{ icon: "databricks-color:zerobus-ingest", form: "square", label: "zerobus-ingest", pos: "b" }
+    engineering3@{ icon: "databricks-color:spark-declarative-pipelines", form: "square", label: "spark-declarative-pipelines", pos: "b" }
+    engineering4@{ icon: "databricks-color:lakeflow-jobs", form: "square", label: "lakeflow-jobs", pos: "b" }
+    engineering5@{ icon: "databricks-color:lakeflow-designer", form: "square", label: "lakeflow-designer", pos: "b" }
+    engineering6@{ icon: "databricks-color:auto-loader", form: "square", label: "auto-loader", pos: "b" }
+    engineering7@{ icon: "databricks-color:structured-streaming", form: "square", label: "structured-streaming", pos: "b" }
+    engineering8@{ icon: "databricks-color:lakebridge", form: "square", label: "lakebridge", pos: "b" }
+
+    engineering0 ~~~ engineering1 ~~~ engineering2 ~~~ engineering3 ~~~ engineering4 ~~~ engineering5
+    engineering6 ~~~ engineering7 ~~~ engineering8
+  </pre>
+</div>
+<h2 class="cat"><span class="dot" style="background:#00875C"></span>Storage &amp; Databases<span class="n">6</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    storage0@{ icon: "databricks-color:delta-lake", form: "square", label: "delta-lake", pos: "b" }
+    storage1@{ icon: "databricks-color:apache-iceberg", form: "square", label: "apache-iceberg", pos: "b" }
+    storage2@{ icon: "databricks-color:lakehouse-storage", form: "square", label: "lakehouse-storage", pos: "b" }
+    storage3@{ icon: "databricks-color:liquid-clustering", form: "square", label: "liquid-clustering", pos: "b" }
+    storage4@{ icon: "databricks-color:predictive-optimization", form: "square", label: "predictive-optimization", pos: "b" }
+    storage5@{ icon: "databricks-color:lakebase", form: "square", label: "lakebase", pos: "b" }
+
+    storage0 ~~~ storage1 ~~~ storage2 ~~~ storage3 ~~~ storage4 ~~~ storage5
+  </pre>
+</div>
+<h2 class="cat"><span class="dot" style="background:#1B5162"></span>Analytics &amp; BI<span class="n">7</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    analytics0@{ icon: "databricks-color:data-warehousing", form: "square", label: "data-warehousing", pos: "b" }
+    analytics1@{ icon: "databricks-color:databricks-sql", form: "square", label: "databricks-sql", pos: "b" }
+    analytics2@{ icon: "databricks-color:sql-warehouse", form: "square", label: "sql-warehouse", pos: "b" }
+    analytics3@{ icon: "databricks-color:lakehouse-rt", form: "square", label: "lakehouse-rt", pos: "b" }
+    analytics4@{ icon: "databricks-color:ai-bi", form: "square", label: "ai-bi", pos: "b" }
+    analytics5@{ icon: "databricks-color:ai-bi-dashboards", form: "square", label: "ai-bi-dashboards", pos: "b" }
+    analytics6@{ icon: "databricks-color:lakehouse-federation", form: "square", label: "lakehouse-federation", pos: "b" }
+
+    analytics0 ~~~ analytics1 ~~~ analytics2 ~~~ analytics3 ~~~ analytics4 ~~~ analytics5
+  </pre>
+</div>
+<h2 class="cat"><span class="dot" style="background:#98102A"></span>AI &amp; Agents<span class="n">16</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    ai0@{ icon: "databricks-color:genie", form: "square", label: "genie", pos: "b" }
+    ai1@{ icon: "databricks-color:genie-one", form: "square", label: "genie-one", pos: "b" }
+    ai2@{ icon: "databricks-color:genie-agents", form: "square", label: "genie-agents", pos: "b" }
+    ai3@{ icon: "databricks-color:genie-code", form: "square", label: "genie-code", pos: "b" }
+    ai4@{ icon: "databricks-color:genie-deep-research", form: "square", label: "genie-deep-research", pos: "b" }
+    ai5@{ icon: "databricks-color:agent-bricks", form: "square", label: "agent-bricks", pos: "b" }
+    ai6@{ icon: "databricks-color:ai-search", form: "square", label: "ai-search", pos: "b" }
+    ai7@{ icon: "databricks-color:unity-ai-gateway", form: "square", label: "unity-ai-gateway", pos: "b" }
+    ai8@{ icon: "databricks-color:document-intelligence", form: "square", label: "document-intelligence", pos: "b" }
+    ai9@{ icon: "databricks-color:model-serving", form: "square", label: "model-serving", pos: "b" }
+    ai10@{ icon: "databricks-color:model-training", form: "square", label: "model-training", pos: "b" }
+    ai11@{ icon: "databricks-color:mlflow", form: "square", label: "mlflow", pos: "b" }
+    ai12@{ icon: "databricks-color:feature-store", form: "square", label: "feature-store", pos: "b" }
+    ai13@{ icon: "databricks-color:ai-functions", form: "square", label: "ai-functions", pos: "b" }
+    ai14@{ icon: "databricks-color:automl", form: "square", label: "automl", pos: "b" }
+    ai15@{ icon: "databricks-color:customerlake", form: "square", label: "customerlake", pos: "b" }
+
+    ai0 ~~~ ai1 ~~~ ai2 ~~~ ai3 ~~~ ai4 ~~~ ai5
+    ai6 ~~~ ai7 ~~~ ai8 ~~~ ai9 ~~~ ai10 ~~~ ai11
+    ai12 ~~~ ai13 ~~~ ai14 ~~~ ai15
+  </pre>
+</div>
+<h2 class="cat"><span class="dot" style="background:#1B3139"></span>Governance &amp; Security<span class="n">8</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    governance0@{ icon: "databricks-color:unity-catalog", form: "square", label: "unity-catalog", pos: "b" }
+    governance1@{ icon: "databricks-color:unity-catalog-semantics", form: "square", label: "unity-catalog-semantics", pos: "b" }
+    governance2@{ icon: "databricks-color:data-lineage", form: "square", label: "data-lineage", pos: "b" }
+    governance3@{ icon: "databricks-color:abac", form: "square", label: "abac", pos: "b" }
+    governance4@{ icon: "databricks-color:data-quality-monitoring", form: "square", label: "data-quality-monitoring", pos: "b" }
+    governance5@{ icon: "databricks-color:lakewatch", form: "square", label: "lakewatch", pos: "b" }
+    governance6@{ icon: "databricks-color:system-tables", form: "square", label: "system-tables", pos: "b" }
+    governance7@{ icon: "databricks-color:enterprise-security", form: "square", label: "enterprise-security", pos: "b" }
+
+    governance0 ~~~ governance1 ~~~ governance2 ~~~ governance3 ~~~ governance4 ~~~ governance5
+    governance6 ~~~ governance7
+  </pre>
+</div>
+<h2 class="cat"><span class="dot" style="background:#BA7B23"></span>Sharing &amp; Collaboration<span class="n">5</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    sharing0@{ icon: "databricks-color:delta-sharing", form: "square", label: "delta-sharing", pos: "b" }
+    sharing1@{ icon: "databricks-color:opensharing", form: "square", label: "opensharing", pos: "b" }
+    sharing2@{ icon: "databricks-color:marketplace", form: "square", label: "marketplace", pos: "b" }
+    sharing3@{ icon: "databricks-color:clean-rooms", form: "square", label: "clean-rooms", pos: "b" }
+    sharing4@{ icon: "databricks-color:partner-connect", form: "square", label: "partner-connect", pos: "b" }
+
+    sharing0 ~~~ sharing1 ~~~ sharing2 ~~~ sharing3 ~~~ sharing4
+  </pre>
+</div>
+<h2 class="cat"><span class="dot" style="background:#618794"></span>Developer Tools &amp; Apps<span class="n">10</span></h2>
+<div class="panel">
+  <pre class="mermaid">
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart LR
+    devtools0@{ icon: "databricks-color:databricks-apps", form: "square", label: "databricks-apps", pos: "b" }
+    devtools1@{ icon: "databricks-color:notebooks", form: "square", label: "notebooks", pos: "b" }
+    devtools2@{ icon: "databricks-color:workspace", form: "square", label: "workspace", pos: "b" }
+    devtools3@{ icon: "databricks-color:git-folders", form: "square", label: "git-folders", pos: "b" }
+    devtools4@{ icon: "databricks-color:asset-bundles", form: "square", label: "asset-bundles", pos: "b" }
+    devtools5@{ icon: "databricks-color:databricks-cli", form: "square", label: "databricks-cli", pos: "b" }
+    devtools6@{ icon: "databricks-color:databricks-connect", form: "square", label: "databricks-connect", pos: "b" }
+    devtools7@{ icon: "databricks-color:ide-integrations", form: "square", label: "ide-integrations", pos: "b" }
+    devtools8@{ icon: "databricks-color:rest-api", form: "square", label: "rest-api", pos: "b" }
+    devtools9@{ icon: "databricks-color:terraform-provider", form: "square", label: "terraform-provider", pos: "b" }
+
+    devtools0 ~~~ devtools1 ~~~ devtools2 ~~~ devtools3 ~~~ devtools4 ~~~ devtools5
+    devtools6 ~~~ devtools7 ~~~ devtools8 ~~~ devtools9
+  </pre>
+</div>
+<!-- ALL-ICONS:END -->
+
+<script src="../iconify/databricks.js"></script>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  // Use the global pack when the classic script loaded. If it did not load,
+  // get the JSON file instead. fetch() works on a server but not on file://.
+  const color = window.databricksColorIconPack;
+  const mono = window.databricksIconPack;
+  const pack = color || mono;
+  mermaid.registerIconPacks(
+    pack
+      ? [
+          { name: 'databricks-color', icons: color },
+          { name: 'databricks', icons: mono },
+        ]
+      : [
+          { name: 'databricks-color', loader: () => fetch('../iconify/databricks-color.json').then((r) => r.json()) },
+          { name: 'databricks', loader: () => fetch('../iconify/databricks.json').then((r) => r.json()) },
+        ],
+  );
+  if (!pack && location.protocol === 'file:') {
+    document.getElementById('packfail').hidden = false;
+  }
+
+  mermaid.initialize({
+    startOnLoad: false,
+    securityLevel: 'loose',
+    theme: 'neutral',
+    themeVariables: { fontFamily: 'DM Sans, sans-serif' },
+    // SVG <text> labels instead of foreignObject: portable across renderers
+    // (GitHub, Kroki, headless exporters) that don't composite HTML in SVG.
+    flowchart: { htmlLabels: false },
+  });
+
+  // mermaid.run() derives each SVG id from Date.now(), so two diagrams that
+  // render inside the same millisecond collide and the second one's content
+  // lands in the first one's <svg>. Rendering explicitly with our own ids
+  // avoids that entirely.
+  for (const [i, el] of [...document.querySelectorAll('pre.mermaid')].entries()) {
+    const { svg } = await mermaid.render(`dbx-diagram-${i}`, el.textContent.trim());
+    el.innerHTML = svg;
+  }
+</script>
+</body>
+</html>

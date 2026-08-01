@@ -1,0 +1,8 @@
+# sharp is a build-time dependency, only needed to re-render the PNG files
+tools/node_modules/
+node_modules/
+
+.DS_Store
+
+# local Claude Code config, not part of the icon set
+.claude/
