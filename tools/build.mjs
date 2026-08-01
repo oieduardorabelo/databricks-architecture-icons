@@ -679,7 +679,9 @@ fs.writeFileSync(
            letter-spacing:.12em;text-transform:uppercase;color:#90A5B1}
   .eyebrow b{color:var(--lava);font-weight:500}
   .hero h1{margin:0;font-size:40px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
-  .hero .lede{margin:16px 0 0;max-width:64ch;font-size:16px;line-height:1.5;color:#C4CCD6}
+  .hero .lead{margin:16px 0 0;max-width:60ch;font-size:20px;line-height:1.2;
+              font-weight:500;color:var(--oat-light)}
+  .hero .lede{margin:8px 0 0;max-width:64ch;font-size:16px;line-height:1.5;color:#C4CCD6}
   .stats{margin:24px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
   .stats li{font:500 12px/1 "DM Mono",ui-monospace,Menlo,monospace;letter-spacing:.04em;
             padding:8px 12px;border:1px solid #143D4A;border-radius:8px;color:#C4CCD6}
@@ -792,6 +794,7 @@ fs.writeFileSync(
   <div class="wrap">
     <p class="eyebrow"><b>Unofficial</b> &middot; not affiliated with Databricks</p>
     <h1>${PROJECT.name}</h1>
+    <p class="lead">Build architecture diagrams with official Databricks artwork.</p>
     <p class="lede">The set has ${catalog.length} products in ${Object.values(CATEGORIES).filter((c) => catalog.some((x) => x.categoryLabel === c.label)).length} categories.
       It gives SVG files and PNG files for any diagram tool.</p>
     <nav>
