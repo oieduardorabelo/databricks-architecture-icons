@@ -47,12 +47,12 @@
   .topbar .wrap{display:flex;align-items:center;justify-content:center;gap:6px}
   .topbar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
   .topbar a:hover{color:var(--oat-medium)}
-  .hero{background:var(--navy800);color:var(--oat-light);padding:56px 0 48px}
+  .hero{background:var(--navy800);color:var(--oat-light);padding:48px 0 40px}
   .eyebrow{margin:0 0 16px;font:500 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace;
            letter-spacing:.12em;text-transform:uppercase;color:#90A5B1}
   .eyebrow b{color:var(--lava);font-weight:500}
   .hero h1{margin:0;font-size:40px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
-  .hero .lede{margin:16px 0 0;max-width:64ch;font-size:16px;line-height:1.5;color:#C4CCD6}
+  .hero .lede{margin:16px 0 0;max-width:68ch;font-size:16px;line-height:1.5;color:#C4CCD6}
   .stats{margin:24px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
   .stats li{font:500 12px/1 "DM Mono",ui-monospace,Menlo,monospace;letter-spacing:.04em;
             padding:8px 12px;border:1px solid #143D4A;border-radius:8px;color:#C4CCD6}
@@ -63,6 +63,14 @@
   .hero nav a.primary{background:var(--lava);border-color:var(--lava);color:#fff}
   .hero nav a.primary:hover{background:#BD2B26;border-color:#BD2B26;color:#fff}
 
+  .more{margin:24px 0 0;border-top:1px solid #143D4A;padding:16px 0 0}
+  .more summary{cursor:pointer;font:500 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace;
+                letter-spacing:.12em;text-transform:uppercase;color:#90A5B1;list-style:none}
+  .more summary::-webkit-details-marker{display:none}
+  .more summary::before{content:"+ ";color:var(--lava)}
+  .more[open] summary::before{content:"- "}
+  .more summary:hover{color:var(--oat-light)}
+  .more .dl-row{margin-top:16px}
   .downloads{margin:32px 0 0;padding:24px 0 0;border-top:1px solid #143D4A}
   .dl-head{margin:0 0 12px;font:500 12px/1.5 "DM Mono",ui-monospace,Menlo,monospace;
            letter-spacing:.12em;text-transform:uppercase;color:#90A5B1}
@@ -155,65 +163,32 @@
 </div>
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow"><b>Unofficial</b> &middot; community resource &middot; not affiliated with Databricks</p>
+    <p class="eyebrow"><b>Unofficial</b> &middot; not affiliated with Databricks</p>
     <h1>Databricks Architecture Icons</h1>
-    <p class="lede">An architecture diagram shows the design, the deployment and the topology of a
-      system. These icons give each Databricks product one mark at one canvas size. Every mark is
-      official Databricks artwork. Nothing in this set is redrawn.</p>
-    <p class="lede">Use the icons in a diagram, a presentation, a document or a poster.</p>
-    <ul class="stats">
-      <li>71 products</li>
-      <li>8 categories</li>
-      <li>48&times;48 SVG</li>
-      <li>256px PNG</li>
-      <li>Iconify pack for Mermaid</li>
-    </ul>
+    <p class="lede">Build architecture diagrams with official Databricks artwork.
+      71 products in 8 categories,
+      as SVG and PNG, plus an Iconify pack for Mermaid. Nothing in this set is redrawn.</p>
     <nav>
-      <a class="primary" href="#provenance">Where these come from</a>
-      <a href="README.md">README</a>
-      <a href="CATALOG.md">Catalog</a>
-      <a href="catalog.json">catalog.json</a>
-      <a href="https://github.com/oieduardorabelo/databricks-architecture-icons" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="primary" href="zips/databricks-architecture-icons-all.zip" download>Download all
+        &middot; 1.5 MB</a>
       <a href="examples/mermaid-architecture.html">Mermaid demo</a>
-      <a href="examples/mermaid-architecture.html#every-icon">Every icon in Mermaid</a>
+      <a href="https://github.com/oieduardorabelo/databricks-architecture-icons" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="#provenance">Where these come from</a>
     </nav>
-    <section class="downloads">
-      <h2 class="dl-head">Download the icons</h2>
+    <details class="more">
+      <summary>Single formats and categories</summary>
       <div class="dl-row">
-        <a class="dl" href="zips/databricks-architecture-icons-svg.zip" download>
-          <b>svg/</b>
-          <span>71 files &middot; 92 KB</span>
-        </a>
-        <a class="dl" href="zips/databricks-architecture-icons-svg-mono.zip" download>
-          <b>svg-mono/</b>
-          <span>71 files &middot; 93 KB</span>
-        </a>
-        <a class="dl" href="zips/databricks-architecture-icons-svg-tile.zip" download>
-          <b>svg-tile/</b>
-          <span>71 files &middot; 96 KB</span>
-        </a>
-        <a class="dl" href="zips/databricks-architecture-icons-png.zip" download>
-          <b>png/</b>
-          <span>71 files &middot; 401 KB</span>
-        </a>
-        <a class="dl" href="zips/databricks-architecture-icons-png-tile.zip" download>
-          <b>png-tile/</b>
-          <span>71 files &middot; 528 KB</span>
-        </a>
-        <a class="dl" href="zips/databricks-architecture-icons-logos.zip" download>
-          <b>logos/</b>
-          <span>8 files &middot; 22 KB</span>
-        </a>
-        <a class="dl primary" href="zips/databricks-architecture-icons-all.zip" download>
-          <b>Everything</b>
-          <span>370 files &middot; 1.5 MB</span>
-        </a>
+        <a class="dl" href="zips/databricks-architecture-icons-svg.zip" download><b>svg/</b><span>71 files &middot; 92 KB</span></a>
+        <a class="dl" href="zips/databricks-architecture-icons-svg-mono.zip" download><b>svg-mono/</b><span>71 files &middot; 93 KB</span></a>
+        <a class="dl" href="zips/databricks-architecture-icons-svg-tile.zip" download><b>svg-tile/</b><span>71 files &middot; 96 KB</span></a>
+        <a class="dl" href="zips/databricks-architecture-icons-png.zip" download><b>png/</b><span>71 files &middot; 401 KB</span></a>
+        <a class="dl" href="zips/databricks-architecture-icons-png-tile.zip" download><b>png-tile/</b><span>71 files &middot; 528 KB</span></a>
+        <a class="dl" href="zips/databricks-architecture-icons-logos.zip" download><b>logos/</b><span>8 files &middot; 22 KB</span></a>
       </div>
-      <p class="dl-note">The archive for a category is on the heading of that category, below. Each
-        archive holds SVG files and PNG files.</p>
-      <p class="dl-note works">Works with Mermaid, Miro, Lucidchart, draw.io, Excalidraw, Figma,
-        PowerPoint, Keynote and Google Slides.</p>
-    </section>
+      <p class="dl-note">Each category has its own archive, on the heading of that category below.
+        Works with Mermaid, Miro, Lucidchart, draw.io, Excalidraw, Figma, PowerPoint, Keynote and
+        Google Slides.</p>
+    </details>
   </div>
 </header>
 <div class="toolbar">
