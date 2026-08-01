@@ -9,8 +9,8 @@
  *   aka    former / alternative name, when the product has been renamed
  *   desc   one-line description suitable for a diagram caption or tooltip
  *   src    basename (no extension) of the official SVG in sources/
- *   kind   'icon'  -> Databricks Lava product icon (recolourable)
- *          'logo'  -> full-colour project logo, used as published
+ *   kind   'icon'  -> Databricks Lava product icon (recolorable)
+ *          'logo'  -> full-color project logo, used as published
  *   docs   canonical Databricks URL for the product
  */
 
@@ -25,11 +25,11 @@ export const PROJECT = {
 };
 
 /**
- * Category colours are exact values from the published Databricks palette
+ * Category colors are exact values from the published Databricks palette
  * (https://brandguides.brandfolder.com/databricks-extended-brand-guidelines).
  * The extended palette exists, in Databricks' own words, "to enhance the
  * comprehension of a message or to provide additional clarity through visual
- * hierarchy" — which is exactly what colour-coding a diagram layer does.
+ * hierarchy" — which is exactly what color-coding a diagram layer does.
  *
  * `contrast` is the ratio against the white glyph that sits on the tile.
  * WCAG 2.2 SC 1.4.11 requires 3:1 for non-text content; build.mjs enforces it.
@@ -45,9 +45,9 @@ export const CATEGORIES = {
   devtools: { label: 'Developer Tools & Apps', color: '#618794', note: 'Navy 500' },
 };
 
-/** Primary palette plus the extended greys, verbatim from the brand guidelines. */
+/** Primary palette plus the extended grays, verbatim from the brand guidelines. */
 export const BRAND = {
-  lava: '#FF3621', // Lava 600 — primary accent, "bright and vibrant pops of colour"
+  lava: '#FF3621', // Lava 600 — primary accent, "bright and vibrant pops of color"
   navy800: '#1B3139', // Navy 800 — primary, large background
   navy900: '#0B2026', // extended — dark-mode background
   navy700: '#143D4A',
@@ -67,7 +67,7 @@ export const PRODUCTS = [
     name: 'Databricks',
     // kind: 'logo' is load-bearing, not cosmetic. The brand guidelines list
     // "Don't recolor the logo" under What to avoid, so the build must never
-    // run this mark through the mono or tile recolouring.
+    // run this mark through the mono or tile recoloring.
     desc: 'The Databricks logo mark. Use it to label the platform boundary in an architecture diagram.',
     category: 'platform',
     src: 'Databricks-Logo-Icon',
@@ -726,7 +726,7 @@ export const PRODUCTS = [
   },
 ];
 
-/** Extra full-colour brand lockups shipped alongside the icon set. */
+/** Extra full-color brand lockups shipped alongside the icon set. */
 export const LOGOS = [
   { slug: 'databricks', name: 'Databricks', src: 'Databricks-Logo-Icon' },
   { slug: 'apache-spark', name: 'Apache Spark', src: 'logo-apache-spark' },

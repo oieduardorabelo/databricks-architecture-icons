@@ -4,8 +4,9 @@
  *
  *   node tools/build.mjs
  *
- * Outputs: svg/ svg-mono/ svg-tile/ png/ png-tile/ logos/ iconify/
- *          catalog.json catalog.csv CATALOG.md index.html
+ * Outputs: icons/ (the artwork, the catalog), mermaid/ (the Iconify packs and
+ *          the demo page), drawio/ (the shape libraries and the templates),
+ *          zips/ and index.html
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,7 +16,7 @@ import { createZip } from './zip.mjs';
 import { drawioFiles, validateDrawio, escapeXmlText, ICON_BASE } from './drawio-templates.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SOURCES = path.join(ROOT, 'sources');
+const SOURCES = path.join(ROOT, 'icons', 'sources');
 const CANVAS = 48;
 const PAD = 2;
 const PNG_SIZE = 256;
@@ -38,8 +39,8 @@ const hasPng = () =>
   sharp ||
   PRODUCTS.every(
     (p) =>
-      fs.existsSync(path.join(ROOT, 'png', `${p.slug}.png`)) &&
-      fs.existsSync(path.join(ROOT, 'png-tile', `${p.slug}.png`)),
+      fs.existsSync(path.join(ROOT, 'icons', 'png', `${p.slug}.png`)) &&
+      fs.existsSync(path.join(ROOT, 'icons', 'png-tile', `${p.slug}.png`)),
   );
 const PNG_AVAILABLE = hasPng();
 const fresh = (dir) => {
@@ -97,13 +98,13 @@ function namespaceIds(body, prefix) {
 }
 
 // Databricks product icons are duotone: a Lava foreground (#FF5F46 / #FF3621)
-// over a light Lava tint (#FABFBA), occasionally on a white plate. Recolouring
+// over a light Lava tint (#FABFBA), occasionally on a white plate. Recoloring
 // has to keep those three roles apart or the tint and the plate merge into the
 // foreground and the mark turns into a blob.
 const WHITEISH = /^(#fff(?:fff)?|#fefefe|white)$/i;
 
-function luminance(colour) {
-  const m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(colour.trim());
+function luminance(color) {
+  const m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(color.trim());
   if (!m) return null;
   let h = m[1];
   if (h.length === 3) h = h.split('').map((c) => c + c).join('');
@@ -113,7 +114,7 @@ function luminance(colour) {
 
 /**
  * Run a rewrite over drawable markup only. Shapes inside <clipPath>, <mask>
- * and friends are geometry or alpha channels, not artwork - recolouring or
+ * and friends are geometry or alpha channels, not artwork - recoloring or
  * removing them silently clips the whole icon away.
  */
 const PROTECTED = /<(defs|clipPath|mask|pattern|filter|linearGradient|radialGradient|symbol)\b[\s\S]*?<\/\1\s*>/gi;
@@ -128,9 +129,9 @@ function outsideDefs(body, fn) {
 }
 
 /** 'skip' | 'plate' (white background) | 'tint' (light secondary) | 'fg' */
-function role(colour) {
-  if (!colour) return 'skip';
-  const c = colour.trim();
+function role(color) {
+  if (!color) return 'skip';
+  const c = color.trim();
   if (!c || c === 'none' || c === 'currentColor' || c.startsWith('url(')) return 'skip';
   if (WHITEISH.test(c)) return 'plate';
   const l = luminance(c);
@@ -138,16 +139,16 @@ function role(colour) {
 }
 
 /**
- * Recolour a body for a target surface.
+ * Recolor a body for a target surface.
  *   mode 'mono' -> foreground becomes currentColor, tint becomes a faded
  *                  currentColor, white plates drop out entirely.
  *   mode 'tile' -> foreground becomes white, tint becomes faded white, white
- *                  plates become the tile colour so knock-outs still read.
+ *                  plates become the tile color so knock-outs still read.
  */
-function recolour(body, mode, tileColour) {
+function recolor(body, mode, tileColor) {
   const map = {
     mono: { plate: 'none', tint: 'currentColor', fg: 'currentColor' },
-    tile: { plate: tileColour, tint: '#FFFFFF', fg: '#FFFFFF' },
+    tile: { plate: tileColor, tint: '#FFFFFF', fg: '#FFFFFF' },
   }[mode];
 
   return outsideDefs(body, (chunk) => chunk.replace(/<([a-zA-Z][\w:.-]*)((?:"[^"]*"|'[^']*'|[^>"'])*?)(\/?)>/g, (tag, el, attrs, close) => {
@@ -248,14 +249,15 @@ ${inner}
 
 // -------------------------------------------------------------------- build
 
-fresh('svg');
-fresh('svg-mono');
-fresh('svg-tile');
-fresh('logos');
-fresh('iconify');
+fresh('icons/svg');
+fresh('icons/svg-mono');
+fresh('icons/svg-tile');
+fresh('icons/logos');
+// Not fresh(): mermaid/index.html is hand-written and lives beside the packs.
+fs.mkdirSync(out('mermaid'), { recursive: true });
 if (sharp) {
-  fresh('png');
-  fresh('png-tile');
+  fresh('icons/png');
+  fresh('icons/png-tile');
 }
 
 // sources/MANIFEST.md records the URL each file came from. Parsing it here
@@ -299,28 +301,28 @@ for (const p of PRODUCTS) {
   const body = stripPlate(namespaceIds(rawBody, p.slug), vb);
   const transform = fitTransform(vb);
 
-  // 1. colour variant - the artwork Databricks publishes, fitted to the canvas
-  const colourSvg = wrap(`<g transform="${transform}">${body}</g>`, { title: p.name });
-  fs.writeFileSync(out('svg', `${p.slug}.svg`), colourSvg);
+  // 1. color variant - the artwork Databricks publishes, fitted to the canvas
+  const colorSvg = wrap(`<g transform="${transform}">${body}</g>`, { title: p.name });
+  fs.writeFileSync(out('icons/svg', `${p.slug}.svg`), colorSvg);
 
   // 2. mono variant - inherits currentColor, for theming in CSS / Mermaid / Lucid
-  const monoBody = isLogo ? body : recolour(body, 'mono');
+  const monoBody = isLogo ? body : recolor(body, 'mono');
   const monoSvg = wrap(`<g transform="${transform}">${monoBody}</g>`, { title: p.name });
-  fs.writeFileSync(out('svg-mono', `${p.slug}.svg`), monoSvg);
+  fs.writeFileSync(out('icons/svg-mono', `${p.slug}.svg`), monoSvg);
 
-  // 3. tile variant - white glyph on a category-coloured rounded square
+  // 3. tile variant - white glyph on a category-colored rounded square
   const tileBg = isLogo ? BRAND.white : cat.color;
   const glyph = isLogo
     ? `<g transform="${transform}">${body}</g>`
-    : `<g transform="${transform}">${recolour(body, 'tile', tileBg)}</g>`;
+    : `<g transform="${transform}">${recolor(body, 'tile', tileBg)}</g>`;
   const tileSvg = wrap(
     `<rect width="${CANVAS}" height="${CANVAS}" rx="10" fill="${tileBg}"/>
 <g transform="translate(${CANVAS / 2} ${CANVAS / 2}) scale(0.82) translate(${-CANVAS / 2} ${-CANVAS / 2})">${glyph}</g>`,
     { title: `${p.name} (tile)` },
   );
-  fs.writeFileSync(out('svg-tile', `${p.slug}.svg`), tileSvg);
+  fs.writeFileSync(out('icons/svg-tile', `${p.slug}.svg`), tileSvg);
 
-  // 4. Iconify / Mermaid pack entry (mono, so Mermaid can colour it)
+  // 4. Iconify / Mermaid pack entry (mono, so Mermaid can color it)
   // Two packs from the same geometry. The mono pack inherits currentColor, so
   // Mermaid paints it with the text color of the diagram. The color pack keeps
   // the Databricks artwork, so the icons stay Lava in any theme.
@@ -333,24 +335,26 @@ for (const p of PRODUCTS) {
 
   if (sharp) {
     pngJobs.push(
-      sharp(Buffer.from(colourSvg), { density: 384 })
+      sharp(Buffer.from(colorSvg), { density: 384 })
         .resize(PNG_SIZE, PNG_SIZE, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
         .png()
-        .toFile(out('png', `${p.slug}.png`)),
+        .toFile(out('icons/png', `${p.slug}.png`)),
       sharp(Buffer.from(tileSvg), { density: 384 })
         .resize(PNG_SIZE, PNG_SIZE)
         .png()
-        .toFile(out('png-tile', `${p.slug}.png`)),
+        .toFile(out('icons/png-tile', `${p.slug}.png`)),
     );
   }
 
   if (!SOURCE_URLS[`${p.src}.svg`]) problems.push(`${p.slug}: ${p.src}.svg is not in sources/MANIFEST.md`);
 
   const files = {
-    svg: `svg/${p.slug}.svg`,
-    svgMono: `svg-mono/${p.slug}.svg`,
-    svgTile: `svg-tile/${p.slug}.svg`,
-    ...(PNG_AVAILABLE ? { png: `png/${p.slug}.png`, pngTile: `png-tile/${p.slug}.png` } : {}),
+    svg: `icons/svg/${p.slug}.svg`,
+    svgMono: `icons/svg-mono/${p.slug}.svg`,
+    svgTile: `icons/svg-tile/${p.slug}.svg`,
+    ...(PNG_AVAILABLE
+      ? { png: `icons/png/${p.slug}.png`, pngTile: `icons/png-tile/${p.slug}.png` }
+      : {}),
   };
 
   catalog.push({
@@ -363,9 +367,9 @@ for (const p of PRODUCTS) {
     categoryColor: cat.color,
     docs: p.docs,
     kind: p.kind,
-    source: `sources/${p.src}.svg`,
+    source: `icons/sources/${p.src}.svg`,
     sourceUrl: SOURCE_URLS[`${p.src}.svg`] ?? null,
-    sourceRawUrl: `${PROJECT.url}sources/${p.src}.svg`,
+    sourceRawUrl: `${PROJECT.url}icons/sources/${p.src}.svg`,
     // Relative paths work in a clone; the absolute ones are ready to paste
     // into a document, a board or an <img> tag.
     files,
@@ -373,14 +377,14 @@ for (const p of PRODUCTS) {
   });
 }
 
-// full-colour brand lockups, copied through untouched
+// full-color brand lockups, copied through untouched
 for (const l of LOGOS) {
   const srcPath = path.join(SOURCES, `${l.src}.svg`);
   if (!fs.existsSync(srcPath)) {
     problems.push(`logo ${l.slug}: missing source ${l.src}.svg`);
     continue;
   }
-  fs.copyFileSync(srcPath, out('logos', `${l.slug}.svg`));
+  fs.copyFileSync(srcPath, out('icons/logos', `${l.slug}.svg`));
 }
 
 // ------------------------------------------------------------------ catalog
@@ -392,7 +396,7 @@ const byCategory = Object.entries(CATEGORIES).map(([key, c]) => ({
 }));
 
 fs.writeFileSync(
-  out('catalog.json'),
+  out('icons', 'catalog.json'),
   JSON.stringify(
     {
       name: PROJECT.name,
@@ -416,7 +420,7 @@ fs.writeFileSync(
 
 const csvCell = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
 fs.writeFileSync(
-  out('catalog.csv'),
+  out('icons', 'catalog.csv'),
   [
     ['slug','name','aka','description','category','category_color','svg','png','svg_url','png_url','docs','source_url'].join(','),
     ...catalog.map((p) =>
@@ -447,7 +451,7 @@ for (const c of byCategory) {
   }
   md.push('');
 }
-fs.writeFileSync(out('CATALOG.md'), md.join('\n'));
+fs.writeFileSync(out('icons', 'CATALOG.md'), md.join('\n'));
 
 // ------------------------------------------------------- iconify pack (mermaid)
 
@@ -467,8 +471,8 @@ const makePack = (prefix, name, icons) => ({
 const iconPack = makePack('databricks', 'Databricks Products (mono)', iconifyIcons);
 const colorPack = makePack('databricks-color', 'Databricks Products (color)', iconifyColorIcons);
 
-fs.writeFileSync(out('iconify', 'databricks.json'), JSON.stringify(iconPack, null, 2) + '\n');
-fs.writeFileSync(out('iconify', 'databricks-color.json'), JSON.stringify(colorPack, null, 2) + '\n');
+fs.writeFileSync(out('mermaid', 'databricks.json'), JSON.stringify(iconPack, null, 2) + '\n');
+fs.writeFileSync(out('mermaid', 'databricks-color.json'), JSON.stringify(colorPack, null, 2) + '\n');
 
 // The same pack as a classic script that assigns a global. A browser blocks
 // fetch() of a file:// URL, so a page opened by a double-click cannot read the
@@ -476,7 +480,7 @@ fs.writeFileSync(out('iconify', 'databricks-color.json'), JSON.stringify(colorPa
 // has no such restriction. Load this file to make a page work from disk and
 // from a server.
 fs.writeFileSync(
-  out('iconify', 'databricks.js'),
+  out('mermaid', 'databricks.js'),
   `/* Databricks Architecture Icons - Iconify packs for Mermaid.
    Use this file when the page must also work from file://, where fetch() is
    blocked. It sets two globals and adds no dependency.
@@ -484,7 +488,7 @@ fs.writeFileSync(
      databricksColorIconPack  the Databricks artwork, Lava colors
      databricksIconPack       one color, inherits currentColor
 
-     <script src="iconify/databricks.js"></script>
+     <script src="databricks.js"></script>
      mermaid.registerIconPacks([
        { name: 'databricks-color', icons: window.databricksColorIconPack },
        { name: 'databricks', icons: window.databricksIconPack },
@@ -504,7 +508,9 @@ window.databricksIconPack = ${JSON.stringify(iconPack)};
 // is one <mxlibrary> element holding a JSON array, and each entry carries an
 // mxGraphModel that draws the icon from its published URL. Written uncompressed:
 // draw.io reads plain XML, and a plain file gives a readable diff.
-fresh('drawio');
+// Not fresh(): drawio/HANDOVER.md is hand-written and lives beside the generated
+// libraries. Every generated file below is overwritten anyway.
+fs.mkdirSync(out('drawio'), { recursive: true });
 {
   const shapes = catalog.map((p) => {
     const style = [
@@ -532,8 +538,8 @@ fresh('drawio');
 
 // The brand system: three templates, a style library and a style palette. The
 // styles are measured from the Databricks solution architecture diagrams.
-if (ICON_BASE !== `${PROJECT.url}svg`) {
-  throw new Error(`drawio-templates.mjs points at ${ICON_BASE}, but PROJECT.url gives ${PROJECT.url}svg`);
+if (ICON_BASE !== `${PROJECT.url}icons/svg`) {
+  throw new Error(`drawio-templates.mjs points at ${ICON_BASE}, but PROJECT.url gives ${PROJECT.url}icons/svg`);
 }
 {
   let bad = 0;
@@ -586,14 +592,15 @@ fresh('zips');
 
 const ZIP_PREFIX = 'databricks-architecture-icons';
 const VARIANT_HINTS = {
-  svg: 'Official colour artwork',
-  'svg-mono': 'currentColor, themeable',
-  'svg-tile': 'White glyph on a category tile',
-  png: `${PNG_SIZE}px transparent`,
-  'png-tile': `${PNG_SIZE}px tiles`,
-  logos: 'Full-colour brand lockups',
+  'icons/svg': 'Official color artwork',
+  'icons/svg-mono': 'currentColor, themeable',
+  'icons/svg-tile': 'White glyph on a category tile',
+  'icons/png': `${PNG_SIZE}px transparent`,
+  'icons/png-tile': `${PNG_SIZE}px tiles`,
+  'icons/logos': 'Full-color brand lockups',
 };
-const VARIANT_DIRS = ['svg', 'svg-mono', 'svg-tile', ...(PNG_AVAILABLE ? ['png', 'png-tile'] : []), 'logos'];
+const VARIANT_DIRS = ['icons/svg', 'icons/svg-mono', 'icons/svg-tile',
+  ...(PNG_AVAILABLE ? ['icons/png', 'icons/png-tile'] : []), 'icons/logos'];
 
 const readDir = (dir) =>
   fs
@@ -613,14 +620,14 @@ function addZip(group, id, label, hint, entries) {
 const fmtBytes = (n) => (n < 1024 * 1024 ? `${Math.round(n / 1024)} KB` : `${(n / 1024 / 1024).toFixed(1)} MB`);
 
 for (const dir of VARIANT_DIRS) {
-  addZip('variant', dir, `${dir}/`, VARIANT_HINTS[dir], readDir(dir));
+  addZip('variant', dir.split('/').pop(), `${dir.split('/').pop()}/`, VARIANT_HINTS[dir], readDir(dir));
 }
 
 addZip('all', 'all', 'Everything', 'Every variant plus the catalog', [
   ...VARIANT_DIRS.flatMap(readDir),
-  ...readDir('iconify'),
+  ...readDir('mermaid').filter((e) => !e.name.endsWith('.html')),
   ...readDir('drawio'),
-  ...['catalog.json', 'catalog.csv', 'CATALOG.md', 'README.md']
+  ...['icons/catalog.json', 'icons/catalog.csv', 'icons/CATALOG.md', 'README.md']
     .filter((f) => fs.existsSync(out(f)))
     .map((f) => ({ name: f, data: fs.readFileSync(out(f)) })),
 ]);
@@ -724,7 +731,7 @@ fs.writeFileSync(
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   /* Palette and type follow the published Databricks brand guidelines:
-     primary colours Lava 600 / Navy 800 / Oat / White, extended greys for
+     primary colors Lava 600 / Navy 800 / Oat / White, extended grays for
      text and rules, DM Sans as the primary typeface and DM Mono for code.
      Sizes sit on an 8px scale (4 or 2 below 20px), body line-height 150%,
      headlines 120%, as the type guidance asks. */
@@ -893,7 +900,7 @@ fs.writeFileSync(
     </nav>
     <p class="uses-head">Available in</p>
     <div class="uses">
-      <a class="use" href="examples/mermaid-architecture.html">
+      <a class="use" href="mermaid/">
         <img src="integrations/mermaid.svg" alt="" width="32" height="32">
         <span><b>Mermaid</b>Two icon packs, and setup you can paste</span>
       </a>
@@ -943,8 +950,8 @@ ${cards}
     <h3>Where these icons come from, and the terms</h3>
     <p>Every icon in this library is an official Databricks SVG file. Nothing is redrawn, traced or
       approximated. The files come from Databricks URLs. These are the named product marks and the Lava
-      line-icon set on databricks.com. The <code>sources/</code> directory holds each original file next
-      to a <a href="sources/MANIFEST.md">manifest</a> that gives its source URL. Two marks are
+      line-icon set on databricks.com. The <code>icons/sources/</code> directory holds each original file
+      next to a <a href="icons/sources/MANIFEST.md">manifest</a> that gives its source URL. Two marks are
       different: Apache Spark and Apache Iceberg are project logos of the Apache Software Foundation.</p>
 
     <h4>What the build changes</h4>
@@ -1074,14 +1081,14 @@ ${chains.join('\n')}
     })
     .join('\n');
 
-  const page = out('examples', 'mermaid-architecture.html');
+  const page = out('mermaid', 'index.html');
   const html = fs.readFileSync(page, 'utf8');
   const START = '<!-- ALL-ICONS:START -->';
   const END = '<!-- ALL-ICONS:END -->';
   const a = html.indexOf(START);
   const b = html.indexOf(END);
   if (a < 0 || b < 0) {
-    problems.push('examples/mermaid-architecture.html: the ALL-ICONS markers are missing');
+    problems.push('mermaid/index.html: the ALL-ICONS markers are missing');
   } else {
     fs.writeFileSync(page, html.slice(0, a + START.length) + '\n' + panels + '\n' + html.slice(b));
   }
@@ -1145,9 +1152,10 @@ if (sharp) {
 if (sharp) await Promise.all(pngJobs);
 
 console.log(`${PROJECT.name}: built ${catalog.length} products`);
-console.log(`  svg/ svg-mono/ svg-tile/${PNG_AVAILABLE ? ' png/ png-tile/' : ''} logos/ iconify/`);
+console.log(`  icons/ (svg svg-mono svg-tile${PNG_AVAILABLE ? ' png png-tile' : ''} logos sources catalog)`);
+console.log(`  mermaid/ (two Iconify packs, a classic script and the demo page)`);
 if (!sharp && PNG_AVAILABLE) console.log('  (PNG files kept from the last build - sharp is only needed to rebuild them)');
-console.log(`  catalog.json catalog.csv CATALOG.md index.html${sharp ? ' preview.png' : ''} .nojekyll`);
+console.log(`  index.html${sharp ? ' preview.png' : ''} .nojekyll`);
 console.log(`  drawio/databricks-architecture-icons.xml (${catalog.length} shapes)`);
 console.log(`  drawio/ 3 templates, 2 more shape libraries, a style palette and a guide`);
 console.log('  category contrast (white glyph, WCAG 1.4.11 floor is 3:1):');

@@ -14,7 +14,7 @@ architecture diagrams.
 | `databricks-architecture-icons.xml` | a shape library of all 71 product icons |
 | `databricks-brand-styles.xml` | a shape library of the 32 brand styles |
 | `databricks-templates.xml` | a shape library holding the three templates. Drag one onto a blank page |
-| `style-palette.drawio` | one labelled example of every style, for Copy Style and Paste Style |
+| `style-palette.drawio` | one labeled example of every style, for Copy Style and Paste Style |
 
 ## Open a template
 
@@ -38,7 +38,7 @@ your shape, press Ctrl+E and replace the text.
 
 1. **Every label in square brackets.** They are placeholders. Replace all of them.
 2. **The title block**, and the footer strip in the complex template.
-3. **Delete a zone you do not use.** Do not recolour one.
+3. **Delete a zone you do not use.** Do not recolor one.
 4. **The icons.** Each capability node names an icon in its `image=` key. Change the slug.
    `catalog.json` lists all 71 slugs.
 
@@ -47,7 +47,7 @@ your shape, press Ctrl+E and replace the text.
 **Lava `#FF5F46` marks Databricks. Oat `#D9D7CE` marks
 everything that is not Databricks.** Every other rule supports that one.
 
-## Colour tokens
+## Color tokens
 
 | Token | Hex |
 |---|---|
@@ -84,7 +84,7 @@ everything that is not Databricks.** Every other rule supports that one.
 | `bar-oat` | `rounded=0;html=1;whiteSpace=wrap;fillColor=#D9D7CE;strokeColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `node-platform` | `rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#FF5F46;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `node-external` | `rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
-| `node-capability` | `shape=image;html=1;whiteSpace=wrap;imageAspect=1;verticalLabelPosition=bottom;verticalAlign=top;labelPosition=center;align=center;fontSize=11;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;image=https://oieduardorabelo.github.io/databricks-architecture-icons/svg/lakeflow.svg;` |
+| `node-capability` | `shape=image;html=1;whiteSpace=wrap;imageAspect=1;verticalLabelPosition=bottom;verticalAlign=top;labelPosition=center;align=center;fontSize=11;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;image=https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow.svg;` |
 | `node-decision` | `rhombus;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#143D4A;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `node-store` | `shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=14;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#143D4A;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `node-manual` | `shape=hexagon;perimeter=hexagonPerimeter2;html=1;whiteSpace=wrap;fillColor=#EEEDE9;strokeColor=#143D4A;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
@@ -100,6 +100,6 @@ everything that is not Databricks.** Every other rule supports that one.
 | `edge-secondary` | `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;strokeColor=#A9B8BD;strokeWidth=2;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `edge-derived` | `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;dashed=1;dashPattern=6 4;fixDash=1;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `edge-two-way` | `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;startArrow=block;startFill=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;labelBackgroundColor=#FFFFFF;fontSize=10;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
-| `edge-labelled` | `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;labelBackgroundColor=#FFFFFF;fontSize=10;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
+| `edge-labeled` | `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;labelBackgroundColor=#FFFFFF;fontSize=10;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `edge-step` | `edgeStyle=none;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |
 | `edge-leader` | `edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#A9B8BD;strokeWidth=1;dashed=1;dashPattern=4 4;fixDash=1;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;` |

@@ -1,0 +1,2065 @@
+{
+  "name": "Databricks Architecture Icons",
+  "tagline": "Icons for architecture diagrams, built from official Databricks artwork.",
+  "official": false,
+  "url": "https://oieduardorabelo.github.io/databricks-architecture-icons/",
+  "repository": "https://github.com/oieduardorabelo/databricks-architecture-icons",
+  "generated": null,
+  "canvas": "48x48",
+  "pngSize": 256,
+  "artworkSource": "Official Databricks SVGs (databricks.com and @databricks/design-system)",
+  "categories": {
+    "platform": {
+      "label": "Platform & Compute",
+      "color": "#FF3621",
+      "note": "Lava 600 (primary)",
+      "contrast": 3.62
+    },
+    "engineering": {
+      "label": "Data Engineering",
+      "color": "#2272B4",
+      "note": "Blue 600",
+      "contrast": 5.08
+    },
+    "storage": {
+      "label": "Storage & Databases",
+      "color": "#00875C",
+      "note": "Green 700",
+      "contrast": 4.55
+    },
+    "analytics": {
+      "label": "Analytics & BI",
+      "color": "#1B5162",
+      "note": "Navy 600",
+      "contrast": 8.75
+    },
+    "ai": {
+      "label": "AI & Agents",
+      "color": "#98102A",
+      "note": "Maroon 600",
+      "contrast": 8.6
+    },
+    "governance": {
+      "label": "Governance & Security",
+      "color": "#1B3139",
+      "note": "Navy 800 (primary)",
+      "contrast": 13.59
+    },
+    "sharing": {
+      "label": "Sharing & Collaboration",
+      "color": "#BA7B23",
+      "note": "Yellow 700",
+      "contrast": 3.53
+    },
+    "devtools": {
+      "label": "Developer Tools & Apps",
+      "color": "#618794",
+      "note": "Navy 500",
+      "contrast": 3.89
+    }
+  },
+  "brand": {
+    "lava": "#FF3621",
+    "navy800": "#1B3139",
+    "navy900": "#0B2026",
+    "navy700": "#143D4A",
+    "navy600": "#1B5162",
+    "oatLight": "#F9F7F4",
+    "oatMedium": "#EEEDE9",
+    "white": "#FFFFFF",
+    "grayNav": "#303F47",
+    "grayText": "#5A6F77",
+    "grayLines": "#DCE0E2"
+  },
+  "count": 71,
+  "products": [
+    {
+      "slug": "databricks",
+      "name": "Databricks",
+      "aka": null,
+      "description": "The Databricks logo mark. Use it to label the platform boundary in an architecture diagram.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/",
+      "kind": "logo",
+      "source": "icons/sources/Databricks-Logo-Icon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-05/Databricks-Logo-Icon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/Databricks-Logo-Icon.svg",
+      "files": {
+        "svg": "icons/svg/databricks.svg",
+        "svgMono": "icons/svg-mono/databricks.svg",
+        "svgTile": "icons/svg-tile/databricks.svg",
+        "png": "icons/png/databricks.png",
+        "pngTile": "icons/png-tile/databricks.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks.png"
+      }
+    },
+    {
+      "slug": "data-intelligence-platform",
+      "name": "Data Intelligence Platform",
+      "aka": null,
+      "description": "The unified platform for data engineering, analytics, AI and governance on one lakehouse foundation.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/data-intelligence-platform",
+      "kind": "icon",
+      "source": "icons/sources/icon-data-intelligence-platform.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-01/icon-data-intelligence-platform.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-data-intelligence-platform.svg",
+      "files": {
+        "svg": "icons/svg/data-intelligence-platform.svg",
+        "svgMono": "icons/svg-mono/data-intelligence-platform.svg",
+        "svgTile": "icons/svg-tile/data-intelligence-platform.svg",
+        "png": "icons/png/data-intelligence-platform.png",
+        "pngTile": "icons/png-tile/data-intelligence-platform.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-intelligence-platform.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-intelligence-platform.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-intelligence-platform.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-intelligence-platform.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-intelligence-platform.png"
+      }
+    },
+    {
+      "slug": "lakehouse",
+      "name": "Lakehouse Architecture",
+      "aka": null,
+      "description": "Open architecture combining data lake economics with warehouse reliability and ACID management.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/data-lakehouse",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-delta-lakehouse.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-06/primary-icon-orange-delta-lakehouse.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-delta-lakehouse.svg",
+      "files": {
+        "svg": "icons/svg/lakehouse.svg",
+        "svgMono": "icons/svg-mono/lakehouse.svg",
+        "svgTile": "icons/svg-tile/lakehouse.svg",
+        "png": "icons/png/lakehouse.png",
+        "pngTile": "icons/png-tile/lakehouse.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse.png"
+      }
+    },
+    {
+      "slug": "apache-spark",
+      "name": "Apache Spark",
+      "aka": null,
+      "description": "Managed, autoscaling Apache Spark for large-scale batch, streaming and ML processing.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/spark",
+      "kind": "logo",
+      "source": "icons/sources/logo-apache-spark.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-01/logo-apache-spark.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/logo-apache-spark.svg",
+      "files": {
+        "svg": "icons/svg/apache-spark.svg",
+        "svgMono": "icons/svg-mono/apache-spark.svg",
+        "svgTile": "icons/svg-tile/apache-spark.svg",
+        "png": "icons/png/apache-spark.png",
+        "pngTile": "icons/png-tile/apache-spark.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/apache-spark.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/apache-spark.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/apache-spark.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/apache-spark.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/apache-spark.png"
+      }
+    },
+    {
+      "slug": "photon",
+      "name": "Photon",
+      "aka": null,
+      "description": "A native C++ vectorized query engine. It accelerates SQL and DataFrame work with no code changes.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/photon",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-photon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-03/icon-orange-photon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-photon.svg",
+      "files": {
+        "svg": "icons/svg/photon.svg",
+        "svgMono": "icons/svg-mono/photon.svg",
+        "svgTile": "icons/svg-tile/photon.svg",
+        "png": "icons/png/photon.png",
+        "pngTile": "icons/png-tile/photon.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/photon.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/photon.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/photon.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/photon.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/photon.png"
+      }
+    },
+    {
+      "slug": "compute-clusters",
+      "name": "Compute (Clusters)",
+      "aka": null,
+      "description": "All-purpose and job compute resources that run notebooks, pipelines and jobs.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://docs.databricks.com/aws/en/compute/",
+      "kind": "icon",
+      "source": "icons/sources/clusterIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-05/clusterIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/clusterIcon.svg",
+      "files": {
+        "svg": "icons/svg/compute-clusters.svg",
+        "svgMono": "icons/svg-mono/compute-clusters.svg",
+        "svgTile": "icons/svg-tile/compute-clusters.svg",
+        "png": "icons/png/compute-clusters.png",
+        "pngTile": "icons/png-tile/compute-clusters.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/compute-clusters.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/compute-clusters.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/compute-clusters.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/compute-clusters.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/compute-clusters.png"
+      }
+    },
+    {
+      "slug": "serverless-compute",
+      "name": "Serverless Compute",
+      "aka": null,
+      "description": "Fully managed, versionless compute that starts in seconds and autoscales without cluster administration.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/serverless-compute",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-scale.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-scale.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-scale.svg",
+      "files": {
+        "svg": "icons/svg/serverless-compute.svg",
+        "svgMono": "icons/svg-mono/serverless-compute.svg",
+        "svgTile": "icons/svg-tile/serverless-compute.svg",
+        "png": "icons/png/serverless-compute.png",
+        "pngTile": "icons/png-tile/serverless-compute.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/serverless-compute.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/serverless-compute.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/serverless-compute.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/serverless-compute.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/serverless-compute.png"
+      }
+    },
+    {
+      "slug": "databricks-runtime",
+      "name": "Databricks Runtime",
+      "aka": null,
+      "description": "An optimized runtime image with Spark, Delta and ML libraries. The ML variant adds GPU frameworks and AutoML.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/machine-learning-runtime",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-runtime.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-01/primary-icon-orange-runtime.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-runtime.svg",
+      "files": {
+        "svg": "icons/svg/databricks-runtime.svg",
+        "svgMono": "icons/svg-mono/databricks-runtime.svg",
+        "svgTile": "icons/svg-tile/databricks-runtime.svg",
+        "png": "icons/png/databricks-runtime.png",
+        "pngTile": "icons/png-tile/databricks-runtime.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-runtime.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-runtime.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-runtime.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-runtime.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-runtime.png"
+      }
+    },
+    {
+      "slug": "spark-real-time-mode",
+      "name": "Real-Time Mode for Apache Spark",
+      "aka": null,
+      "description": "Structured Streaming execution mode delivering millisecond latency for time-critical pipelines.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/data-engineering/spark-real-time-mode",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-speed.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-05/primary-icon-orange-speed.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-speed.svg",
+      "files": {
+        "svg": "icons/svg/spark-real-time-mode.svg",
+        "svgMono": "icons/svg-mono/spark-real-time-mode.svg",
+        "svgTile": "icons/svg-tile/spark-real-time-mode.svg",
+        "png": "icons/png/spark-real-time-mode.png",
+        "pngTile": "icons/png-tile/spark-real-time-mode.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/spark-real-time-mode.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/spark-real-time-mode.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/spark-real-time-mode.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/spark-real-time-mode.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/spark-real-time-mode.png"
+      }
+    },
+    {
+      "slug": "multicloud",
+      "name": "Multicloud Deployment",
+      "aka": null,
+      "description": "The same platform and governance model deployed across AWS, Azure and Google Cloud.",
+      "category": "platform",
+      "categoryLabel": "Platform & Compute",
+      "categoryColor": "#FF3621",
+      "docs": "https://www.databricks.com/product/data-intelligence-platform",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-multicloud.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-05/primary-icon-orange-multicloud.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-multicloud.svg",
+      "files": {
+        "svg": "icons/svg/multicloud.svg",
+        "svgMono": "icons/svg-mono/multicloud.svg",
+        "svgTile": "icons/svg-tile/multicloud.svg",
+        "png": "icons/png/multicloud.png",
+        "pngTile": "icons/png-tile/multicloud.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/multicloud.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/multicloud.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/multicloud.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/multicloud.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/multicloud.png"
+      }
+    },
+    {
+      "slug": "lakeflow",
+      "name": "Lakeflow",
+      "aka": null,
+      "description": "The unified data engineering suite covering ingestion, declarative transformation and orchestration.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://www.databricks.com/product/data-engineering",
+      "kind": "icon",
+      "source": "icons/sources/icon-lakeflow.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-01/icon-lakeflow.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-lakeflow.svg",
+      "files": {
+        "svg": "icons/svg/lakeflow.svg",
+        "svgMono": "icons/svg-mono/lakeflow.svg",
+        "svgTile": "icons/svg-tile/lakeflow.svg",
+        "png": "icons/png/lakeflow.png",
+        "pngTile": "icons/png-tile/lakeflow.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow.png"
+      }
+    },
+    {
+      "slug": "lakeflow-connect",
+      "name": "Lakeflow Connect",
+      "aka": null,
+      "description": "Managed ingestion with 100+ connectors for SaaS applications, databases and cloud storage.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://www.databricks.com/product/data-engineering/lakeflow-connect",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-connectors.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-09/primary-icon-orange-connectors.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-connectors.svg",
+      "files": {
+        "svg": "icons/svg/lakeflow-connect.svg",
+        "svgMono": "icons/svg-mono/lakeflow-connect.svg",
+        "svgTile": "icons/svg-tile/lakeflow-connect.svg",
+        "png": "icons/png/lakeflow-connect.png",
+        "pngTile": "icons/png-tile/lakeflow-connect.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow-connect.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow-connect.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow-connect.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow-connect.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-connect.png"
+      }
+    },
+    {
+      "slug": "zerobus-ingest",
+      "name": "Zerobus Ingest",
+      "aka": null,
+      "description": "Broker-free streaming ingest over gRPC, REST and OpenTelemetry with roughly five-second freshness.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://www.databricks.com/product/data-engineering/lakeflow-connect/zerobus-ingest",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-input-ingest_.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-04/primary-icon-orange-input-ingest_.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-input-ingest_.svg",
+      "files": {
+        "svg": "icons/svg/zerobus-ingest.svg",
+        "svgMono": "icons/svg-mono/zerobus-ingest.svg",
+        "svgTile": "icons/svg-tile/zerobus-ingest.svg",
+        "png": "icons/png/zerobus-ingest.png",
+        "pngTile": "icons/png-tile/zerobus-ingest.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/zerobus-ingest.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/zerobus-ingest.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/zerobus-ingest.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/zerobus-ingest.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/zerobus-ingest.png"
+      }
+    },
+    {
+      "slug": "spark-declarative-pipelines",
+      "name": "Apache Spark Declarative Pipelines",
+      "aka": "Lakeflow Declarative Pipelines. Formerly Delta Live Tables (DLT)",
+      "description": "Declarative batch and streaming ETL with built-in data quality expectations, CDC and dependency management.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://www.databricks.com/product/data-engineering/spark-declarative-pipelines",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-lakeflow-pipelines.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-02/primary-icon-orange-lakeflow-pipelines.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-lakeflow-pipelines.svg",
+      "files": {
+        "svg": "icons/svg/spark-declarative-pipelines.svg",
+        "svgMono": "icons/svg-mono/spark-declarative-pipelines.svg",
+        "svgTile": "icons/svg-tile/spark-declarative-pipelines.svg",
+        "png": "icons/png/spark-declarative-pipelines.png",
+        "pngTile": "icons/png-tile/spark-declarative-pipelines.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/spark-declarative-pipelines.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/spark-declarative-pipelines.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/spark-declarative-pipelines.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/spark-declarative-pipelines.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/spark-declarative-pipelines.png"
+      }
+    },
+    {
+      "slug": "lakeflow-jobs",
+      "name": "Lakeflow Jobs",
+      "aka": "formerly Databricks Workflows",
+      "description": "Native orchestration for data, analytics and AI workflows, with control flow, retries and alerting.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://www.databricks.com/product/data-engineering/lakeflow-jobs",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-automation-orchestration.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-automation-orchestration.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-automation-orchestration.svg",
+      "files": {
+        "svg": "icons/svg/lakeflow-jobs.svg",
+        "svgMono": "icons/svg-mono/lakeflow-jobs.svg",
+        "svgTile": "icons/svg-tile/lakeflow-jobs.svg",
+        "png": "icons/png/lakeflow-jobs.png",
+        "pngTile": "icons/png-tile/lakeflow-jobs.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow-jobs.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow-jobs.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow-jobs.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow-jobs.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-jobs.png"
+      }
+    },
+    {
+      "slug": "lakeflow-designer",
+      "name": "Lakeflow Designer",
+      "aka": null,
+      "description": "No-code, drag-and-drop pipeline authoring that generates governed, production-ready pipeline code.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://www.databricks.com/product/data-engineering/lakeflow-designer",
+      "kind": "icon",
+      "source": "icons/sources/dagicon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-05/dagicon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/dagicon.svg",
+      "files": {
+        "svg": "icons/svg/lakeflow-designer.svg",
+        "svgMono": "icons/svg-mono/lakeflow-designer.svg",
+        "svgTile": "icons/svg-tile/lakeflow-designer.svg",
+        "png": "icons/png/lakeflow-designer.png",
+        "pngTile": "icons/png-tile/lakeflow-designer.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow-designer.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow-designer.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow-designer.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow-designer.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-designer.png"
+      }
+    },
+    {
+      "slug": "auto-loader",
+      "name": "Auto Loader",
+      "aka": null,
+      "description": "Incrementally and idempotently ingests new files from cloud object storage as they arrive.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-access-connector.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/primary-icon-orange-access-connector.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-access-connector.svg",
+      "files": {
+        "svg": "icons/svg/auto-loader.svg",
+        "svgMono": "icons/svg-mono/auto-loader.svg",
+        "svgTile": "icons/svg-tile/auto-loader.svg",
+        "png": "icons/png/auto-loader.png",
+        "pngTile": "icons/png-tile/auto-loader.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/auto-loader.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/auto-loader.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/auto-loader.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/auto-loader.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/auto-loader.png"
+      }
+    },
+    {
+      "slug": "structured-streaming",
+      "name": "Structured Streaming",
+      "aka": null,
+      "description": "The Apache Spark API for exactly-once stream processing in continuous, incremental pipelines.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://docs.databricks.com/aws/en/structured-streaming/",
+      "kind": "icon",
+      "source": "icons/sources/streamIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/streamIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/streamIcon.svg",
+      "files": {
+        "svg": "icons/svg/structured-streaming.svg",
+        "svgMono": "icons/svg-mono/structured-streaming.svg",
+        "svgTile": "icons/svg-tile/structured-streaming.svg",
+        "png": "icons/png/structured-streaming.png",
+        "pngTile": "icons/png-tile/structured-streaming.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/structured-streaming.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/structured-streaming.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/structured-streaming.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/structured-streaming.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/structured-streaming.png"
+      }
+    },
+    {
+      "slug": "lakebridge",
+      "name": "Lakebridge",
+      "aka": null,
+      "description": "Migration tooling that profiles legacy warehouses, converts code to ANSI SQL and validates the results.",
+      "category": "engineering",
+      "categoryLabel": "Data Engineering",
+      "categoryColor": "#2272B4",
+      "docs": "https://www.databricks.com/solutions/migration",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-reserved-keywords-parser.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-03/icon-orange-reserved-keywords-parser.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-reserved-keywords-parser.svg",
+      "files": {
+        "svg": "icons/svg/lakebridge.svg",
+        "svgMono": "icons/svg-mono/lakebridge.svg",
+        "svgTile": "icons/svg-tile/lakebridge.svg",
+        "png": "icons/png/lakebridge.png",
+        "pngTile": "icons/png-tile/lakebridge.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakebridge.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakebridge.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakebridge.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakebridge.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakebridge.png"
+      }
+    },
+    {
+      "slug": "delta-lake",
+      "name": "Delta Lake",
+      "aka": null,
+      "description": "Open table format adding ACID transactions, time travel and change data feed to object storage.",
+      "category": "storage",
+      "categoryLabel": "Storage & Databases",
+      "categoryColor": "#00875C",
+      "docs": "https://www.databricks.com/product/delta-lake-on-databricks",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange_delta-lake.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-03/icon-orange_delta-lake.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange_delta-lake.svg",
+      "files": {
+        "svg": "icons/svg/delta-lake.svg",
+        "svgMono": "icons/svg-mono/delta-lake.svg",
+        "svgTile": "icons/svg-tile/delta-lake.svg",
+        "png": "icons/png/delta-lake.png",
+        "pngTile": "icons/png-tile/delta-lake.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/delta-lake.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/delta-lake.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/delta-lake.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/delta-lake.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/delta-lake.png"
+      }
+    },
+    {
+      "slug": "apache-iceberg",
+      "name": "Apache Iceberg",
+      "aka": null,
+      "description": "First-class managed and foreign Iceberg tables, readable and writable through Unity and Iceberg REST catalogs.",
+      "category": "storage",
+      "categoryLabel": "Storage & Databases",
+      "categoryColor": "#00875C",
+      "docs": "https://www.databricks.com/product/lakehouse-storage",
+      "kind": "logo",
+      "source": "icons/sources/logo-color-apache-iceberg.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-12/logo-color-apache-iceberg.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/logo-color-apache-iceberg.svg",
+      "files": {
+        "svg": "icons/svg/apache-iceberg.svg",
+        "svgMono": "icons/svg-mono/apache-iceberg.svg",
+        "svgTile": "icons/svg-tile/apache-iceberg.svg",
+        "png": "icons/png/apache-iceberg.png",
+        "pngTile": "icons/png-tile/apache-iceberg.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/apache-iceberg.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/apache-iceberg.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/apache-iceberg.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/apache-iceberg.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/apache-iceberg.png"
+      }
+    },
+    {
+      "slug": "lakehouse-storage",
+      "name": "Lakehouse Storage (Managed Tables)",
+      "aka": null,
+      "description": "Self-optimizing managed Delta and Iceberg tables with automatic layout, compaction and caching.",
+      "category": "storage",
+      "categoryLabel": "Storage & Databases",
+      "categoryColor": "#00875C",
+      "docs": "https://www.databricks.com/product/lakehouse-storage",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-Delta-Table.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-Delta-Table.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-Delta-Table.svg",
+      "files": {
+        "svg": "icons/svg/lakehouse-storage.svg",
+        "svgMono": "icons/svg-mono/lakehouse-storage.svg",
+        "svgTile": "icons/svg-tile/lakehouse-storage.svg",
+        "png": "icons/png/lakehouse-storage.png",
+        "pngTile": "icons/png-tile/lakehouse-storage.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse-storage.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse-storage.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse-storage.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse-storage.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-storage.png"
+      }
+    },
+    {
+      "slug": "liquid-clustering",
+      "name": "Liquid Clustering",
+      "aka": null,
+      "description": "Partition-free, self-tuning data layout that adapts clustering keys to real query patterns.",
+      "category": "storage",
+      "categoryLabel": "Storage & Databases",
+      "categoryColor": "#00875C",
+      "docs": "https://docs.databricks.com/aws/en/delta/clustering",
+      "kind": "icon",
+      "source": "icons/sources/layerIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-05/layerIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/layerIcon.svg",
+      "files": {
+        "svg": "icons/svg/liquid-clustering.svg",
+        "svgMono": "icons/svg-mono/liquid-clustering.svg",
+        "svgTile": "icons/svg-tile/liquid-clustering.svg",
+        "png": "icons/png/liquid-clustering.png",
+        "pngTile": "icons/png-tile/liquid-clustering.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/liquid-clustering.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/liquid-clustering.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/liquid-clustering.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/liquid-clustering.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/liquid-clustering.png"
+      }
+    },
+    {
+      "slug": "predictive-optimization",
+      "name": "Predictive Optimization",
+      "aka": null,
+      "description": "AI-driven background maintenance that runs OPTIMIZE, VACUUM and statistics where they pay off most.",
+      "category": "storage",
+      "categoryLabel": "Storage & Databases",
+      "categoryColor": "#00875C",
+      "docs": "https://docs.databricks.com/aws/en/optimizations/predictive-optimization",
+      "kind": "icon",
+      "source": "icons/sources/gearOutlinedIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-08/gearOutlinedIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/gearOutlinedIcon.svg",
+      "files": {
+        "svg": "icons/svg/predictive-optimization.svg",
+        "svgMono": "icons/svg-mono/predictive-optimization.svg",
+        "svgTile": "icons/svg-tile/predictive-optimization.svg",
+        "png": "icons/png/predictive-optimization.png",
+        "pngTile": "icons/png-tile/predictive-optimization.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/predictive-optimization.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/predictive-optimization.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/predictive-optimization.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/predictive-optimization.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/predictive-optimization.png"
+      }
+    },
+    {
+      "slug": "lakebase",
+      "name": "Lakebase",
+      "aka": null,
+      "description": "Serverless Postgres OLTP database with branching, scale-to-zero and native lakehouse sync for apps and agents.",
+      "category": "storage",
+      "categoryLabel": "Storage & Databases",
+      "categoryColor": "#00875C",
+      "docs": "https://www.databricks.com/product/lakebase",
+      "kind": "icon",
+      "source": "icons/sources/icon-lakebase.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-01/icon-lakebase.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-lakebase.svg",
+      "files": {
+        "svg": "icons/svg/lakebase.svg",
+        "svgMono": "icons/svg-mono/lakebase.svg",
+        "svgTile": "icons/svg-tile/lakebase.svg",
+        "png": "icons/png/lakebase.png",
+        "pngTile": "icons/png-tile/lakebase.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakebase.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakebase.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakebase.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakebase.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakebase.png"
+      }
+    },
+    {
+      "slug": "data-warehousing",
+      "name": "Databricks Lakehouse (Data Warehousing)",
+      "aka": null,
+      "description": "Serverless data warehouse built on open table formats and governed by Unity Catalog.",
+      "category": "analytics",
+      "categoryLabel": "Analytics & BI",
+      "categoryColor": "#1B5162",
+      "docs": "https://www.databricks.com/product/databricks-lakehouse",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-data-warehouse.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-03/primary-icon-orange-data-warehouse.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-data-warehouse.svg",
+      "files": {
+        "svg": "icons/svg/data-warehousing.svg",
+        "svgMono": "icons/svg-mono/data-warehousing.svg",
+        "svgTile": "icons/svg-tile/data-warehousing.svg",
+        "png": "icons/png/data-warehousing.png",
+        "pngTile": "icons/png-tile/data-warehousing.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-warehousing.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-warehousing.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-warehousing.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-warehousing.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-warehousing.png"
+      }
+    },
+    {
+      "slug": "databricks-sql",
+      "name": "Databricks SQL",
+      "aka": null,
+      "description": "The SQL surface of the lakehouse: warehouses, editor, queries, alerts and BI connectivity.",
+      "category": "analytics",
+      "categoryLabel": "Analytics & BI",
+      "categoryColor": "#1B5162",
+      "docs": "https://www.databricks.com/product/databricks-sql",
+      "kind": "icon",
+      "source": "icons/sources/icon-databricks-sql.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-01/icon-databricks-sql.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-databricks-sql.svg",
+      "files": {
+        "svg": "icons/svg/databricks-sql.svg",
+        "svgMono": "icons/svg-mono/databricks-sql.svg",
+        "svgTile": "icons/svg-tile/databricks-sql.svg",
+        "png": "icons/png/databricks-sql.png",
+        "pngTile": "icons/png-tile/databricks-sql.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-sql.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-sql.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-sql.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-sql.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-sql.png"
+      }
+    },
+    {
+      "slug": "sql-warehouse",
+      "name": "SQL Warehouse",
+      "aka": null,
+      "description": "Serverless, Photon-powered SQL compute endpoint for BI tools, dashboards and ad hoc queries.",
+      "category": "analytics",
+      "categoryLabel": "Analytics & BI",
+      "categoryColor": "#1B5162",
+      "docs": "https://docs.databricks.com/aws/en/compute/sql-warehouse/",
+      "kind": "icon",
+      "source": "icons/sources/TableLightningIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/TableLightningIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/TableLightningIcon.svg",
+      "files": {
+        "svg": "icons/svg/sql-warehouse.svg",
+        "svgMono": "icons/svg-mono/sql-warehouse.svg",
+        "svgTile": "icons/svg-tile/sql-warehouse.svg",
+        "png": "icons/png/sql-warehouse.png",
+        "pngTile": "icons/png-tile/sql-warehouse.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/sql-warehouse.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/sql-warehouse.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/sql-warehouse.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/sql-warehouse.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/sql-warehouse.png"
+      }
+    },
+    {
+      "slug": "lakehouse-rt",
+      "name": "Lakehouse//RT",
+      "aka": null,
+      "description": "Real-time warehouse tier serving millisecond queries at high concurrency directly on lake tables.",
+      "category": "analytics",
+      "categoryLabel": "Analytics & BI",
+      "categoryColor": "#1B5162",
+      "docs": "https://www.databricks.com/product/lakehouse/real-time-lakehouse",
+      "kind": "icon",
+      "source": "icons/sources/icon-lakehouse-rt.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/icon-lakehouse-rt.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-lakehouse-rt.svg",
+      "files": {
+        "svg": "icons/svg/lakehouse-rt.svg",
+        "svgMono": "icons/svg-mono/lakehouse-rt.svg",
+        "svgTile": "icons/svg-tile/lakehouse-rt.svg",
+        "png": "icons/png/lakehouse-rt.png",
+        "pngTile": "icons/png-tile/lakehouse-rt.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse-rt.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse-rt.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse-rt.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse-rt.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-rt.png"
+      }
+    },
+    {
+      "slug": "ai-bi",
+      "name": "Databricks AI/BI",
+      "aka": null,
+      "description": "The built-in business intelligence experience spanning dashboards, Genie spaces and semantics.",
+      "category": "analytics",
+      "categoryLabel": "Analytics & BI",
+      "categoryColor": "#1B5162",
+      "docs": "https://www.databricks.com/product/business-intelligence",
+      "kind": "icon",
+      "source": "icons/sources/icon-ai-bi.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-01/icon-ai-bi.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-ai-bi.svg",
+      "files": {
+        "svg": "icons/svg/ai-bi.svg",
+        "svgMono": "icons/svg-mono/ai-bi.svg",
+        "svgTile": "icons/svg-tile/ai-bi.svg",
+        "png": "icons/png/ai-bi.png",
+        "pngTile": "icons/png-tile/ai-bi.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-bi.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-bi.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-bi.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-bi.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-bi.png"
+      }
+    },
+    {
+      "slug": "ai-bi-dashboards",
+      "name": "AI/BI Dashboards",
+      "aka": null,
+      "description": "Dashboards with natural-language chart authoring and forecasting. Publication needs no separate license.",
+      "category": "analytics",
+      "categoryLabel": "Analytics & BI",
+      "categoryColor": "#1B5162",
+      "docs": "https://www.databricks.com/product/business-intelligence/ai-bi-dashboards",
+      "kind": "icon",
+      "source": "icons/sources/dashboardIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-01/dashboardIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/dashboardIcon.svg",
+      "files": {
+        "svg": "icons/svg/ai-bi-dashboards.svg",
+        "svgMono": "icons/svg-mono/ai-bi-dashboards.svg",
+        "svgTile": "icons/svg-tile/ai-bi-dashboards.svg",
+        "png": "icons/png/ai-bi-dashboards.png",
+        "pngTile": "icons/png-tile/ai-bi-dashboards.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-bi-dashboards.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-bi-dashboards.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-bi-dashboards.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-bi-dashboards.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-bi-dashboards.png"
+      }
+    },
+    {
+      "slug": "lakehouse-federation",
+      "name": "Lakehouse Federation",
+      "aka": null,
+      "description": "Query and govern external systems such as Snowflake, BigQuery, Postgres and MySQL in place, without moving data.",
+      "category": "analytics",
+      "categoryLabel": "Analytics & BI",
+      "categoryColor": "#1B5162",
+      "docs": "https://docs.databricks.com/aws/en/query-federation/",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-Network-Data-Sources.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-03/icon-orange-Network-Data-Sources.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-Network-Data-Sources.svg",
+      "files": {
+        "svg": "icons/svg/lakehouse-federation.svg",
+        "svgMono": "icons/svg-mono/lakehouse-federation.svg",
+        "svgTile": "icons/svg-tile/lakehouse-federation.svg",
+        "png": "icons/png/lakehouse-federation.png",
+        "pngTile": "icons/png-tile/lakehouse-federation.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse-federation.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse-federation.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse-federation.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse-federation.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-federation.png"
+      }
+    },
+    {
+      "slug": "genie",
+      "name": "Databricks Genie",
+      "aka": null,
+      "description": "The agentic AI experience that answers questions and acts on governed enterprise data.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/business-intelligence",
+      "kind": "icon",
+      "source": "icons/sources/icon-genie.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-05/icon-genie.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-genie.svg",
+      "files": {
+        "svg": "icons/svg/genie.svg",
+        "svgMono": "icons/svg-mono/genie.svg",
+        "svgTile": "icons/svg-tile/genie.svg",
+        "png": "icons/png/genie.png",
+        "pngTile": "icons/png-tile/genie.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie.png"
+      }
+    },
+    {
+      "slug": "genie-one",
+      "name": "Genie One",
+      "aka": null,
+      "description": "AI coworker hub where business users ask questions, get grounded answers and trigger agentic actions.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/genie/one",
+      "kind": "icon",
+      "source": "icons/sources/icon-genie-one-16x16.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/icon-genie-one-16x16.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-genie-one-16x16.svg",
+      "files": {
+        "svg": "icons/svg/genie-one.svg",
+        "svgMono": "icons/svg-mono/genie-one.svg",
+        "svgTile": "icons/svg-tile/genie-one.svg",
+        "png": "icons/png/genie-one.png",
+        "pngTile": "icons/png-tile/genie-one.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-one.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-one.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-one.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-one.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-one.png"
+      }
+    },
+    {
+      "slug": "genie-agents",
+      "name": "Genie Agents",
+      "aka": "formerly AI/BI Genie spaces",
+      "description": "Governed natural-language analytics spaces that answer business questions over curated data.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/genie/agents",
+      "kind": "icon",
+      "source": "icons/sources/speechBubbleIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-02/speechBubbleIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/speechBubbleIcon.svg",
+      "files": {
+        "svg": "icons/svg/genie-agents.svg",
+        "svgMono": "icons/svg-mono/genie-agents.svg",
+        "svgTile": "icons/svg-tile/genie-agents.svg",
+        "png": "icons/png/genie-agents.png",
+        "pngTile": "icons/png-tile/genie-agents.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-agents.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-agents.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-agents.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-agents.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-agents.png"
+      }
+    },
+    {
+      "slug": "genie-code",
+      "name": "Genie Code",
+      "aka": null,
+      "description": "Agentic coding partner for data teams that builds pipelines, dashboards, notebooks and ML workflows.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/genie/code",
+      "kind": "icon",
+      "source": "icons/sources/GenieCodeIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-03/GenieCodeIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/GenieCodeIcon.svg",
+      "files": {
+        "svg": "icons/svg/genie-code.svg",
+        "svgMono": "icons/svg-mono/genie-code.svg",
+        "svgTile": "icons/svg-tile/genie-code.svg",
+        "png": "icons/png/genie-code.png",
+        "pngTile": "icons/png-tile/genie-code.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-code.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-code.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-code.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-code.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-code.png"
+      }
+    },
+    {
+      "slug": "genie-deep-research",
+      "name": "Genie Deep Research",
+      "aka": null,
+      "description": "Multi-step research agent that investigates a question across governed data and returns a cited report.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/genie/one",
+      "kind": "icon",
+      "source": "icons/sources/GenieDeepResearchIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-02/GenieDeepResearchIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/GenieDeepResearchIcon.svg",
+      "files": {
+        "svg": "icons/svg/genie-deep-research.svg",
+        "svgMono": "icons/svg-mono/genie-deep-research.svg",
+        "svgTile": "icons/svg-tile/genie-deep-research.svg",
+        "png": "icons/png/genie-deep-research.png",
+        "pngTile": "icons/png-tile/genie-deep-research.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-deep-research.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-deep-research.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-deep-research.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-deep-research.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-deep-research.png"
+      }
+    },
+    {
+      "slug": "agent-bricks",
+      "name": "Agent Bricks",
+      "aka": null,
+      "description": "Platform for building, evaluating and governing enterprise AI agents grounded in your own data.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/artificial-intelligence/agent-bricks",
+      "kind": "icon",
+      "source": "icons/sources/icon-mosaic-ai-bricks.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-01/icon-mosaic-ai-bricks.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-mosaic-ai-bricks.svg",
+      "files": {
+        "svg": "icons/svg/agent-bricks.svg",
+        "svgMono": "icons/svg-mono/agent-bricks.svg",
+        "svgTile": "icons/svg-tile/agent-bricks.svg",
+        "png": "icons/png/agent-bricks.png",
+        "pngTile": "icons/png-tile/agent-bricks.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/agent-bricks.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/agent-bricks.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/agent-bricks.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/agent-bricks.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/agent-bricks.png"
+      }
+    },
+    {
+      "slug": "ai-search",
+      "name": "Databricks AI Search",
+      "aka": "formerly Databricks Vector Search / Mosaic AI Vector Search",
+      "description": "Managed hybrid vector and BM25 search with auto-syncing indexes and built-in reranking.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/artificial-intelligence/ai-search",
+      "kind": "icon",
+      "source": "icons/sources/SearchDataIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-11/SearchDataIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/SearchDataIcon.svg",
+      "files": {
+        "svg": "icons/svg/ai-search.svg",
+        "svgMono": "icons/svg-mono/ai-search.svg",
+        "svgTile": "icons/svg-tile/ai-search.svg",
+        "png": "icons/png/ai-search.png",
+        "pngTile": "icons/png-tile/ai-search.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-search.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-search.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-search.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-search.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-search.png"
+      }
+    },
+    {
+      "slug": "unity-ai-gateway",
+      "name": "Unity AI Gateway",
+      "aka": null,
+      "description": "Single control plane for model, MCP and agent access with guardrails, rate limits, budgets and audit.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/artificial-intelligence/unity-ai-gateway",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-authentication-service.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-10/primary-icon-orange-authentication-service.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-authentication-service.svg",
+      "files": {
+        "svg": "icons/svg/unity-ai-gateway.svg",
+        "svgMono": "icons/svg-mono/unity-ai-gateway.svg",
+        "svgTile": "icons/svg-tile/unity-ai-gateway.svg",
+        "png": "icons/png/unity-ai-gateway.png",
+        "pngTile": "icons/png-tile/unity-ai-gateway.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/unity-ai-gateway.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/unity-ai-gateway.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/unity-ai-gateway.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/unity-ai-gateway.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-ai-gateway.png"
+      }
+    },
+    {
+      "slug": "document-intelligence",
+      "name": "Document Intelligence",
+      "aka": null,
+      "description": "SQL-native parsing, extraction and classification that turns PDFs and images into governed structured data.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/artificial-intelligence/document-intelligence",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-Data-Parser-Normalizer-ETL-ELT.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-Data-Parser-Normalizer-ETL-ELT.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-Data-Parser-Normalizer-ETL-ELT.svg",
+      "files": {
+        "svg": "icons/svg/document-intelligence.svg",
+        "svgMono": "icons/svg-mono/document-intelligence.svg",
+        "svgTile": "icons/svg-tile/document-intelligence.svg",
+        "png": "icons/png/document-intelligence.png",
+        "pngTile": "icons/png-tile/document-intelligence.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/document-intelligence.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/document-intelligence.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/document-intelligence.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/document-intelligence.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/document-intelligence.png"
+      }
+    },
+    {
+      "slug": "model-serving",
+      "name": "Databricks Model Serving",
+      "aka": "formerly Mosaic AI Model Serving",
+      "description": "Unified serverless endpoints for custom ML models, foundation models and agents, plus batch inference.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/model-serving",
+      "kind": "icon",
+      "source": "icons/sources/CloudModelIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-05/CloudModelIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/CloudModelIcon.svg",
+      "files": {
+        "svg": "icons/svg/model-serving.svg",
+        "svgMono": "icons/svg-mono/model-serving.svg",
+        "svgTile": "icons/svg-tile/model-serving.svg",
+        "png": "icons/png/model-serving.png",
+        "pngTile": "icons/png-tile/model-serving.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/model-serving.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/model-serving.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/model-serving.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/model-serving.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/model-serving.png"
+      }
+    },
+    {
+      "slug": "model-training",
+      "name": "Databricks Model Training",
+      "aka": null,
+      "description": "Managed fine-tuning and custom model training on serverless H100 GPUs, without moving data.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/machine-learning/mosaic-ai-training",
+      "kind": "icon",
+      "source": "icons/sources/modelsIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-10/modelsIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/modelsIcon.svg",
+      "files": {
+        "svg": "icons/svg/model-training.svg",
+        "svgMono": "icons/svg-mono/model-training.svg",
+        "svgTile": "icons/svg-tile/model-training.svg",
+        "png": "icons/png/model-training.png",
+        "pngTile": "icons/png-tile/model-training.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/model-training.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/model-training.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/model-training.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/model-training.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/model-training.png"
+      }
+    },
+    {
+      "slug": "mlflow",
+      "name": "Managed MLflow",
+      "aka": null,
+      "description": "Hosted MLflow for experiment tracking, GenAI tracing, evaluation and the Unity Catalog model registry.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/managed-mlflow",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-Full-Lifecycle-Machine-Learning.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-01/icon-orange-Full-Lifecycle-Machine-Learning.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-Full-Lifecycle-Machine-Learning.svg",
+      "files": {
+        "svg": "icons/svg/mlflow.svg",
+        "svgMono": "icons/svg-mono/mlflow.svg",
+        "svgTile": "icons/svg-tile/mlflow.svg",
+        "png": "icons/png/mlflow.png",
+        "pngTile": "icons/png-tile/mlflow.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/mlflow.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/mlflow.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/mlflow.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/mlflow.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/mlflow.png"
+      }
+    },
+    {
+      "slug": "feature-store",
+      "name": "Databricks Feature Store",
+      "aka": null,
+      "description": "Governed feature registry with batch and low-latency online serving, and training/serving consistency.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/feature-store",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-cache-sync-reduction.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-10/primary-icon-orange-cache-sync-reduction.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-cache-sync-reduction.svg",
+      "files": {
+        "svg": "icons/svg/feature-store.svg",
+        "svgMono": "icons/svg-mono/feature-store.svg",
+        "svgTile": "icons/svg-tile/feature-store.svg",
+        "png": "icons/png/feature-store.png",
+        "pngTile": "icons/png-tile/feature-store.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/feature-store.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/feature-store.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/feature-store.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/feature-store.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/feature-store.png"
+      }
+    },
+    {
+      "slug": "ai-functions",
+      "name": "AI Functions",
+      "aka": null,
+      "description": "SQL functions such as ai_query, ai_classify and ai_extract that call models directly inside queries.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://docs.databricks.com/aws/en/large-language-models/ai-functions",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-built-in-functions.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-08/primary-icon-orange-built-in-functions.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-built-in-functions.svg",
+      "files": {
+        "svg": "icons/svg/ai-functions.svg",
+        "svgMono": "icons/svg-mono/ai-functions.svg",
+        "svgTile": "icons/svg-tile/ai-functions.svg",
+        "png": "icons/png/ai-functions.png",
+        "pngTile": "icons/png-tile/ai-functions.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-functions.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-functions.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-functions.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-functions.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-functions.png"
+      }
+    },
+    {
+      "slug": "automl",
+      "name": "Databricks AutoML",
+      "aka": null,
+      "description": "Glass-box automated training that produces baseline models plus the editable notebooks that built them.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/automl",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-machine-learning.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2024-02/primary-icon-orange-machine-learning.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-machine-learning.svg",
+      "files": {
+        "svg": "icons/svg/automl.svg",
+        "svgMono": "icons/svg-mono/automl.svg",
+        "svgTile": "icons/svg-tile/automl.svg",
+        "png": "icons/png/automl.png",
+        "pngTile": "icons/png-tile/automl.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/automl.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/automl.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/automl.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/automl.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/automl.png"
+      }
+    },
+    {
+      "slug": "customerlake",
+      "name": "CustomerLake",
+      "aka": null,
+      "description": "Agentic customer data platform with identity resolution, Customer 360 and marketing agents, native to the lakehouse.",
+      "category": "ai",
+      "categoryLabel": "AI & Agents",
+      "categoryColor": "#98102A",
+      "docs": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "icon",
+      "source": "icons/sources/icon-customerlake.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/icon-customerlake.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-customerlake.svg",
+      "files": {
+        "svg": "icons/svg/customerlake.svg",
+        "svgMono": "icons/svg-mono/customerlake.svg",
+        "svgTile": "icons/svg-tile/customerlake.svg",
+        "png": "icons/png/customerlake.png",
+        "pngTile": "icons/png-tile/customerlake.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/customerlake.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/customerlake.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/customerlake.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/customerlake.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/customerlake.png"
+      }
+    },
+    {
+      "slug": "unity-catalog",
+      "name": "Unity Catalog",
+      "aka": null,
+      "description": "Unified governance for data, models, agents and MCP servers across clouds, under one permission model.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://www.databricks.com/product/unity-catalog",
+      "kind": "icon",
+      "source": "icons/sources/icon-unity-catalog.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-01/icon-unity-catalog.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-unity-catalog.svg",
+      "files": {
+        "svg": "icons/svg/unity-catalog.svg",
+        "svgMono": "icons/svg-mono/unity-catalog.svg",
+        "svgTile": "icons/svg-tile/unity-catalog.svg",
+        "png": "icons/png/unity-catalog.png",
+        "pngTile": "icons/png-tile/unity-catalog.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/unity-catalog.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/unity-catalog.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/unity-catalog.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/unity-catalog.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-catalog.png"
+      }
+    },
+    {
+      "slug": "unity-catalog-semantics",
+      "name": "Unity Catalog Semantics",
+      "aka": null,
+      "description": "Central semantic layer of metric views and business definitions that grounds BI tools and AI agents.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://www.databricks.com/product/unity-catalog/business-semantics",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-context-enrichment.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-context-enrichment.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-context-enrichment.svg",
+      "files": {
+        "svg": "icons/svg/unity-catalog-semantics.svg",
+        "svgMono": "icons/svg-mono/unity-catalog-semantics.svg",
+        "svgTile": "icons/svg-tile/unity-catalog-semantics.svg",
+        "png": "icons/png/unity-catalog-semantics.png",
+        "pngTile": "icons/png-tile/unity-catalog-semantics.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/unity-catalog-semantics.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/unity-catalog-semantics.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/unity-catalog-semantics.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/unity-catalog-semantics.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-catalog-semantics.png"
+      }
+    },
+    {
+      "slug": "data-lineage",
+      "name": "Data & AI Lineage",
+      "aka": null,
+      "description": "Automatic column-level lineage across tables, dashboards, models and agents for impact analysis and audit.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-data-lineage.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-data-lineage.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-data-lineage.svg",
+      "files": {
+        "svg": "icons/svg/data-lineage.svg",
+        "svgMono": "icons/svg-mono/data-lineage.svg",
+        "svgTile": "icons/svg-tile/data-lineage.svg",
+        "png": "icons/png/data-lineage.png",
+        "pngTile": "icons/png-tile/data-lineage.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-lineage.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-lineage.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-lineage.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-lineage.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-lineage.png"
+      }
+    },
+    {
+      "slug": "abac",
+      "name": "Attribute-Based Access Control",
+      "aka": null,
+      "description": "Tag- and attribute-driven policies that enforce row, column and object permissions at scale.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/abac/",
+      "kind": "icon",
+      "source": "icons/sources/lockOutlinedIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-01/lockOutlinedIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/lockOutlinedIcon.svg",
+      "files": {
+        "svg": "icons/svg/abac.svg",
+        "svgMono": "icons/svg-mono/abac.svg",
+        "svgTile": "icons/svg-tile/abac.svg",
+        "png": "icons/png/abac.png",
+        "pngTile": "icons/png-tile/abac.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/abac.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/abac.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/abac.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/abac.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/abac.png"
+      }
+    },
+    {
+      "slug": "data-quality-monitoring",
+      "name": "Data Quality Monitoring",
+      "aka": "formerly Lakehouse Monitoring",
+      "description": "Automated profiling, freshness checks and anomaly detection over tables and inference logs.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://www.databricks.com/product/machine-learning/lakehouse-monitoring",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-Observable-Metrics_0.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-Observable-Metrics_0.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-Observable-Metrics_0.svg",
+      "files": {
+        "svg": "icons/svg/data-quality-monitoring.svg",
+        "svgMono": "icons/svg-mono/data-quality-monitoring.svg",
+        "svgTile": "icons/svg-tile/data-quality-monitoring.svg",
+        "png": "icons/png/data-quality-monitoring.png",
+        "pngTile": "icons/png-tile/data-quality-monitoring.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-quality-monitoring.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-quality-monitoring.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-quality-monitoring.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-quality-monitoring.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-quality-monitoring.png"
+      }
+    },
+    {
+      "slug": "lakewatch",
+      "name": "Lakewatch",
+      "aka": null,
+      "description": "Open agentic SIEM for petabyte-scale security logs, detection-as-code and AI-assisted threat hunting.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://www.databricks.com/product/lakewatch",
+      "kind": "icon",
+      "source": "icons/sources/icon-orange-SIEM.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-SIEM.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/icon-orange-SIEM.svg",
+      "files": {
+        "svg": "icons/svg/lakewatch.svg",
+        "svgMono": "icons/svg-mono/lakewatch.svg",
+        "svgTile": "icons/svg-tile/lakewatch.svg",
+        "png": "icons/png/lakewatch.png",
+        "pngTile": "icons/png-tile/lakewatch.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakewatch.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakewatch.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakewatch.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakewatch.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakewatch.png"
+      }
+    },
+    {
+      "slug": "system-tables",
+      "name": "System Tables",
+      "aka": null,
+      "description": "Built-in analytical tables exposing billing, usage, lineage, audit and job history for observability.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://docs.databricks.com/aws/en/admin/system-tables/",
+      "kind": "icon",
+      "source": "icons/sources/visibleIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-02/visibleIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/visibleIcon.svg",
+      "files": {
+        "svg": "icons/svg/system-tables.svg",
+        "svgMono": "icons/svg-mono/system-tables.svg",
+        "svgTile": "icons/svg-tile/system-tables.svg",
+        "png": "icons/png/system-tables.png",
+        "pngTile": "icons/png-tile/system-tables.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/system-tables.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/system-tables.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/system-tables.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/system-tables.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/system-tables.png"
+      }
+    },
+    {
+      "slug": "enterprise-security",
+      "name": "Enterprise Security",
+      "aka": null,
+      "description": "Network isolation, customer-managed keys, private connectivity and compliance controls for the workspace.",
+      "category": "governance",
+      "categoryLabel": "Governance & Security",
+      "categoryColor": "#1B3139",
+      "docs": "https://www.databricks.com/trust/security-features",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-enterprise-security.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-06/primary-icon-orange-enterprise-security.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-enterprise-security.svg",
+      "files": {
+        "svg": "icons/svg/enterprise-security.svg",
+        "svgMono": "icons/svg-mono/enterprise-security.svg",
+        "svgTile": "icons/svg-tile/enterprise-security.svg",
+        "png": "icons/png/enterprise-security.png",
+        "pngTile": "icons/png-tile/enterprise-security.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/enterprise-security.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/enterprise-security.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/enterprise-security.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/enterprise-security.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/enterprise-security.png"
+      }
+    },
+    {
+      "slug": "delta-sharing",
+      "name": "Delta Sharing",
+      "aka": null,
+      "description": "An open protocol for live, zero-copy data sharing across clouds, platforms and organizations.",
+      "category": "sharing",
+      "categoryLabel": "Sharing & Collaboration",
+      "categoryColor": "#BA7B23",
+      "docs": "https://www.databricks.com/product/delta-sharing",
+      "kind": "icon",
+      "source": "icons/sources/shareIcon-orange.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-01/shareIcon-orange.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/shareIcon-orange.svg",
+      "files": {
+        "svg": "icons/svg/delta-sharing.svg",
+        "svgMono": "icons/svg-mono/delta-sharing.svg",
+        "svgTile": "icons/svg-tile/delta-sharing.svg",
+        "png": "icons/png/delta-sharing.png",
+        "pngTile": "icons/png-tile/delta-sharing.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/delta-sharing.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/delta-sharing.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/delta-sharing.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/delta-sharing.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/delta-sharing.png"
+      }
+    },
+    {
+      "slug": "opensharing",
+      "name": "OpenSharing",
+      "aka": null,
+      "description": "Linux Foundation standard extending governed sharing to data, models and agents across engines and clouds.",
+      "category": "sharing",
+      "categoryLabel": "Sharing & Collaboration",
+      "categoryColor": "#BA7B23",
+      "docs": "https://www.databricks.com/product/opensharing",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-open-source.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-03/primary-icon-orange-open-source.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-open-source.svg",
+      "files": {
+        "svg": "icons/svg/opensharing.svg",
+        "svgMono": "icons/svg-mono/opensharing.svg",
+        "svgTile": "icons/svg-tile/opensharing.svg",
+        "png": "icons/png/opensharing.png",
+        "pngTile": "icons/png-tile/opensharing.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/opensharing.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/opensharing.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/opensharing.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/opensharing.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/opensharing.png"
+      }
+    },
+    {
+      "slug": "marketplace",
+      "name": "Databricks Marketplace",
+      "aka": null,
+      "description": "Open exchange for datasets, models, notebooks, dashboards and solution accelerators.",
+      "category": "sharing",
+      "categoryLabel": "Sharing & Collaboration",
+      "categoryColor": "#BA7B23",
+      "docs": "https://www.databricks.com/product/marketplace",
+      "kind": "icon",
+      "source": "icons/sources/dataMarketplaceIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/dataMarketplaceIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/dataMarketplaceIcon.svg",
+      "files": {
+        "svg": "icons/svg/marketplace.svg",
+        "svgMono": "icons/svg-mono/marketplace.svg",
+        "svgTile": "icons/svg-tile/marketplace.svg",
+        "png": "icons/png/marketplace.png",
+        "pngTile": "icons/png-tile/marketplace.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/marketplace.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/marketplace.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/marketplace.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/marketplace.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/marketplace.png"
+      }
+    },
+    {
+      "slug": "clean-rooms",
+      "name": "Databricks Clean Rooms",
+      "aka": null,
+      "description": "Privacy-safe multi-party collaboration on shared data with no raw-data access, across clouds.",
+      "category": "sharing",
+      "categoryLabel": "Sharing & Collaboration",
+      "categoryColor": "#BA7B23",
+      "docs": "https://www.databricks.com/product/collaboration/clean-rooms",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-collaborate.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-collaborate.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-collaborate.svg",
+      "files": {
+        "svg": "icons/svg/clean-rooms.svg",
+        "svgMono": "icons/svg-mono/clean-rooms.svg",
+        "svgTile": "icons/svg-tile/clean-rooms.svg",
+        "png": "icons/png/clean-rooms.png",
+        "pngTile": "icons/png-tile/clean-rooms.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/clean-rooms.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/clean-rooms.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/clean-rooms.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/clean-rooms.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/clean-rooms.png"
+      }
+    },
+    {
+      "slug": "partner-connect",
+      "name": "Partner Connect",
+      "aka": null,
+      "description": "Guided setup that wires validated ingestion, BI and governance partner tools into your workspace.",
+      "category": "sharing",
+      "categoryLabel": "Sharing & Collaboration",
+      "categoryColor": "#BA7B23",
+      "docs": "https://www.databricks.com/partnerconnect",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-partner-connect.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-06/primary-icon-orange-partner-connect.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-partner-connect.svg",
+      "files": {
+        "svg": "icons/svg/partner-connect.svg",
+        "svgMono": "icons/svg-mono/partner-connect.svg",
+        "svgTile": "icons/svg-tile/partner-connect.svg",
+        "png": "icons/png/partner-connect.png",
+        "pngTile": "icons/png-tile/partner-connect.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/partner-connect.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/partner-connect.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/partner-connect.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/partner-connect.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/partner-connect.png"
+      }
+    },
+    {
+      "slug": "databricks-apps",
+      "name": "Databricks Apps",
+      "aka": null,
+      "description": "Serverless hosting for Python data and AI apps built with Streamlit, Dash or Gradio, with Unity Catalog auth.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://www.databricks.com/product/databricks-apps",
+      "kind": "icon",
+      "source": "icons/sources/appsIcon-orange.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-06/appsIcon-orange.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/appsIcon-orange.svg",
+      "files": {
+        "svg": "icons/svg/databricks-apps.svg",
+        "svgMono": "icons/svg-mono/databricks-apps.svg",
+        "svgTile": "icons/svg-tile/databricks-apps.svg",
+        "png": "icons/png/databricks-apps.png",
+        "pngTile": "icons/png-tile/databricks-apps.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-apps.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-apps.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-apps.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-apps.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-apps.png"
+      }
+    },
+    {
+      "slug": "notebooks",
+      "name": "Databricks Notebooks",
+      "aka": null,
+      "description": "Collaborative multi-language notebooks with built-in visualisation, versioning and AI assistance.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://www.databricks.com/product/collaborative-notebooks",
+      "kind": "icon",
+      "source": "icons/sources/notebookIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-03/notebookIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/notebookIcon.svg",
+      "files": {
+        "svg": "icons/svg/notebooks.svg",
+        "svgMono": "icons/svg-mono/notebooks.svg",
+        "svgTile": "icons/svg-tile/notebooks.svg",
+        "png": "icons/png/notebooks.png",
+        "pngTile": "icons/png-tile/notebooks.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/notebooks.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/notebooks.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/notebooks.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/notebooks.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/notebooks.png"
+      }
+    },
+    {
+      "slug": "workspace",
+      "name": "Databricks Workspace",
+      "aka": null,
+      "description": "A collaborative environment. It groups the notebooks, queries, dashboards, jobs and files of each team.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://docs.databricks.com/aws/en/workspace/",
+      "kind": "icon",
+      "source": "icons/sources/workspacesIcon-orange.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-01/workspacesIcon-orange.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/workspacesIcon-orange.svg",
+      "files": {
+        "svg": "icons/svg/workspace.svg",
+        "svgMono": "icons/svg-mono/workspace.svg",
+        "svgTile": "icons/svg-tile/workspace.svg",
+        "png": "icons/png/workspace.png",
+        "pngTile": "icons/png-tile/workspace.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/workspace.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/workspace.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/workspace.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/workspace.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/workspace.png"
+      }
+    },
+    {
+      "slug": "git-folders",
+      "name": "Git Folders (Repos)",
+      "aka": null,
+      "description": "Workspace folders backed by Git for branch-based development and CI/CD.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://www.databricks.com/product/repos",
+      "kind": "icon",
+      "source": "icons/sources/FolderBranchIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/FolderBranchIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/FolderBranchIcon.svg",
+      "files": {
+        "svg": "icons/svg/git-folders.svg",
+        "svgMono": "icons/svg-mono/git-folders.svg",
+        "svgTile": "icons/svg-tile/git-folders.svg",
+        "png": "icons/png/git-folders.png",
+        "pngTile": "icons/png-tile/git-folders.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/git-folders.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/git-folders.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/git-folders.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/git-folders.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/git-folders.png"
+      }
+    },
+    {
+      "slug": "asset-bundles",
+      "name": "Databricks Asset Bundles",
+      "aka": null,
+      "description": "Infrastructure-as-code packaging of jobs, pipelines and apps for repeatable multi-environment deploys.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://docs.databricks.com/aws/en/dev-tools/bundles/",
+      "kind": "icon",
+      "source": "icons/sources/briefcaseOutlinedIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-06/briefcaseOutlinedIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/briefcaseOutlinedIcon.svg",
+      "files": {
+        "svg": "icons/svg/asset-bundles.svg",
+        "svgMono": "icons/svg-mono/asset-bundles.svg",
+        "svgTile": "icons/svg-tile/asset-bundles.svg",
+        "png": "icons/png/asset-bundles.png",
+        "pngTile": "icons/png-tile/asset-bundles.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/asset-bundles.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/asset-bundles.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/asset-bundles.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/asset-bundles.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/asset-bundles.png"
+      }
+    },
+    {
+      "slug": "databricks-cli",
+      "name": "Databricks CLI",
+      "aka": null,
+      "description": "Command-line client for workspaces, jobs, compute, Unity Catalog and bundle deployment.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://docs.databricks.com/aws/en/dev-tools/cli/",
+      "kind": "icon",
+      "source": "icons/sources/runIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-03/runIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/runIcon.svg",
+      "files": {
+        "svg": "icons/svg/databricks-cli.svg",
+        "svgMono": "icons/svg-mono/databricks-cli.svg",
+        "svgTile": "icons/svg-tile/databricks-cli.svg",
+        "png": "icons/png/databricks-cli.png",
+        "pngTile": "icons/png-tile/databricks-cli.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-cli.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-cli.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-cli.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-cli.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-cli.png"
+      }
+    },
+    {
+      "slug": "databricks-connect",
+      "name": "Databricks Connect",
+      "aka": null,
+      "description": "Run local DataFrame code against remote Databricks compute from any IDE or application.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://docs.databricks.com/aws/en/dev-tools/databricks-connect/",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-unified.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2023-07/primary-icon-orange-unified.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-unified.svg",
+      "files": {
+        "svg": "icons/svg/databricks-connect.svg",
+        "svgMono": "icons/svg-mono/databricks-connect.svg",
+        "svgTile": "icons/svg-tile/databricks-connect.svg",
+        "png": "icons/png/databricks-connect.png",
+        "pngTile": "icons/png-tile/databricks-connect.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-connect.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-connect.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-connect.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-connect.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-connect.png"
+      }
+    },
+    {
+      "slug": "ide-integrations",
+      "name": "IDE Integrations",
+      "aka": null,
+      "description": "Official VS Code and PyCharm extensions for editing, syncing, running and debugging on Databricks.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://www.databricks.com/product/data-science/ide-integrations",
+      "kind": "icon",
+      "source": "icons/sources/codeIcon.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-05/codeIcon.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/codeIcon.svg",
+      "files": {
+        "svg": "icons/svg/ide-integrations.svg",
+        "svgMono": "icons/svg-mono/ide-integrations.svg",
+        "svgTile": "icons/svg-tile/ide-integrations.svg",
+        "png": "icons/png/ide-integrations.png",
+        "pngTile": "icons/png-tile/ide-integrations.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ide-integrations.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ide-integrations.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ide-integrations.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ide-integrations.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ide-integrations.png"
+      }
+    },
+    {
+      "slug": "rest-api",
+      "name": "REST API & SDKs",
+      "aka": null,
+      "description": "Programmatic control of every platform resource, with official Python, Java, Go and JavaScript SDKs.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://docs.databricks.com/api/workspace/introduction",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-webhook.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-webhook.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-webhook.svg",
+      "files": {
+        "svg": "icons/svg/rest-api.svg",
+        "svgMono": "icons/svg-mono/rest-api.svg",
+        "svgTile": "icons/svg-tile/rest-api.svg",
+        "png": "icons/png/rest-api.png",
+        "pngTile": "icons/png-tile/rest-api.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/rest-api.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/rest-api.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/rest-api.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/rest-api.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/rest-api.png"
+      }
+    },
+    {
+      "slug": "terraform-provider",
+      "name": "Databricks Terraform Provider",
+      "aka": null,
+      "description": "Official Terraform provider for declaring workspaces, compute, Unity Catalog objects and permissions.",
+      "category": "devtools",
+      "categoryLabel": "Developer Tools & Apps",
+      "categoryColor": "#618794",
+      "docs": "https://registry.terraform.io/providers/databricks/databricks/latest/docs",
+      "kind": "icon",
+      "source": "icons/sources/primary-icon-orange-automation.svg",
+      "sourceUrl": "https://www.databricks.com/sites/default/files/2026-05/primary-icon-orange-automation.svg",
+      "sourceRawUrl": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/sources/primary-icon-orange-automation.svg",
+      "files": {
+        "svg": "icons/svg/terraform-provider.svg",
+        "svgMono": "icons/svg-mono/terraform-provider.svg",
+        "svgTile": "icons/svg-tile/terraform-provider.svg",
+        "png": "icons/png/terraform-provider.png",
+        "pngTile": "icons/png-tile/terraform-provider.png"
+      },
+      "urls": {
+        "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/terraform-provider.svg",
+        "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/terraform-provider.svg",
+        "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/terraform-provider.svg",
+        "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/terraform-provider.png",
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/terraform-provider.png"
+      }
+    }
+  ]
+}

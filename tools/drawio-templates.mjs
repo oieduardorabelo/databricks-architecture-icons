@@ -3,7 +3,7 @@
  *
  * One canonical style guide, merged from the 15 measured Databricks solution
  * architecture diagrams and the draw.io format research. It is the single
- * source of truth for the colour tokens, the style strings and the three
+ * source of truth for the color tokens, the style strings and the three
  * template tiers.
  *
  * `tools/build.mjs` imports `drawioFiles()` and writes the result to `drawio/`.
@@ -11,7 +11,7 @@
  */
 
 /** Where the published icons live. `build.mjs` checks this against PROJECT.url. */
-export const ICON_BASE = 'https://oieduardorabelo.github.io/databricks-architecture-icons/svg';
+export const ICON_BASE = 'https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg';
 const icon = (slug) => `${ICON_BASE}/${slug}.svg`;
 
 /* ------------------------------------------------------------------ tokens */
@@ -113,7 +113,7 @@ export const STYLES = {
     `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=${T['ink-navy']};strokeWidth=2;dashed=1;dashPattern=6 4;fixDash=1;${FONT}`,
   'edge-two-way':
     `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;startArrow=block;startFill=1;endArrow=block;endFill=1;strokeColor=${T['ink-navy']};strokeWidth=2;labelBackgroundColor=${T['surface-white']};fontSize=10;fontStyle=1;fontColor=${T['ink-navy-deep']};${FONT}`,
-  'edge-labelled':
+  'edge-labeled':
     `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=${T['ink-navy']};strokeWidth=2;labelBackgroundColor=${T['surface-white']};fontSize=10;fontStyle=1;fontColor=${T['ink-navy-deep']};${FONT}`,
   'edge-step':
     `edgeStyle=none;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=${T['ink-navy']};strokeWidth=2;${FONT}`,
@@ -269,8 +269,8 @@ function tier2() {
   e('t2-e1', S['edge-flow'], 't2-src', 't2-plat', '', 'exitX=1;exitY=0.4;entryX=0;entryY=0.3;');
   e('t2-e2', S['edge-flow'], 't2-plat', 't2-con', '', 'exitX=1;exitY=0.3;entryX=0;entryY=0.4;');
   e('t2-e3', S['edge-flow'], 't2-p1', 't2-dec', '', 'exitX=1;exitY=0.6;entryX=0;entryY=0.5;');
-  e('t2-e4', S['edge-labelled'], 't2-dec', 't2-man', '[No]', 'exitX=0.25;exitY=1;entryX=0.5;entryY=0;');
-  e('t2-e5', S['edge-labelled'], 't2-dec', 't2-pub', '[Yes]', 'exitX=0.75;exitY=1;entryX=0.5;entryY=0;');
+  e('t2-e4', S['edge-labeled'], 't2-dec', 't2-man', '[No]', 'exitX=0.25;exitY=1;entryX=0.5;entryY=0;');
+  e('t2-e5', S['edge-labeled'], 't2-dec', 't2-pub', '[Yes]', 'exitX=0.75;exitY=1;entryX=0.5;entryY=0;');
   e('t2-e6', S['edge-secondary'], 't2-man', 't2-p1', '', 'exitX=0;exitY=0.5;entryX=1;entryY=0.8;');
   e('t2-e7', S['edge-flow'], 't2-pub', 't2-stobar', '', 'exitX=0.5;exitY=1;entryX=0.91;entryY=0;');
   e('t2-e8', S['edge-step'], 't2-r1', 't2-r2', '', 'exitX=1;exitY=0.5;entryX=0;entryY=0.5;');
@@ -375,7 +375,7 @@ function tier3() {
     v(`t3-lsw${i + 1}`, '', style, 20 + i * 197, 55 - Math.round(h / 2), w, h, 't3-leg');
     v(`t3-ltx${i + 1}`, label, S['legend-label'], 64 + i * 197, 44, 130, 22, 't3-leg');
   });
-  v('t3-note2', '[Annotation] Replace every bracketed label. Delete a zone you do not use; do not recolour one.', S['note-callout'], 1480, 1270, 500, 90);
+  v('t3-note2', '[Annotation] Replace every bracketed label. Delete a zone you do not use; do not recolor one.', S['note-callout'], 1480, 1270, 500, 90);
   v('t3-note3', '[Annotation] Lava marks Databricks. Oat marks every system that is not Databricks.', S['note-callout'], 2020, 1270, 500, 90);
   v('t3-foot', '[Project] · [Owner] · v[0.1] · [YYYY-MM-DD] · [Source of truth link]', S['footer-strip'], 40, 1385, 2480, 35);
 
@@ -399,8 +399,8 @@ function tier3() {
   e('t3-x6', S['edge-two-way'], 't3-plat', 't3-e2', '', 'exitX=1;exitY=0.5;entryX=0;entryY=0.5;');
   e('t3-x7', S['edge-flow'], 't3-plat', 't3-e3', '', 'exitX=1;exitY=0.85;entryX=0;entryY=0.5;');
   e('t3-x8', S['edge-flow'], 't3-p1', 't3-dec', '', 'exitX=0.2;exitY=1;entryX=0.5;entryY=0;');
-  e('t3-x9', S['edge-labelled'], 't3-dec', 't3-re', '[No]', 'exitX=1;exitY=0.25;entryX=0;entryY=0.5;');
-  e('t3-x10', S['edge-labelled'], 't3-dec', 't3-pub', '[Yes]', 'exitX=1;exitY=0.75;entryX=0;entryY=0.5;');
+  e('t3-x9', S['edge-labeled'], 't3-dec', 't3-re', '[No]', 'exitX=1;exitY=0.25;entryX=0;entryY=0.5;');
+  e('t3-x10', S['edge-labeled'], 't3-dec', 't3-pub', '[Yes]', 'exitX=1;exitY=0.75;entryX=0;entryY=0.5;');
   e('t3-x11', S['edge-secondary'], 't3-re', 't3-p1', '', 'exitX=1;exitY=0.5;entryX=0.84;entryY=1;');
   e('t3-x12', S['edge-flow'], 't3-pub', 't3-stobar', '', 'exitX=0.5;exitY=1;entryX=0.29;entryY=0;');
   e('t3-x13', S['edge-step'], 't3-r1', 't3-r2', '', 'exitX=1;exitY=0.5;entryX=0;entryY=0.5;');
@@ -419,7 +419,7 @@ const PALETTE = [
   ['zone-external', 'Zone outside Databricks', 260, 120, '[Data sources]'],
   ['zone-owned', 'Databricks zone outside the platform', 260, 120, '[Databricks Apps]'],
   ['panel-group', 'Capability group', 260, 120, '[Capability group]'],
-  ['panel-plain', 'Unlabelled dashed group', 260, 120, ''],
+  ['panel-plain', 'Unlabeled dashed group', 260, 120, ''],
   ['bar-lava', 'Platform title bar', 260, 44, '[Platform title]'],
   ['bar-navy', 'Section header bar', 260, 44, '[Section header]'],
   ['bar-oat', 'External zone header bar', 260, 44, '[External header]'],
@@ -445,7 +445,7 @@ const EDGE_PALETTE = [
   ['edge-secondary', 'Secondary or return path'],
   ['edge-derived', 'Derived or logical flow'],
   ['edge-two-way', 'Two-way exchange'],
-  ['edge-labelled', 'Labelled branch'],
+  ['edge-labeled', 'Labelled branch'],
   ['edge-step', 'Short straight step'],
   ['edge-leader', 'Annotation leader'],
 ];
@@ -591,7 +591,7 @@ architecture diagrams.
 | \`databricks-architecture-icons.xml\` | a shape library of all 71 product icons |
 | \`databricks-brand-styles.xml\` | a shape library of the ${Object.keys(STYLES).length} brand styles |
 | \`databricks-templates.xml\` | a shape library holding the three templates. Drag one onto a blank page |
-| \`style-palette.drawio\` | one labelled example of every style, for Copy Style and Paste Style |
+| \`style-palette.drawio\` | one labeled example of every style, for Copy Style and Paste Style |
 
 ## Open a template
 
@@ -615,7 +615,7 @@ your shape, press Ctrl+E and replace the text.
 
 1. **Every label in square brackets.** They are placeholders. Replace all of them.
 2. **The title block**, and the footer strip in the complex template.
-3. **Delete a zone you do not use.** Do not recolour one.
+3. **Delete a zone you do not use.** Do not recolor one.
 4. **The icons.** Each capability node names an icon in its \`image=\` key. Change the slug.
    \`catalog.json\` lists all ${71} slugs.
 
@@ -624,7 +624,7 @@ your shape, press Ctrl+E and replace the text.
 **Lava \`${TOKENS['brand-lava']}\` marks Databricks. Oat \`${TOKENS['surface-oat-line']}\` marks
 everything that is not Databricks.** Every other rule supports that one.
 
-## Colour tokens
+## Color tokens
 
 | Token | Hex |
 |---|---|

@@ -5,7 +5,7 @@
      databricksColorIconPack  the Databricks artwork, Lava colors
      databricksIconPack       one color, inherits currentColor
 
-     <script src="iconify/databricks.js"></script>
+     <script src="databricks.js"></script>
      mermaid.registerIconPacks([
        { name: 'databricks-color', icons: window.databricksColorIconPack },
        { name: 'databricks', icons: window.databricksIconPack },

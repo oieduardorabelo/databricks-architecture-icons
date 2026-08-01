@@ -41,9 +41,9 @@
 <h1>Databricks <b>Architecture Icons</b> · Mermaid</h1>
 <p class="sub">Architecture diagrams with official Databricks artwork. Free to use, and free to
 share. <a href="#every-icon">Every icon</a> &middot;
-<a href="../index.html">Back to the library</a> &middot;
-<a href="../CATALOG.md">Every slug</a> &middot;
-<a href="../README.md">README</a></p>
+<a href="../">Back to the library</a> &middot;
+<a href="../icons/CATALOG.md">Every slug</a> &middot;
+<a href="https://github.com/oieduardorabelo/databricks-architecture-icons#readme">README</a></p>
 
 <h2>Start in two minutes</h2>
 <p class="note">You do not download anything. The two icon packs are on GitHub Pages, and the
@@ -52,13 +52,13 @@ share. <a href="#every-icon">Every icon</a> &middot;
 <ol class="steps">
   <li>Register the packs once, before Mermaid renders anything.</li>
   <li>Name an icon as <code>databricks-color:&lt;slug&gt;</code>. All 71 slugs are in
-      <a href="../CATALOG.md">CATALOG.md</a>, and every one is drawn
+      <a href="../icons/CATALOG.md">CATALOG.md</a>, and every one is drawn
       <a href="#every-icon">further down this page</a>.</li>
   <li>Write the diagram.</li>
 </ol>
 <pre class="code">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-const PACKS = 'https://oieduardorabelo.github.io/databricks-architecture-icons/iconify';
+const PACKS = 'https://oieduardorabelo.github.io/databricks-architecture-icons/mermaid';
 
 mermaid.registerIconPacks([
   { name: 'databricks-color', loader: () =&gt; fetch(`${PACKS}/databricks-color.json`).then((r) =&gt; r.json()) },
@@ -92,11 +92,11 @@ mermaid.initialize({ startOnLoad: true });</pre>
   never calls your code. For those, export the diagram to SVG and commit the image.</p>
 <p class="note"><b>Pin the pack if the diagram must not change.</b> The URL above always serves the
   newest build. jsDelivr serves the same file from a commit, so it can hold one build for good:
-  <code>https://cdn.jsdelivr.net/gh/oieduardorabelo/databricks-architecture-icons@&lt;commit&gt;/iconify/databricks-color.json</code>.
+  <code>https://cdn.jsdelivr.net/gh/oieduardorabelo/databricks-architecture-icons@&lt;commit&gt;/mermaid/databricks-color.json</code>.
   Put a full commit SHA in place of <code>&lt;commit&gt;</code>. A branch name such as
   <code>@main</code> also works, but it moves with the branch and pins nothing. To work with no
   network at all, download <a href="../zips/databricks-architecture-icons-all.zip">the archive</a>
-  and serve <code>iconify/</code> yourself.</p>
+  and serve <code>mermaid/</code> yourself.</p>
 <p class="note"><b>This page loads the packs from the folder beside it</b>, not from the web, so it
   also opens from disk. Your project should use the hosted URL in the block above.</p>
 <p id="packfail" class="warn" hidden>The icon pack did not load, so Mermaid draws a “?” for each
@@ -377,7 +377,7 @@ flowchart LR
 </div>
 <!-- ALL-ICONS:END -->
 
-<script src="../iconify/databricks.js"></script>
+<script src="databricks.js"></script>
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
@@ -393,8 +393,8 @@ flowchart LR
           { name: 'databricks', icons: mono },
         ]
       : [
-          { name: 'databricks-color', loader: () => fetch('../iconify/databricks-color.json').then((r) => r.json()) },
-          { name: 'databricks', loader: () => fetch('../iconify/databricks.json').then((r) => r.json()) },
+          { name: 'databricks-color', loader: () => fetch('databricks-color.json').then((r) => r.json()) },
+          { name: 'databricks', loader: () => fetch('databricks.json').then((r) => r.json()) },
         ],
   );
   if (!pack && location.protocol === 'file:') {
