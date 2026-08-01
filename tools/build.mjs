@@ -631,7 +631,7 @@ fs.writeFileSync(
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${PROJECT.name}</title>
-<meta name="description" content="${esc(PROJECT.tagline)} Build architecture diagrams for ${catalog.length} Databricks products. SVG files, PNG files and an Iconify pack for Mermaid. An unofficial community resource.">
+<meta name="description" content="${esc(PROJECT.tagline)} Build architecture diagrams for ${catalog.length} Databricks products. SVG files and PNG files for any diagram tool, and an Iconify pack for Mermaid. An unofficial community resource.">
 <meta property="og:title" content="${PROJECT.name}">
 <meta property="og:description" content="${esc(PROJECT.tagline)} ${catalog.length} products, official Databricks artwork.">
 <meta property="og:image" content="${PROJECT.url}preview.png">
@@ -679,7 +679,9 @@ fs.writeFileSync(
            letter-spacing:.12em;text-transform:uppercase;color:#90A5B1}
   .eyebrow b{color:var(--lava);font-weight:500}
   .hero h1{margin:0;font-size:40px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
-  .hero .lede{margin:16px 0 0;max-width:68ch;font-size:16px;line-height:1.5;color:#C4CCD6}
+  .hero .lead{margin:16px 0 0;max-width:60ch;font-size:20px;line-height:1.2;
+              font-weight:500;color:var(--oat-light)}
+  .hero .lede{margin:8px 0 0;max-width:68ch;font-size:16px;line-height:1.5;color:#C4CCD6}
   .stats{margin:24px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
   .stats li{font:500 12px/1 "DM Mono",ui-monospace,Menlo,monospace;letter-spacing:.04em;
             padding:8px 12px;border:1px solid #143D4A;border-radius:8px;color:#C4CCD6}
@@ -792,9 +794,10 @@ fs.writeFileSync(
   <div class="wrap">
     <p class="eyebrow"><b>Unofficial</b> &middot; not affiliated with Databricks</p>
     <h1>${PROJECT.name}</h1>
-    <p class="lede">Build architecture diagrams with official Databricks artwork.
-      ${catalog.length} products in ${Object.values(CATEGORIES).filter((c) => catalog.some((x) => x.categoryLabel === c.label)).length} categories,
-      as SVG and PNG, plus an Iconify pack for Mermaid. Nothing in this set is redrawn.</p>
+    <p class="lead">Build architecture diagrams with official Databricks artwork.</p>
+    <p class="lede">The set has ${catalog.length} products in ${Object.values(CATEGORIES).filter((c) => catalog.some((x) => x.categoryLabel === c.label)).length} categories.
+      It gives SVG files and PNG files for any diagram tool. It also gives an Iconify pack for
+      Mermaid. Nothing in this set is redrawn.</p>
     <nav>
       <a class="primary" href="${downloads.find((d) => d.group === 'all').file}" download>Download all
         &middot; ${fmtBytes(downloads.find((d) => d.group === 'all').bytes)}</a>
@@ -803,16 +806,16 @@ fs.writeFileSync(
       <a href="#provenance">Where these come from</a>
     </nav>
     <details class="more">
-      <summary>Single formats and categories</summary>
+      <summary>More downloads</summary>
       <div class="dl-row">
         ${downloads
           .filter((d) => d.group === 'variant')
           .map((d) => `<a class="dl" href="${d.file}" download><b>${esc(d.label)}</b><span>${d.count} files &middot; ${fmtBytes(d.bytes)}</span></a>`)
           .join('\n        ')}
       </div>
-      <p class="dl-note">Each category has its own archive, on the heading of that category below.
-        Works with Mermaid, Miro, Lucidchart, draw.io, Excalidraw, Figma, PowerPoint, Keynote and
-        Google Slides.</p>
+      <p class="dl-note">Each category has its own archive. The link is on the heading of that
+        category. The icons work with Mermaid, Miro, Lucidchart, draw.io, Excalidraw, Figma,
+        PowerPoint, Keynote and Google Slides.</p>
     </details>
   </div>
 </header>
