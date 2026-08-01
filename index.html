@@ -92,8 +92,11 @@
   button:hover{border-color:var(--lava)}
   button.on{background:var(--lava);border-color:var(--lava);color:#fff}
 
-  main{padding:40px 0 80px}
-  .cat{margin-bottom:48px}
+  /* .wrap is a class and main is an element, so .wrap{padding:0 32px} wins on
+     specificity and zeroes the vertical padding. Qualify the selector. */
+  main.wrap{padding-top:56px;padding-bottom:80px}
+  /* the toolbar is sticky, so an anchored section needs to clear it */
+  .cat{margin-bottom:48px;scroll-margin-top:88px}
   h2{display:flex;align-items:center;gap:8px;margin:0 0 16px;font-size:12px;line-height:1.2;
      font-weight:700;text-transform:uppercase;letter-spacing:.12em}
   .dot{width:12px;height:12px;border-radius:50%;display:inline-block;flex:0 0 auto}
