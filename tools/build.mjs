@@ -864,7 +864,7 @@ fs.writeFileSync(
 <body>
 <div class="topbar">
   <div class="wrap">Made with <span aria-hidden="true">&hearts;</span> by
-    <a href="https://github.com/oieduardorabelo" target="_blank" rel="noreferrer">@oieduardorabelo</a>
+    <a href="${PROJECT.repository}" target="_blank" rel="noreferrer">@oieduardorabelo</a>
   </div>
 </div>
 <header class="hero">
