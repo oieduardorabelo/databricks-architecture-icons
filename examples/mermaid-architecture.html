@@ -39,43 +39,69 @@
   <a href="https://github.com/oieduardorabelo" target="_blank" rel="noreferrer">@oieduardorabelo</a>
 </div>
 <h1>Databricks <b>Architecture Icons</b> · Mermaid</h1>
-<p class="sub">Architecture diagrams with official Databricks artwork.
-<a href="#every-icon">Every icon</a> &middot;
+<p class="sub">Architecture diagrams with official Databricks artwork. Free to use, and free to
+share. <a href="#every-icon">Every icon</a> &middot;
 <a href="../index.html">Back to the library</a> &middot;
+<a href="../CATALOG.md">Every slug</a> &middot;
 <a href="../README.md">README</a></p>
 
-<h2>Add the icons to your Mermaid diagrams</h2>
+<h2>Start in two minutes</h2>
+<p class="note">You do not download anything. The two icon packs are on GitHub Pages, and the
+  server sends <code>access-control-allow-origin: *</code>, so your page can read them straight
+  from the web. Paste the block below, change the slugs, and you have a diagram.</p>
 <ol class="steps">
-  <li>Copy <code>iconify/databricks-color.json</code> into your project. Serve it as a static file.</li>
-  <li>Register the pack before you render a diagram.</li>
-  <li>Write each icon id as <code>databricks-color:&lt;slug&gt;</code>.
-      <a href="../CATALOG.md">CATALOG.md</a> lists every slug.</li>
+  <li>Register the packs once, before Mermaid renders anything.</li>
+  <li>Name an icon as <code>databricks-color:&lt;slug&gt;</code>. All 71 slugs are in
+      <a href="../CATALOG.md">CATALOG.md</a>, and every one is drawn
+      <a href="#every-icon">further down this page</a>.</li>
+  <li>Write the diagram.</li>
 </ol>
-<pre class="code">import mermaid from 'mermaid';
+<pre class="code">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+const PACKS = 'https://oieduardorabelo.github.io/databricks-architecture-icons/iconify';
 
 mermaid.registerIconPacks([
-  {
-    name: 'databricks-color',
-    loader: () =&gt; fetch('/icons/databricks-color.json').then((r) =&gt; r.json()),
-  },
+  { name: 'databricks-color', loader: () =&gt; fetch(`${PACKS}/databricks-color.json`).then((r) =&gt; r.json()) },
+  { name: 'databricks',       loader: () =&gt; fetch(`${PACKS}/databricks.json`).then((r) =&gt; r.json()) },
 ]);
 
 mermaid.initialize({ startOnLoad: true });</pre>
+
+<h2>Write the diagram</h2>
+<p class="note">Two diagram types take an icon. Use <code>architecture-beta</code> for a quick
+  system sketch. Use <code>flowchart</code> when you need labels on the arrows, subgraphs or a
+  layout direction. The <code>@{ icon: … }</code> node shape needs Mermaid 11.3 or later.</p>
 <pre class="code">architecture-beta
-    service wh(databricks-color:sql-warehouse)[SQL Warehouse]
     service gold(databricks-color:lakehouse-storage)[Managed Tables]
+    service wh(databricks-color:sql-warehouse)[SQL Warehouse]
     gold:R --&gt; L:wh</pre>
-<p class="note">The pack <code>databricks-color</code> keeps the Databricks Lava artwork. The pack
-  <code>databricks</code> holds the same icons in one color. That pack inherits
-  <code>currentColor</code>, so Mermaid gives the icons the text color of the diagram. Use it for a
-  dark theme.</p>
-<p class="note">A browser blocks <code>fetch()</code> on <code>file://</code>. If your page must run
-  from disk, load <code>iconify/databricks.js</code> with a classic script tag instead. It sets
-  <code>window.databricksColorIconPack</code> and <code>window.databricksIconPack</code>. This page
-  uses that method.</p>
-<p id="packfail" class="warn" hidden>The icon pack did not load. Mermaid draws a “?” for each icon.
-Make sure that the <code>iconify/</code> directory is one level above this page. As an alternative,
-serve the folder with <code>npx serve .</code>.</p>
+<pre class="code">flowchart LR
+    gold@{ icon: "databricks-color:lakehouse-storage", form: "square", label: "Managed Tables", pos: "b" }
+    wh@{ icon: "databricks-color:sql-warehouse", form: "square", label: "SQL Warehouse", pos: "b" }
+    gold --&gt;|"served hourly"| wh</pre>
+
+<h2>Which pack, and where it works</h2>
+<p class="note"><b>Two packs, same 71 icons.</b> Use <code>databricks-color</code> for the official
+  Databricks Lava artwork. Use <code>databricks</code> for a single-color version: it inherits
+  <code>currentColor</code>, so Mermaid paints each icon in the text color of the diagram. That one
+  suits a dark theme, or a house style that is not Lava.</p>
+<p class="note"><b>You need control of the Mermaid setup.</b> The packs load through
+  <code>registerIconPacks()</code>, which is your JavaScript. It runs on your own page, and in a
+  docs site that lets you configure Mermaid, such as Docusaurus, VitePress or MkDocs. It does not
+  run inside a GitHub README or a GitHub issue, because GitHub renders that Mermaid itself and
+  never calls your code. For those, export the diagram to SVG and commit the image.</p>
+<p class="note"><b>Pin the pack if the diagram must not change.</b> The URL above always serves the
+  newest build. jsDelivr serves the same file from a commit, so it can hold one build for good:
+  <code>https://cdn.jsdelivr.net/gh/oieduardorabelo/databricks-architecture-icons@&lt;commit&gt;/iconify/databricks-color.json</code>.
+  Put a full commit SHA in place of <code>&lt;commit&gt;</code>. A branch name such as
+  <code>@main</code> also works, but it moves with the branch and pins nothing. To work with no
+  network at all, download <a href="../zips/databricks-architecture-icons-all.zip">the archive</a>
+  and serve <code>iconify/</code> yourself.</p>
+<p class="note"><b>This page loads the packs from the folder beside it</b>, not from the web, so it
+  also opens from disk. Your project should use the hosted URL in the block above.</p>
+<p id="packfail" class="warn" hidden>The icon pack did not load, so Mermaid draws a “?” for each
+icon. Open this page from <a href="https://oieduardorabelo.github.io/databricks-architecture-icons/examples/mermaid-architecture.html">the published site</a>,
+or serve the project folder with <code>npx serve .</code>.</p>
 
 <h2>Medallion pipeline</h2>
 
