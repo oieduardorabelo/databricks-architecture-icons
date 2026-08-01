@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48" fill="none" role="img" aria-label="Serverless Compute (outline b)">
+<title>Serverless Compute (outline b)</title>
+<rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#FFFFFF" stroke="#FF5F46" stroke-width="3"/>
+<g transform="translate(24 24) scale(0.68) translate(-24 -24)"><g transform="translate(2 2) scale(0.44)"><g clip-path="url(#serverless-compute-clip0_2510_2439)">
+<path d="M41.1599 58.8399V16.6999C41.1599 14.1332 43.2399 12.0532 45.8066 12.0532H83.3066C85.8732 12.0532 87.9532 14.1332 87.9532 16.6999V54.1999C87.9532 56.7666 85.8732 58.8465 83.3066 58.8465H49.0999C47.2866 58.8465 45.8132 57.3732 45.8132 55.5599C45.8132 54.6865 46.1599 53.8532 46.7732 53.2332L78.5599 21.4466" stroke="#FF5F46" stroke-width="1.82927" stroke-miterlimit="3" stroke-linecap="square"/>
+<path d="M41.1601 58.8402V83.3002C41.1601 85.8668 39.0801 87.9468 36.5135 87.9468H16.7001C14.1335 87.9468 12.0535 85.8668 12.0535 83.3002V63.4802C12.0535 60.9135 14.1335 58.8335 16.7001 58.8335H33.2268C35.0401 58.8335 36.5135 60.3068 36.5135 62.1202C36.5135 62.9935 36.1668 63.8268 35.5535 64.4468L19.2668 80.7335" stroke="#FF5F46" stroke-width="1.82927" stroke-miterlimit="3" stroke-linecap="square"/>
+<path d="M59.5933 20.667H79.3333V40.407" stroke="#FF5F46" stroke-width="1.82927" stroke-miterlimit="3" stroke-linecap="square"/>
+</g>
+<defs>
+<clipPath id="serverless-compute-clip0_2510_2439">
+<rect width="100" height="100" fill="white"/>
+</clipPath>
+</defs></g></g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48" fill="none" role="img" aria-label="Genie One (outline c)">
+<title>Genie One (outline c)</title>
+<rect x="2" y="2" width="44" height="44" rx="12" fill="#FFFFFF" stroke="#FF3621" stroke-width="4"/>
+<g transform="translate(24 24) scale(0.72) translate(-24 -24)"><g transform="translate(2 2) scale(2.75)"><g clip-path="url(#genie-one-clip0_2042_717)">
+<path d="M2.51709 4.83094V11.0712L7.99951 14.2118L13.4829 11.0702V4.83192L7.99951 1.69032L2.51709 4.83094ZM15.0825 11.4188C15.0825 11.7773 14.8906 12.1088 14.5796 12.287L8.49658 15.7714L8.37842 15.829C8.09549 15.9448 7.7719 15.9247 7.50244 15.7704L1.42041 12.287C1.10936 12.1088 0.91748 11.7773 0.91748 11.4188V4.48426C0.91748 4.12579 1.10936 3.79428 1.42041 3.6161L7.50244 0.132698C7.81026 -0.0436223 8.18873 -0.0445151 8.49658 0.131722L14.5796 3.6161C14.8906 3.79428 15.0825 4.12578 15.0825 4.48426V11.4188Z" fill="#FF3621"/>
+<path d="M7.12192 11.7479V6.06344L5.7439 6.43826L5.78638 5.25185L7.37139 4.15625H8.8417V11.7479L7.98181 12.2656L7.12192 11.7479Z" fill="#FF3621"/>
+</g>
+<defs>
+<clipPath id="genie-one-clip0_2042_717">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs></g></g>
+</svg>

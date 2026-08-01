@@ -152,6 +152,12 @@ The build fails if a category tile drops below the WCAG 2.2 contrast floor of 3:
 | `icons/png/`, `icons/png-tile/` | 256px, for tools that reject SVG |
 | `icons/logos/` | full-color brand lockups, copied through untouched |
 | `icons/catalog.json`, `.csv`, `CATALOG.md` | the machine-readable and human-readable index |
+| `icons/outline/` | three candidates for a white box with a lava border. Not chosen yet |
+
+`icons/outline/` is a review artifact. The three folders `a`, `b` and `c` hold the same 71 icons
+with a different border and a different icon scale. Open `icons/outline/compare.html` to judge
+them. They are not in the catalog, the archives or the website. After you pick one, keep that
+variant, delete the other two, and add it to the catalog in `tools/build.mjs`.
 
 `sharp` renders the PNG files. It is optional: the PNG files are committed, and the build keeps
 them when `sharp` is missing. It checks the disk, not whether `sharp` loaded. An earlier version

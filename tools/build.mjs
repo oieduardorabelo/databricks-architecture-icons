@@ -247,11 +247,24 @@ ${inner}
 `;
 }
 
+// ------------------------------------------------------- outline candidates
+
+// A pattern the Databricks community uses often: the artwork centered in a
+// white rounded square with a lava border. Three candidates, for a choice.
+// They are not in the catalog, the archives or the website yet. Pick one, then
+// wire it in and delete the rest.
+const OUTLINE_VARIANTS = [
+  { id: 'a', label: 'Light', stroke: 2, radius: 10, scale: 0.62, color: '#FF3621' },
+  { id: 'b', label: 'Diagram', stroke: 3, radius: 10, scale: 0.68, color: '#FF5F46' },
+  { id: 'c', label: 'Bold', stroke: 4, radius: 12, scale: 0.72, color: '#FF3621' },
+];
+
 // -------------------------------------------------------------------- build
 
 fresh('icons/svg');
 fresh('icons/svg-mono');
 fresh('icons/svg-tile');
+for (const v of OUTLINE_VARIANTS) fresh(`icons/outline/${v.id}`);
 fresh('icons/logos');
 // Not fresh(): mermaid/index.html is hand-written and lives beside the packs.
 fs.mkdirSync(out('mermaid'), { recursive: true });
@@ -321,6 +334,19 @@ for (const p of PRODUCTS) {
     { title: `${p.name} (tile)` },
   );
   fs.writeFileSync(out('icons/svg-tile', `${p.slug}.svg`), tileSvg);
+
+  // 3b. outline candidates - the published artwork, centered in a white
+  // rounded square with a lava border. The stroke is drawn inside the canvas,
+  // so the box is inset by half its width and never clips.
+  for (const v of OUTLINE_VARIANTS) {
+    const inset = v.stroke / 2;
+    const outlineSvg = wrap(
+      `<rect x="${inset}" y="${inset}" width="${CANVAS - v.stroke}" height="${CANVAS - v.stroke}" rx="${v.radius}" fill="#FFFFFF" stroke="${v.color}" stroke-width="${v.stroke}"/>
+<g transform="translate(${CANVAS / 2} ${CANVAS / 2}) scale(${v.scale}) translate(${-CANVAS / 2} ${-CANVAS / 2})"><g transform="${transform}">${body}</g></g>`,
+      { title: `${p.name} (outline ${v.id})` },
+    );
+    fs.writeFileSync(out(`icons/outline/${v.id}`, `${p.slug}.svg`), outlineSvg);
+  }
 
   // 4. Iconify / Mermaid pack entry (mono, so Mermaid can color it)
   // Two packs from the same geometry. The mono pack inherits currentColor, so
@@ -646,6 +672,104 @@ for (const c of byCategory) {
     c.label,
     `${c.products.length} products, every variant`,
     entries,
+  );
+}
+
+// ------------------------------------------------- outline comparison page
+
+// A page to judge the three candidates. It is not linked from the website.
+{
+  const SAMPLE = ['databricks', 'lakeflow', 'unity-catalog', 'delta-lake', 'databricks-sql',
+    'genie', 'mlflow', 'apache-spark', 'lakebase', 'model-serving'];
+  const sample = SAMPLE.map((sl) => catalog.find((p) => p.slug === sl)).filter(Boolean);
+  const cell = (v, p, size) =>
+    `<figure><img src="${v}/${p.slug}.svg" width="${size}" height="${size}" alt="${esc(p.name)}"><figcaption>${esc(p.name)}</figcaption></figure>`;
+
+  fs.writeFileSync(
+    out('icons/outline', 'compare.html'),
+    `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Outline candidates</title>
+<style>
+  body{margin:0;padding:32px;background:#F9F7F4;color:#1B3139;
+       font:15px/1.6 "DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  h1{font-size:20px;margin:0 0 4px} h1 b{color:#FF3621}
+  p.sub{margin:0 0 24px;color:#5b6b73;font-size:13px}
+  h2{font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin:32px 0 12px}
+  table.spec{border-collapse:collapse;margin:0 0 24px;font-size:13px}
+  table.spec th,table.spec td{border:1px solid #dcd8d1;padding:6px 12px;text-align:left}
+  table.spec th{background:#EEEDE9}
+  .bar{display:flex;gap:8px;margin:0 0 20px}
+  .bar button{font:13px/1 "DM Sans",sans-serif;padding:8px 14px;border:1px solid #dcd8d1;
+              border-radius:8px;background:#fff;color:#1B3139;cursor:pointer}
+  .bar button[aria-pressed=true]{border-color:#FF3621;color:#FF3621}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:0 0 32px}
+  .col{border:1px solid #dcd8d1;border-radius:14px;padding:18px;background:#fff}
+  .col h3{margin:0 0 2px;font-size:14px}
+  .col p{margin:0 0 16px;font:400 12px/1.4 "DM Mono",ui-monospace,Menlo,monospace;color:#5b6b73}
+  .set{display:flex;flex-wrap:wrap;gap:14px}
+  figure{margin:0;width:76px;text-align:center}
+  figure img{display:block;margin:0 auto}
+  figcaption{margin-top:6px;font-size:10px;line-height:1.25;color:#5b6b73;
+             overflow-wrap:anywhere}
+  .grid figure{width:60px}
+  body[data-bg=oat] .col{background:#EEEDE9}
+  body[data-bg=navy]{background:#0B2026;color:#EEEDE9}
+  body[data-bg=navy] .col{background:#1B3139;border-color:#143D4A}
+  body[data-bg=navy] figcaption,body[data-bg=navy] .col p{color:#90A5B1}
+  body[data-bg=navy] table.spec th{background:#143D4A}
+  body[data-bg=navy] table.spec th,body[data-bg=navy] table.spec td{border-color:#143D4A}
+  body[data-bg=navy] .bar button{background:#1B3139;color:#EEEDE9;border-color:#143D4A}
+</style>
+</head>
+<body data-bg="oat">
+<h1>Outline <b>candidates</b></h1>
+<p class="sub">The artwork centered in a white rounded square with a lava border. Three options.
+  Nothing here is in the catalog, the archives or the website yet.</p>
+
+<table class="spec">
+  <tr><th>Variant</th><th>Border</th><th>Hex</th><th>Radius</th><th>Icon scale</th></tr>
+  ${OUTLINE_VARIANTS.map((v) => `<tr><td><b>${v.id.toUpperCase()}</b> &middot; ${v.label}</td><td>${v.stroke} px</td><td><code>${v.color}</code></td><td>${v.radius} px</td><td>${Math.round(v.scale * 100)} %</td></tr>`).join('\n  ')}
+</table>
+
+<div class="bar">
+  <button data-bg="oat" aria-pressed="true">Oat background</button>
+  <button data-bg="white" aria-pressed="false">White background</button>
+  <button data-bg="navy" aria-pressed="false">Navy background</button>
+</div>
+
+<h2>Side by side, 64 px</h2>
+<div class="row">
+  ${OUTLINE_VARIANTS.map((v) => `<div class="col">
+    <h3>${v.id.toUpperCase()} &middot; ${v.label}</h3>
+    <p>${v.stroke}px ${v.color} &middot; r${v.radius} &middot; ${Math.round(v.scale * 100)}%</p>
+    <div class="set">${sample.map((p) => cell(v.id, p, 64)).join('')}</div>
+  </div>`).join('\n  ')}
+</div>
+
+${OUTLINE_VARIANTS.map((v) => `<h2>${v.id.toUpperCase()} &middot; ${v.label} &middot; all ${catalog.length} icons at 48 px</h2>
+<div class="col grid"><div class="set">${catalog.map((p) => cell(v.id, p, 48)).join('')}</div></div>`).join('\n')}
+
+<script>
+  // ?bg=navy makes a background choice shareable
+  const wanted = new URLSearchParams(location.search).get('bg');
+  if (wanted) document.body.dataset.bg = wanted;
+  for (const b of document.querySelectorAll('.bar button')) {
+    b.setAttribute('aria-pressed', String(b.dataset.bg === document.body.dataset.bg));
+    b.addEventListener('click', () => {
+      document.body.dataset.bg = b.dataset.bg;
+      for (const o of document.querySelectorAll('.bar button')) {
+        o.setAttribute('aria-pressed', String(o === b));
+      }
+    });
+  }
+</script>
+</body>
+</html>
+`,
   );
 }
 
