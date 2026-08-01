@@ -284,6 +284,7 @@ const pngJobs = [];
 const catalog = [];
 const iconifyIcons = {};
 const iconifyColorIcons = {};
+const iconifyOutlineIcons = {};
 const problems = [];
 
 for (const [key, c] of Object.entries(CATEGORIES)) {
@@ -343,6 +344,12 @@ for (const p of PRODUCTS) {
     { title: `${p.name} (outline)` },
   );
   fs.writeFileSync(out('icons/svg-outline', `${p.slug}.svg`), outlineSvg);
+
+  // The same box as an Iconify body. The rect carries an explicit fill and
+  // stroke, so the fill="none" on the wrapper does not reach it.
+  iconifyOutlineIcons[p.slug] = {
+    body: `<g fill="none"><rect x="${inset}" y="${inset}" width="${CANVAS - OUTLINE.stroke}" height="${CANVAS - OUTLINE.stroke}" rx="${OUTLINE.radius}" fill="${BRAND.white}" stroke="${OUTLINE.color}" stroke-width="${OUTLINE.stroke}"/><g transform="translate(${CANVAS / 2} ${CANVAS / 2}) scale(${OUTLINE.scale}) translate(${-CANVAS / 2} ${-CANVAS / 2})"><g transform="${transform}">${body}</g></g></g>`,
+  };
 
   // 5. Iconify / Mermaid pack entry (mono, so Mermaid can color it)
   // Two packs from the same geometry. The mono pack inherits currentColor, so
@@ -501,9 +508,11 @@ const makePack = (prefix, name, icons) => ({
 
 const iconPack = makePack('databricks', 'Databricks Products (mono)', iconifyIcons);
 const colorPack = makePack('databricks-color', 'Databricks Products (color)', iconifyColorIcons);
+const outlinePack = makePack('databricks-outline', 'Databricks Products (outline)', iconifyOutlineIcons);
 
 fs.writeFileSync(out('mermaid', 'databricks.json'), JSON.stringify(iconPack, null, 2) + '\n');
 fs.writeFileSync(out('mermaid', 'databricks-color.json'), JSON.stringify(colorPack, null, 2) + '\n');
+fs.writeFileSync(out('mermaid', 'databricks-outline.json'), JSON.stringify(outlinePack, null, 2) + '\n');
 
 // The same pack as a classic script that assigns a global. A browser blocks
 // fetch() of a file:// URL, so a page opened by a double-click cannot read the
@@ -516,20 +525,24 @@ fs.writeFileSync(
    Use this file when the page must also work from file://, where fetch() is
    blocked. It sets two globals and adds no dependency.
 
-     databricksColorIconPack  the Databricks artwork, Lava colors
-     databricksIconPack       one color, inherits currentColor
+     databricksColorIconPack    the Databricks artwork, Lava colors
+     databricksIconPack         one color, inherits currentColor
+     databricksOutlineIconPack  the artwork in a white box, lava hairline
 
      <script src="databricks.js"></script>
      mermaid.registerIconPacks([
        { name: 'databricks-color', icons: window.databricksColorIconPack },
        { name: 'databricks', icons: window.databricksIconPack },
+       { name: 'databricks-outline', icons: window.databricksOutlineIconPack },
      ]);
 
-   Then write databricks-color:lakeflow for the Lava artwork, or
-   databricks:lakeflow for an icon that takes the color of the diagram.
+   Then write databricks-color:lakeflow for the Lava artwork,
+   databricks:lakeflow for an icon that takes the color of the diagram, or
+   databricks-outline:lakeflow for the artwork in a white box.
 */
 window.databricksColorIconPack = ${JSON.stringify(colorPack)};
 window.databricksIconPack = ${JSON.stringify(iconPack)};
+window.databricksOutlineIconPack = ${JSON.stringify(outlinePack)};
 `,
 );
 
@@ -567,6 +580,30 @@ fs.mkdirSync(out('drawio'), { recursive: true });
   );
 }
 
+// The same 71 icons, but the outline artwork: each one arrives in a white box
+// with a lava hairline, so it reads on a light canvas and on a dark one.
+{
+  const shapes = catalog.map((p) => {
+    const style = [
+      'shape=image',
+      'verticalLabelPosition=bottom',
+      'verticalAlign=top',
+      'imageAspect=0',
+      `image=${PROJECT.url}${p.files.svgOutline}`,
+      'aspect=fixed',
+    ].join(';');
+    const model =
+      '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>' +
+      `<mxCell id="2" value="" style="${style};" vertex="1" parent="1">` +
+      `<mxGeometry width="${CANVAS}" height="${CANVAS}" as="geometry"/></mxCell></root></mxGraphModel>`;
+    return { xml: model, w: CANVAS, h: CANVAS, aspect: 'fixed', title: p.name };
+  });
+  fs.writeFileSync(
+    out('drawio', 'databricks-architecture-icons-outline.xml'),
+    `<mxlibrary title="${PROJECT.name} (outline)">${escapeXmlText(JSON.stringify(shapes))}</mxlibrary>\n`,
+  );
+}
+
 // The brand system: three templates, a style library and a style palette. The
 // styles are measured from the Databricks solution architecture diagrams.
 if (ICON_BASE !== `${PROJECT.url}icons/svg`) {
@@ -598,6 +635,7 @@ const DRAWIO_RAW = `${PROJECT.repository.replace('https://github.com/', 'https:/
 // libraries load from one link: the icons, the brand styles, and the templates.
 const DRAWIO_CLIBS = [
   'databricks-architecture-icons.xml',
+  'databricks-architecture-icons-outline.xml',
   'databricks-brand-styles.xml',
   'databricks-templates.xml',
 ]
@@ -963,7 +1001,7 @@ fs.writeFileSync(
         ).join('\n        ')}
       </div>
       <p class="dl-note"><b>Open in draw.io</b> above loads three libraries at once: the
-        ${catalog.length} product icons, the brand styles, and the same three templates. Drag a
+        ${catalog.length} product icons in two styles, the brand styles, and the same three templates. Drag a
         template onto a blank page, or download the file here and use File &rsaquo; Open From
         &rsaquo; Device. Every label in square brackets is a placeholder to replace.</p>
     </details>
@@ -1166,7 +1204,7 @@ if (sharp) {
       svg += `<text x="${PADX + 18}" y="${b.y + 19}" font-family="DM Sans,Helvetica,sans-serif" font-size="14" font-weight="600" letter-spacing="1.4" fill="${BRAND.navy800}">${esc(b.head.label.toUpperCase())}</text>`;
       continue;
     }
-    const data = fs.readFileSync(out('icons/svg-tile', `${b.product.slug}.svg`)).toString('base64');
+    const data = fs.readFileSync(out('icons/svg-outline', `${b.product.slug}.svg`)).toString('base64');
     svg += `<image x="${b.x}" y="${b.y}" width="${TILE}" height="${TILE}" xlink:href="data:image/svg+xml;base64,${data}"/>`;
     const words = b.product.slug.split('-');
     const lines = [''];
@@ -1190,10 +1228,10 @@ console.log(`${PROJECT.name}: built ${catalog.length} products`);
 console.log(
   `  icons/ (svg svg-mono svg-tile svg-outline${PNG_AVAILABLE ? ' png png-tile png-outline' : ''} logos sources catalog)`,
 );
-console.log(`  mermaid/ (two Iconify packs, a classic script and the demo page)`);
+console.log(`  mermaid/ (three Iconify packs, a classic script and the demo page)`);
 if (!sharp && PNG_AVAILABLE) console.log('  (PNG files kept from the last build - sharp is only needed to rebuild them)');
 console.log(`  index.html${sharp ? ' preview.png' : ''} .nojekyll`);
-console.log(`  drawio/databricks-architecture-icons.xml (${catalog.length} shapes)`);
+console.log(`  drawio/ 2 icon libraries (${catalog.length} shapes each: artwork and outline)`);
 console.log(`  drawio/ 3 templates, 2 more shape libraries, a style palette and a guide`);
 console.log('  category contrast (white glyph, WCAG 1.4.11 floor is 3:1):');
 for (const c of Object.values(CATEGORIES)) {

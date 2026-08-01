@@ -46,7 +46,7 @@ share. <a href="#every-icon">Every icon</a> &middot;
 <a href="https://github.com/oieduardorabelo/databricks-architecture-icons#readme">README</a></p>
 
 <h2>Start in two minutes</h2>
-<p class="note">You do not download anything. The two icon packs are on GitHub Pages, and the
+<p class="note">You do not download anything. The three icon packs are on GitHub Pages, and the
   server sends <code>access-control-allow-origin: *</code>, so your page can read them straight
   from the web. Paste the block below, change the slugs, and you have a diagram.</p>
 <ol class="steps">
@@ -61,8 +61,9 @@ share. <a href="#every-icon">Every icon</a> &middot;
 const PACKS = 'https://oieduardorabelo.github.io/databricks-architecture-icons/mermaid';
 
 mermaid.registerIconPacks([
-  { name: 'databricks-color', loader: () =&gt; fetch(`${PACKS}/databricks-color.json`).then((r) =&gt; r.json()) },
-  { name: 'databricks',       loader: () =&gt; fetch(`${PACKS}/databricks.json`).then((r) =&gt; r.json()) },
+  { name: 'databricks-color',   loader: () =&gt; fetch(`${PACKS}/databricks-color.json`).then((r) =&gt; r.json()) },
+  { name: 'databricks',         loader: () =&gt; fetch(`${PACKS}/databricks.json`).then((r) =&gt; r.json()) },
+  { name: 'databricks-outline', loader: () =&gt; fetch(`${PACKS}/databricks-outline.json`).then((r) =&gt; r.json()) },
 ]);
 
 mermaid.initialize({ startOnLoad: true });</pre>
@@ -81,10 +82,13 @@ mermaid.initialize({ startOnLoad: true });</pre>
     gold --&gt;|"served hourly"| wh</pre>
 
 <h2>Which pack, and where it works</h2>
-<p class="note"><b>Two packs, same 71 icons.</b> Use <code>databricks-color</code> for the official
-  Databricks Lava artwork. Use <code>databricks</code> for a single-color version: it inherits
-  <code>currentColor</code>, so Mermaid paints each icon in the text color of the diagram. That one
-  suits a dark theme, or a house style that is not Lava.</p>
+<p class="note"><b>Three packs, same 71 icons.</b> Use <code>databricks-color</code> for the
+  official Databricks Lava artwork. Use <code>databricks</code> for a single-color version: it
+  inherits <code>currentColor</code>, so Mermaid paints each icon in the text color of the diagram.
+  That one suits a dark theme, or a house style that is not Lava. Use
+  <code>databricks-outline</code> to put each icon in a white rounded box with a lava hairline.
+  A boxed icon holds its shape on a busy or dark canvas, and it is the pattern the Databricks
+  community draws most often.</p>
 <p class="note"><b>You need control of the Mermaid setup.</b> The packs load through
   <code>registerIconPacks()</code>, which is your JavaScript. It runs on your own page, and in a
   docs site that lets you configure Mermaid, such as Docusaurus, VitePress or MkDocs. It does not
@@ -131,6 +135,26 @@ architecture-beta
     gold:R --> L:wh
     wh:R --> L:dash
     wh:B --> T:genie
+  </pre>
+</div>
+
+<h2>Boxed icons with the outline pack</h2>
+<p class="note">The same diagram type, with <code>databricks-outline</code> in place of
+  <code>databricks-color</code>. Each icon arrives in a white rounded box with a lava hairline, so
+  it keeps its shape against a group fill or a dark page.</p>
+<div class="panel">
+  <pre class="mermaid" id="diagram-outline">
+architecture-beta
+    group platform(databricks-outline:data-intelligence-platform)[Data Intelligence Platform]
+
+    service connect(databricks-outline:lakeflow-connect)[Lakeflow Connect] in platform
+    service pipelines(databricks-outline:spark-declarative-pipelines)[Declarative Pipelines] in platform
+    service uc(databricks-outline:unity-catalog)[Unity Catalog] in platform
+    service wh(databricks-outline:sql-warehouse)[SQL Warehouse] in platform
+
+    connect:R --> L:pipelines
+    pipelines:R --> L:wh
+    uc:T --> B:pipelines
   </pre>
 </div>
 
@@ -385,16 +409,19 @@ flowchart LR
   // get the JSON file instead. fetch() works on a server but not on file://.
   const color = window.databricksColorIconPack;
   const mono = window.databricksIconPack;
+  const outline = window.databricksOutlineIconPack;
   const pack = color || mono;
   mermaid.registerIconPacks(
     pack
       ? [
           { name: 'databricks-color', icons: color },
           { name: 'databricks', icons: mono },
+          { name: 'databricks-outline', icons: outline },
         ]
       : [
           { name: 'databricks-color', loader: () => fetch('databricks-color.json').then((r) => r.json()) },
           { name: 'databricks', loader: () => fetch('databricks.json').then((r) => r.json()) },
+          { name: 'databricks-outline', loader: () => fetch('databricks-outline.json').then((r) => r.json()) },
         ],
   );
   if (!pack && location.protocol === 'file:') {

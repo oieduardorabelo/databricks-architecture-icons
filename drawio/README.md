@@ -12,6 +12,7 @@ architecture diagrams.
 | `template-standard.drawio` | 14 nodes, every shape in the legend, a branch, three zones, a legend box. 1600 x 900 |
 | `template-complex.drawio` | 42 nodes, five zones, every connector variant, annotations, legend, footer strip. 2560 x 1440 |
 | `databricks-architecture-icons.xml` | a shape library of all 71 product icons |
+| `databricks-architecture-icons-outline.xml` | the same 71 icons, each in a white box with a lava hairline |
 | `databricks-brand-styles.xml` | a shape library of the 32 brand styles |
 | `databricks-templates.xml` | a shape library holding the three templates. Drag one onto a blank page |
 | `style-palette.drawio` | one labeled example of every style, for Copy Style and Paste Style |

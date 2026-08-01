@@ -36,8 +36,8 @@ terms.](https://oieduardorabelo.github.io/databricks-architecture-icons/#provena
 
 ```
 icons/       the artwork, the source files and the catalog
-mermaid/     two Iconify packs and the demo page
-drawio/      three shape libraries, three templates and a style palette
+mermaid/     three Iconify packs and the demo page
+drawio/      four shape libraries, three templates and a style palette
 zips/        one archive for each collection and each category
 tools/       the product list and the build script
 index.html   the website
@@ -81,12 +81,14 @@ You do not download anything. The packs are hosted, and the server permits any o
 const PACKS = 'https://oieduardorabelo.github.io/databricks-architecture-icons/mermaid';
 
 mermaid.registerIconPacks([
-  { name: 'databricks-color', loader: () => fetch(`${PACKS}/databricks-color.json`).then((r) => r.json()) },
-  { name: 'databricks',       loader: () => fetch(`${PACKS}/databricks.json`).then((r) => r.json()) },
+  { name: 'databricks-color',   loader: () => fetch(`${PACKS}/databricks-color.json`).then((r) => r.json()) },
+  { name: 'databricks',         loader: () => fetch(`${PACKS}/databricks.json`).then((r) => r.json()) },
+  { name: 'databricks-outline', loader: () => fetch(`${PACKS}/databricks-outline.json`).then((r) => r.json()) },
 ]);
 ```
 
-Then write an icon as `databricks-color:<slug>`.
+Then write an icon as `databricks-color:<slug>`. Use `databricks-outline:` for the boxed form,
+or `databricks:` for a single color that follows the theme.
 
 **[The demo page](https://oieduardorabelo.github.io/databricks-architecture-icons/mermaid/)** gives
 live diagrams, the full setup, and every icon drawn by Mermaid.
@@ -95,7 +97,8 @@ live diagrams, the full setup, and every icon drawn by Mermaid.
 
 **[Open draw.io with the libraries loaded](https://app.diagrams.net/?splash=0&clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2Foieduardorabelo%2Fdatabricks-architecture-icons%2Fmain%2Fdrawio%2Fdatabricks-architecture-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2Foieduardorabelo%2Fdatabricks-architecture-icons%2Fmain%2Fdrawio%2Fdatabricks-brand-styles.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2Foieduardorabelo%2Fdatabricks-architecture-icons%2Fmain%2Fdrawio%2Fdatabricks-templates.xml)**
 
-One click loads three shape libraries: the 71 icons, 30 brand styles, and the three templates.
+One click loads four shape libraries: the 71 icons, the same 71 in the outline box, 30 brand
+styles, and the three templates.
 Drag a template onto an empty page. [drawio/README.md](drawio/README.md) gives every color token
 and every style string.
 

@@ -1,6 +1,6 @@
 # How the draw.io libraries and templates were made, and how to do it again
 
-This folder holds three shape libraries, three templates, a style palette and a generated guide.
+This folder holds four shape libraries, three templates, a style palette and a generated guide.
 `tools/drawio-templates.mjs` produces all of it and `tools/build.mjs` writes it out.
 
 The style system is not invented. It is measured from the solution architecture diagrams that
