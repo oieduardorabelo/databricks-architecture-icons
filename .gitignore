@@ -6,3 +6,8 @@ node_modules/
 
 # local Claude Code config, not part of the icon set
 .claude/
+
+# Databricks' own solution architecture diagrams, downloaded for local reference.
+# Databricks holds the copyright. This repository is public, so the files stay
+# out of it. Remove this line only after you decide that publishing them is safe.
+architectures/

@@ -497,6 +497,38 @@ window.databricksIconPack = ${JSON.stringify(iconPack)};
 `,
 );
 
+// --------------------------------------------------------- draw.io shape library
+
+// draw.io loads a custom palette from a URL with ?clibs=U<encoded url>. The file
+// is one <mxlibrary> element holding a JSON array, and each entry carries an
+// mxGraphModel that draws the icon from its published URL. Written uncompressed:
+// draw.io reads plain XML, and a plain file gives a readable diff.
+fresh('drawio');
+{
+  const shapes = catalog.map((p) => {
+    const style = [
+      'shape=image',
+      'verticalLabelPosition=bottom',
+      'verticalAlign=top',
+      'imageAspect=0',
+      `image=${PROJECT.url}${p.files.svg}`,
+      'aspect=fixed',
+    ].join(';');
+    const model =
+      '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>' +
+      `<mxCell id="2" value="" style="${style};" vertex="1" parent="1">` +
+      `<mxGeometry width="${CANVAS}" height="${CANVAS}" as="geometry"/></mxCell></root></mxGraphModel>`;
+    return { xml: model, w: CANVAS, h: CANVAS, aspect: 'fixed', title: p.name };
+  });
+  fs.writeFileSync(
+    out('drawio', 'databricks-architecture-icons.xml'),
+    `<mxlibrary>${JSON.stringify(shapes)}</mxlibrary>\n`,
+  );
+}
+
+const DRAWIO_LIB_URL = `${PROJECT.url}drawio/databricks-architecture-icons.xml`;
+const DRAWIO_OPEN_URL = `https://app.diagrams.net/?splash=0&clibs=U${encodeURIComponent(DRAWIO_LIB_URL)}`;
+
 // ------------------------------------------------------------------------ zips
 
 // PNGs are written asynchronously; the archives read them back off disk, so
@@ -543,6 +575,7 @@ for (const dir of VARIANT_DIRS) {
 addZip('all', 'all', 'Everything', 'Every variant plus the catalog', [
   ...VARIANT_DIRS.flatMap(readDir),
   ...readDir('iconify'),
+  ...readDir('drawio'),
   ...['catalog.json', 'catalog.csv', 'CATALOG.md', 'README.md']
     .filter((f) => fs.existsSync(out(f)))
     .map((f) => ({ name: f, data: fs.readFileSync(out(f)) })),
@@ -801,6 +834,7 @@ fs.writeFileSync(
       <a class="primary" href="${downloads.find((d) => d.group === 'all').file}" download>Download all
         &middot; ${fmtBytes(downloads.find((d) => d.group === 'all').bytes)}</a>
       <a href="examples/mermaid-architecture.html">Mermaid demo</a>
+      <a href="${esc(DRAWIO_OPEN_URL)}" target="_blank" rel="noreferrer">Open in draw.io</a>
       <a href="${PROJECT.repository}" target="_blank" rel="noreferrer">GitHub</a>
       <a href="#provenance">Where these come from</a>
     </nav>
@@ -1037,6 +1071,7 @@ console.log(`${PROJECT.name}: built ${catalog.length} products`);
 console.log(`  svg/ svg-mono/ svg-tile/${PNG_AVAILABLE ? ' png/ png-tile/' : ''} logos/ iconify/`);
 if (!sharp && PNG_AVAILABLE) console.log('  (PNG files kept from the last build - sharp is only needed to rebuild them)');
 console.log(`  catalog.json catalog.csv CATALOG.md index.html${sharp ? ' preview.png' : ''} .nojekyll`);
+console.log(`  drawio/databricks-architecture-icons.xml (${catalog.length} shapes)`);
 console.log('  category contrast (white glyph, WCAG 1.4.11 floor is 3:1):');
 for (const c of Object.values(CATEGORIES)) {
   console.log(`    ${c.color}  ${String(c.contrast).padStart(5)}:1  ${c.note.padEnd(20)} ${c.label}`);

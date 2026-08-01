@@ -90,6 +90,7 @@ databricks-architecture-icons/
 ├── logos/                full-color brand lockups (Spark, Delta Lake, MLflow, and more)
 ├── zips/                 one archive for each collection and each category
 ├── iconify/               the Iconify packs: databricks-color.json, databricks.json, databricks.js
+├── drawio/                a draw.io shape library with all 71 icons
 ├── examples/             a Mermaid page with live diagrams and every icon
 ├── sources/              the original Databricks files and MANIFEST.md
 └── tools/                products.mjs (the catalog) and build.mjs (the generator)
@@ -267,6 +268,19 @@ The SVG pack is better for most work. It gives sharp icons at all sizes, it take
 #### Renderers that you do not control
 
 GitHub, GitLab, and Kroki render Mermaid on the server. You cannot register an icon pack there. These renderers also remove `<img>` from node labels. For these renderers, put the icons near the diagram and not inside it. A Markdown table of `svg-tile/` images always works. The build makes `CATALOG.md` in this way.
+
+### draw.io / diagrams.net
+
+The file `drawio/databricks-architecture-icons.xml` is a draw.io shape library. It holds all
+71 icons and each one points at the copy on the published site.
+
+**[Open draw.io with the library loaded](https://app.diagrams.net/?splash=0&clibs=Uhttps%3A%2F%2Foieduardorabelo.github.io%2Fdatabricks-architecture-icons%2Fdrawio%2Fdatabricks-architecture-icons.xml)**
+
+The icons then appear in a section of the shape panel. To load the library by hand instead,
+open **File → Open Library from → Device** and select the file.
+
+The link uses the `clibs` parameter of draw.io. The value is `U` and then the URL of the
+library, percent-encoded. To load more than one library, separate them with a semicolon.
 
 ### Miro
 
