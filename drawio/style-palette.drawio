@@ -1,0 +1,241 @@
+<mxfile host="app.diagrams.net" agent="databricks-architecture-icons" type="device">
+  <diagram id="style-palette" name="style-palette">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="2180" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p-title" value="Databricks architecture — style palette" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="900" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-sub" value="Copy a shape, then use Edit &gt; Copy Style and Edit &gt; Paste Style to apply it elsewhere." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#618794;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="64" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-rule" value="" style="rounded=0;html=1;fillColor=#FF5F46;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="92" width="1120" height="4" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s1" value="[Databricks Data Intelligence Platform]" style="swimlane;html=1;whiteSpace=wrap;startSize=52;horizontal=1;fillColor=#FF5F46;swimlaneFillColor=#FFFFFF;strokeColor=#FF5F46;strokeWidth=4;fontColor=#FFFFFF;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;container=1;collapsible=0;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="130" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l1" value="zone-platform — Databricks platform boundary" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="270" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s2" value="[Data sources]" style="swimlane;html=1;whiteSpace=wrap;startSize=44;horizontal=1;fillColor=#D9D7CE;swimlaneFillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;fontColor=#1B3139;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;container=1;collapsible=0;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="130" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l2" value="zone-external — Zone outside Databricks" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="270" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s3" value="[Databricks Apps]" style="swimlane;html=1;whiteSpace=wrap;startSize=44;horizontal=1;fillColor=#143D4A;swimlaneFillColor=#FFFFFF;strokeColor=#143D4A;strokeWidth=2;fontColor=#FFFFFF;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;container=1;collapsible=0;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="130" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l3" value="zone-owned — Databricks zone outside the platform" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="270" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s4" value="[Capability group]" style="swimlane;html=1;whiteSpace=wrap;startSize=38;horizontal=1;fillColor=#143D4A;swimlaneFillColor=#FFFFFF;strokeColor=#143D4A;strokeWidth=2;dashed=1;dashPattern=6 4;fixDash=1;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;container=1;collapsible=0;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l4" value="panel-group — Capability group" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s5" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#143D4A;strokeWidth=2;dashed=1;dashPattern=6 4;fixDash=1;container=1;collapsible=0;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#143D4A;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="320" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l5" value="panel-plain — Unlabelled dashed group" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="460" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s6" value="[Platform title]" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FF5F46;strokeColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#FFFFFF;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="320" width="260" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l6" value="bar-lava — Platform title bar" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="460" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s7" value="[Section header]" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#143D4A;strokeColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#FFFFFF;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="510" width="260" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l7" value="bar-navy — Section header bar" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s8" value="[External header]" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#D9D7CE;strokeColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="510" width="260" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l8" value="bar-oat — External zone header bar" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="650" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s9" value="[Process step]" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#FF5F46;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="510" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l9" value="node-platform — Databricks component" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="650" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s10" value="[External system]" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l10" value="node-external — Non-Databricks system" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="840" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s11" value="[Capability]" style="shape=image;html=1;whiteSpace=wrap;imageAspect=1;verticalLabelPosition=bottom;verticalAlign=top;labelPosition=center;align=center;fontSize=11;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;image=https://oieduardorabelo.github.io/databricks-architecture-icons/svg/lakeflow.svg;" vertex="1" parent="1">
+          <mxGeometry x="420" y="700" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l11" value="node-capability — Capability, icon over label" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="840" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s12" value="[Decision?]" style="rhombus;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#143D4A;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="700" width="180" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l12" value="node-decision — Decision" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="840" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s13" value="[Data store]" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=14;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#143D4A;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="890" width="180" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l13" value="node-store — Data store" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1030" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s14" value="[Manual step]" style="shape=hexagon;perimeter=hexagonPerimeter2;html=1;whiteSpace=wrap;fillColor=#EEEDE9;strokeColor=#143D4A;strokeWidth=2;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="890" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l14" value="node-manual — Manual or offline step" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1030" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s15" value="Bronze" style="ellipse;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#B7584B;strokeWidth=3;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="890" width="110" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l15" value="ring-bronze — Bronze layer" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1030" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s16" value="Silver" style="ellipse;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#A7B7BB;strokeWidth=3;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1080" width="110" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l16" value="ring-silver — Silver layer" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1220" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s17" value="Gold" style="ellipse;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#A1670F;strokeWidth=3;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1080" width="110" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l17" value="ring-gold — Gold layer" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1220" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s18" value="1" style="ellipse;html=1;whiteSpace=wrap;fillColor=#71C5AD;strokeColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#FFFFFF;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1080" width="32" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l18" value="badge-step — Step marker" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1220" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s19" value="[Annotation]" style="shape=note;size=16;html=1;whiteSpace=wrap;fillColor=#F9F7F4;strokeColor=#D9D7CE;strokeWidth=1;align=left;verticalAlign=top;spacing=8;fontSize=11;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1270" width="220" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l19" value="note-callout — Annotation" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1410" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s20" value="Legend" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;container=1;collapsible=0;align=left;verticalAlign=top;spacingLeft=12;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1270" width="220" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l20" value="legend-box — Legend box" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1410" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s21" value="[Project] · v[0.1]" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#EEEDE9;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=16;fontSize=11;fontStyle=0;fontColor=#618794;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1270" width="260" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l21" value="footer-strip — Version and footer strip" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1410" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s22" value="[Diagram title]" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1460" width="260" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l22" value="text-title — Diagram title" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1600" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-s23" value="[Subtitle]" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#618794;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1460" width="260" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-l23" value="text-subtitle — Diagram subtitle" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1600" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ea1" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1680" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-eb1" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1680" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ee1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ea1" target="p-eb1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-el1" value="edge-flow — Primary flow" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1670" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ea2" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1740" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-eb2" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1740" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ee2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;strokeColor=#A9B8BD;strokeWidth=2;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ea2" target="p-eb2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-el2" value="edge-secondary — Secondary or return path" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1730" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ea3" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1800" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-eb3" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1800" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ee3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;dashed=1;dashPattern=6 4;fixDash=1;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ea3" target="p-eb3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-el3" value="edge-derived — Derived or logical flow" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1790" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ea4" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1860" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-eb4" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1860" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ee4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;startArrow=block;startFill=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;labelBackgroundColor=#FFFFFF;fontSize=10;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ea4" target="p-eb4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-el4" value="edge-two-way — Two-way exchange" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1850" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ea5" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1920" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-eb5" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1920" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ee5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;labelBackgroundColor=#FFFFFF;fontSize=10;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ea5" target="p-eb5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-el5" value="edge-labelled — Labelled branch" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1910" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ea6" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1980" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-eb6" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1980" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ee6" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#143D4A;strokeWidth=2;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ea6" target="p-eb6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-el6" value="edge-step — Short straight step" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1970" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ea7" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2040" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-eb7" value="" style="rounded=0;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D9D7CE;strokeWidth=2;align=center;verticalAlign=middle;spacing=6;fontSize=12;fontStyle=1;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="2040" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-ee7" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#A9B8BD;strokeWidth=1;dashed=1;dashPattern=4 4;fixDash=1;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ea7" target="p-eb7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p-el7" value="edge-leader — Annotation leader" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=0;fontColor=#1B3139;fontFamily=DM Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDM%2BSans%3A400%2C500%2C700;" vertex="1" parent="1">
+          <mxGeometry x="340" y="2030" width="400" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

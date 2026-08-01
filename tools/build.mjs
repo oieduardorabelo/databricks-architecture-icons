@@ -12,6 +12,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PRODUCTS, CATEGORIES, LOGOS, BRAND, PROJECT } from './products.mjs';
 import { createZip } from './zip.mjs';
+import { drawioFiles, validateDrawio, escapeXmlText, ICON_BASE } from './drawio-templates.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCES = path.join(ROOT, 'sources');
@@ -520,14 +521,57 @@ fresh('drawio');
       `<mxGeometry width="${CANVAS}" height="${CANVAS}" as="geometry"/></mxCell></root></mxGraphModel>`;
     return { xml: model, w: CANVAS, h: CANVAS, aspect: 'fixed', title: p.name };
   });
+  // The JSON sits in the text of the element, so `<`, `>` and `&` must be
+  // escaped. Without that the file is not well-formed XML, draw.io's parser
+  // returns a parse error and the import fails with no useful message.
   fs.writeFileSync(
     out('drawio', 'databricks-architecture-icons.xml'),
-    `<mxlibrary>${JSON.stringify(shapes)}</mxlibrary>\n`,
+    `<mxlibrary>${escapeXmlText(JSON.stringify(shapes))}</mxlibrary>\n`,
   );
 }
 
-const DRAWIO_LIB_URL = `${PROJECT.url}drawio/databricks-architecture-icons.xml`;
-const DRAWIO_OPEN_URL = `https://app.diagrams.net/?splash=0&clibs=U${encodeURIComponent(DRAWIO_LIB_URL)}`;
+// The brand system: three templates, a style library and a style palette. The
+// styles are measured from the Databricks solution architecture diagrams.
+if (ICON_BASE !== `${PROJECT.url}svg`) {
+  throw new Error(`drawio-templates.mjs points at ${ICON_BASE}, but PROJECT.url gives ${PROJECT.url}svg`);
+}
+{
+  let bad = 0;
+  for (const [name, body] of Object.entries(drawioFiles())) {
+    if (name.endsWith('.drawio')) {
+      const problems = validateDrawio(name, body);
+      if (problems.length) {
+        console.error(`! ${name}\n  - ${problems.join('\n  - ')}`);
+        bad += problems.length;
+      }
+    }
+    fs.writeFileSync(out('drawio', name), body);
+  }
+  if (bad) throw new Error(`${bad} problems in the draw.io templates`);
+}
+
+// draw.io fetches a URL directly only for a short allow list of domains:
+// raw.githubusercontent.com, icons.diagrams.net and the two Google Fonts hosts.
+// Every other URL goes through app.diagrams.net/proxy, which adds a hop and a
+// point of failure. This project is a public repository, so the raw host serves
+// the same files and keeps the fetch direct.
+const DRAWIO_RAW = `${PROJECT.repository.replace('https://github.com/', 'https://raw.githubusercontent.com/')}/main/drawio/`;
+// clibs takes a semicolon-separated list, each entry prefixed with U for a URL.
+// This is the mechanism draw.io documents for a shared library, so all three
+// libraries load from one link: the icons, the brand styles, and the templates.
+const DRAWIO_CLIBS = [
+  'databricks-architecture-icons.xml',
+  'databricks-brand-styles.xml',
+  'databricks-templates.xml',
+]
+  .map((f) => `U${encodeURIComponent(DRAWIO_RAW + f)}`)
+  .join(';');
+const DRAWIO_OPEN_URL = `https://app.diagrams.net/?splash=0&clibs=${DRAWIO_CLIBS}`;
+const DRAWIO_TEMPLATES = [
+  ['Simple', 'template-simple.drawio', '5 nodes &middot; one flow'],
+  ['Standard', 'template-standard.drawio', '14 nodes &middot; every shape'],
+  ['Complex', 'template-complex.drawio', '42 nodes &middot; five zones'],
+];
 
 // ------------------------------------------------------------------------ zips
 
@@ -839,7 +883,7 @@ fs.writeFileSync(
       <a href="#provenance">Where these come from</a>
     </nav>
     <details class="more">
-      <summary>More downloads</summary>
+      <summary>More downloads and draw.io templates</summary>
       <div class="dl-row">
         ${downloads
           .filter((d) => d.group === 'variant')
@@ -849,6 +893,17 @@ fs.writeFileSync(
       <p class="dl-note">Each category has its own archive. The link is on the heading of that
         category. The icons work with Mermaid, Miro, Lucidchart, draw.io, Excalidraw, Figma,
         PowerPoint, Keynote and Google Slides.</p>
+      <p class="dl-head">draw.io templates</p>
+      <div class="dl-row">
+        ${DRAWIO_TEMPLATES.map(
+          ([label, file, hint]) =>
+            `<a class="dl" href="drawio/${file}" download><b>${label}</b><span>${hint}</span></a>`,
+        ).join('\n        ')}
+      </div>
+      <p class="dl-note"><b>Open in draw.io</b> above loads three libraries at once: the
+        ${catalog.length} product icons, the brand styles, and the same three templates. Drag a
+        template onto a blank page, or download the file here and use File &rsaquo; Open From
+        &rsaquo; Device. Every label in square brackets is a placeholder to replace.</p>
     </details>
   </div>
 </header>
@@ -1072,6 +1127,7 @@ console.log(`  svg/ svg-mono/ svg-tile/${PNG_AVAILABLE ? ' png/ png-tile/' : ''}
 if (!sharp && PNG_AVAILABLE) console.log('  (PNG files kept from the last build - sharp is only needed to rebuild them)');
 console.log(`  catalog.json catalog.csv CATALOG.md index.html${sharp ? ' preview.png' : ''} .nojekyll`);
 console.log(`  drawio/databricks-architecture-icons.xml (${catalog.length} shapes)`);
+console.log(`  drawio/ 3 templates, 2 more shape libraries, a style palette and a guide`);
 console.log('  category contrast (white glyph, WCAG 1.4.11 floor is 3:1):');
 for (const c of Object.values(CATEGORIES)) {
   console.log(`    ${c.color}  ${String(c.contrast).padStart(5)}:1  ${c.note.padEnd(20)} ${c.label}`);

@@ -90,7 +90,7 @@ databricks-architecture-icons/
 ├── logos/                full-color brand lockups (Spark, Delta Lake, MLflow, and more)
 ├── zips/                 one archive for each collection and each category
 ├── iconify/               the Iconify packs: databricks-color.json, databricks.json, databricks.js
-├── drawio/                a draw.io shape library with all 71 icons
+├── drawio/                three shape libraries, three templates, a style palette and a guide
 ├── examples/             a Mermaid page with live diagrams and every icon
 ├── sources/              the original Databricks files and MANIFEST.md
 └── tools/                products.mjs (the catalog) and build.mjs (the generator)
@@ -271,16 +271,36 @@ GitHub, GitLab, and Kroki render Mermaid on the server. You cannot register an i
 
 ### draw.io / diagrams.net
 
-The file `drawio/databricks-architecture-icons.xml` is a draw.io shape library. It holds all
-71 icons and each one points at the copy on the published site.
+**[Open draw.io with everything loaded](https://app.diagrams.net/?splash=0&clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2Foieduardorabelo%2Fdatabricks-architecture-icons%2Fmain%2Fdrawio%2Fdatabricks-architecture-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2Foieduardorabelo%2Fdatabricks-architecture-icons%2Fmain%2Fdrawio%2Fdatabricks-brand-styles.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2Foieduardorabelo%2Fdatabricks-architecture-icons%2Fmain%2Fdrawio%2Fdatabricks-templates.xml)**
 
-**[Open draw.io with the library loaded](https://app.diagrams.net/?splash=0&clibs=Uhttps%3A%2F%2Foieduardorabelo.github.io%2Fdatabricks-architecture-icons%2Fdrawio%2Fdatabricks-architecture-icons.xml)**
+One click loads three shape libraries into the shape panel:
 
-The icons then appear in a section of the shape panel. To load the library by hand instead,
-open **File → Open Library from → Device** and select the file.
+| Library | Holds |
+|---|---|
+| `drawio/databricks-architecture-icons.xml` | all 71 product icons |
+| `drawio/databricks-brand-styles.xml` | 30 pre-styled shapes and connectors |
+| `drawio/databricks-templates.xml` | the three templates. Drag one onto a blank page |
+
+The folder also holds each template as its own file, a palette of every style, and a guide:
+
+| File | What it is |
+|---|---|
+| `drawio/template-simple.drawio` | 5 nodes, one linear flow, title block |
+| `drawio/template-standard.drawio` | 14 nodes, every shape in the legend, a branch, three zones |
+| `drawio/template-complex.drawio` | 42 nodes, five zones, every connector variant, legend, footer |
+| `drawio/style-palette.drawio` | one labelled example of every style, for Copy Style and Paste Style |
+| `drawio/README.md` | the colour tokens, the shape legend and every style string |
+
+To load a library by hand, open **File → Open Library from → Device** and select the file. To
+open a template, use **File → Open From → Device**.
+
+The style system comes from the Databricks solution architecture diagrams. One rule carries the
+most meaning: **lava `#FF5F46` marks Databricks, oat `#D9D7CE` marks everything else.**
 
 The link uses the `clibs` parameter of draw.io. The value is `U` and then the URL of the
-library, percent-encoded. To load more than one library, separate them with a semicolon.
+library, percent-encoded. Separate several libraries with a semicolon. The URLs point at
+`raw.githubusercontent.com`, which draw.io fetches directly; every other host goes through the
+draw.io proxy.
 
 ### Miro
 
