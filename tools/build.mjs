@@ -792,7 +792,7 @@ fs.writeFileSync(
 </div>
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow"><b>Unofficial</b> &middot; not affiliated with Databricks</p>
+    <p class="eyebrow"><b>Unofficial</b> &middot; community resource &middot; not affiliated with Databricks</p>
     <h1>${PROJECT.name}</h1>
     <p class="lead">Build architecture diagrams with official Databricks artwork.</p>
     <p class="lede">The set has ${catalog.length} products in ${Object.values(CATEGORIES).filter((c) => catalog.some((x) => x.categoryLabel === c.label)).length} categories.
