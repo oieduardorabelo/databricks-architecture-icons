@@ -149,15 +149,21 @@ The build fails if a category tile drops below the WCAG 2.2 contrast floor of 3:
 | `icons/svg/` | the published artwork, fitted and namespaced. Nothing else changed |
 | `icons/svg-mono/` | one color, `fill="currentColor"`, for theming |
 | `icons/svg-tile/` | a white glyph on a category-colored rounded square |
-| `icons/png/`, `icons/png-tile/` | 256px, for tools that reject SVG |
+| `icons/svg-outline/` | the artwork in a white box with a 1 px lava hairline |
+| `icons/png/`, `icons/png-tile/`, `icons/png-outline/` | 256px, for tools that reject SVG |
 | `icons/logos/` | full-color brand lockups, copied through untouched |
 | `icons/catalog.json`, `.csv`, `CATALOG.md` | the machine-readable and human-readable index |
-| `icons/outline/` | three candidates for a white box with a lava border. Not chosen yet |
 
-`icons/outline/` is a review artifact. The three folders `a`, `b` and `c` hold the same 71 icons
-with a different border and a different icon scale. Open `icons/outline/compare.html` to judge
-them. They are not in the catalog, the archives or the website. After you pick one, keep that
-variant, delete the other two, and add it to the catalog in `tools/build.mjs`.
+### 5.2 Why two boxed variants
+
+A **tile** puts a white glyph on the category color. The color carries the category, which helps in
+a grid or a legend. On a dark canvas the solid color goes muddy.
+
+An **outline** puts the artwork in a white box with a 1 px lava hairline. The Databricks community
+uses this pattern often. It reads the same on a light background and on a dark one, so it suits a
+diagram that you do not control. `OUTLINE` in `tools/build.mjs` holds the four numbers: stroke 1,
+radius 10, icon scale 62 %, color `#FF3621`. Four candidates were built and compared at 1, 2, 3
+and 4 px. The hairline won.
 
 `sharp` renders the PNG files. It is optional: the PNG files are committed, and the build keeps
 them when `sharp` is missing. It checks the disk, not whether `sharp` loaded. An earlier version

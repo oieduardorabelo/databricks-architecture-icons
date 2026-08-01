@@ -90,15 +90,19 @@
         "svg": "icons/svg/databricks.svg",
         "svgMono": "icons/svg-mono/databricks.svg",
         "svgTile": "icons/svg-tile/databricks.svg",
+        "svgOutline": "icons/svg-outline/databricks.svg",
         "png": "icons/png/databricks.png",
-        "pngTile": "icons/png-tile/databricks.png"
+        "pngTile": "icons/png-tile/databricks.png",
+        "pngOutline": "icons/png-outline/databricks.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/databricks.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/databricks.png"
       }
     },
     {
@@ -118,15 +122,19 @@
         "svg": "icons/svg/data-intelligence-platform.svg",
         "svgMono": "icons/svg-mono/data-intelligence-platform.svg",
         "svgTile": "icons/svg-tile/data-intelligence-platform.svg",
+        "svgOutline": "icons/svg-outline/data-intelligence-platform.svg",
         "png": "icons/png/data-intelligence-platform.png",
-        "pngTile": "icons/png-tile/data-intelligence-platform.png"
+        "pngTile": "icons/png-tile/data-intelligence-platform.png",
+        "pngOutline": "icons/png-outline/data-intelligence-platform.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-intelligence-platform.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-intelligence-platform.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-intelligence-platform.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/data-intelligence-platform.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-intelligence-platform.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-intelligence-platform.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-intelligence-platform.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/data-intelligence-platform.png"
       }
     },
     {
@@ -146,15 +154,19 @@
         "svg": "icons/svg/lakehouse.svg",
         "svgMono": "icons/svg-mono/lakehouse.svg",
         "svgTile": "icons/svg-tile/lakehouse.svg",
+        "svgOutline": "icons/svg-outline/lakehouse.svg",
         "png": "icons/png/lakehouse.png",
-        "pngTile": "icons/png-tile/lakehouse.png"
+        "pngTile": "icons/png-tile/lakehouse.png",
+        "pngOutline": "icons/png-outline/lakehouse.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakehouse.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakehouse.png"
       }
     },
     {
@@ -174,15 +186,19 @@
         "svg": "icons/svg/apache-spark.svg",
         "svgMono": "icons/svg-mono/apache-spark.svg",
         "svgTile": "icons/svg-tile/apache-spark.svg",
+        "svgOutline": "icons/svg-outline/apache-spark.svg",
         "png": "icons/png/apache-spark.png",
-        "pngTile": "icons/png-tile/apache-spark.png"
+        "pngTile": "icons/png-tile/apache-spark.png",
+        "pngOutline": "icons/png-outline/apache-spark.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/apache-spark.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/apache-spark.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/apache-spark.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/apache-spark.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/apache-spark.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/apache-spark.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/apache-spark.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/apache-spark.png"
       }
     },
     {
@@ -202,15 +218,19 @@
         "svg": "icons/svg/photon.svg",
         "svgMono": "icons/svg-mono/photon.svg",
         "svgTile": "icons/svg-tile/photon.svg",
+        "svgOutline": "icons/svg-outline/photon.svg",
         "png": "icons/png/photon.png",
-        "pngTile": "icons/png-tile/photon.png"
+        "pngTile": "icons/png-tile/photon.png",
+        "pngOutline": "icons/png-outline/photon.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/photon.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/photon.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/photon.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/photon.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/photon.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/photon.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/photon.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/photon.png"
       }
     },
     {
@@ -230,15 +250,19 @@
         "svg": "icons/svg/compute-clusters.svg",
         "svgMono": "icons/svg-mono/compute-clusters.svg",
         "svgTile": "icons/svg-tile/compute-clusters.svg",
+        "svgOutline": "icons/svg-outline/compute-clusters.svg",
         "png": "icons/png/compute-clusters.png",
-        "pngTile": "icons/png-tile/compute-clusters.png"
+        "pngTile": "icons/png-tile/compute-clusters.png",
+        "pngOutline": "icons/png-outline/compute-clusters.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/compute-clusters.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/compute-clusters.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/compute-clusters.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/compute-clusters.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/compute-clusters.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/compute-clusters.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/compute-clusters.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/compute-clusters.png"
       }
     },
     {
@@ -258,15 +282,19 @@
         "svg": "icons/svg/serverless-compute.svg",
         "svgMono": "icons/svg-mono/serverless-compute.svg",
         "svgTile": "icons/svg-tile/serverless-compute.svg",
+        "svgOutline": "icons/svg-outline/serverless-compute.svg",
         "png": "icons/png/serverless-compute.png",
-        "pngTile": "icons/png-tile/serverless-compute.png"
+        "pngTile": "icons/png-tile/serverless-compute.png",
+        "pngOutline": "icons/png-outline/serverless-compute.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/serverless-compute.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/serverless-compute.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/serverless-compute.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/serverless-compute.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/serverless-compute.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/serverless-compute.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/serverless-compute.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/serverless-compute.png"
       }
     },
     {
@@ -286,15 +314,19 @@
         "svg": "icons/svg/databricks-runtime.svg",
         "svgMono": "icons/svg-mono/databricks-runtime.svg",
         "svgTile": "icons/svg-tile/databricks-runtime.svg",
+        "svgOutline": "icons/svg-outline/databricks-runtime.svg",
         "png": "icons/png/databricks-runtime.png",
-        "pngTile": "icons/png-tile/databricks-runtime.png"
+        "pngTile": "icons/png-tile/databricks-runtime.png",
+        "pngOutline": "icons/png-outline/databricks-runtime.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-runtime.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-runtime.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-runtime.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/databricks-runtime.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-runtime.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-runtime.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-runtime.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/databricks-runtime.png"
       }
     },
     {
@@ -314,15 +346,19 @@
         "svg": "icons/svg/spark-real-time-mode.svg",
         "svgMono": "icons/svg-mono/spark-real-time-mode.svg",
         "svgTile": "icons/svg-tile/spark-real-time-mode.svg",
+        "svgOutline": "icons/svg-outline/spark-real-time-mode.svg",
         "png": "icons/png/spark-real-time-mode.png",
-        "pngTile": "icons/png-tile/spark-real-time-mode.png"
+        "pngTile": "icons/png-tile/spark-real-time-mode.png",
+        "pngOutline": "icons/png-outline/spark-real-time-mode.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/spark-real-time-mode.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/spark-real-time-mode.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/spark-real-time-mode.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/spark-real-time-mode.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/spark-real-time-mode.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/spark-real-time-mode.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/spark-real-time-mode.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/spark-real-time-mode.png"
       }
     },
     {
@@ -342,15 +378,19 @@
         "svg": "icons/svg/multicloud.svg",
         "svgMono": "icons/svg-mono/multicloud.svg",
         "svgTile": "icons/svg-tile/multicloud.svg",
+        "svgOutline": "icons/svg-outline/multicloud.svg",
         "png": "icons/png/multicloud.png",
-        "pngTile": "icons/png-tile/multicloud.png"
+        "pngTile": "icons/png-tile/multicloud.png",
+        "pngOutline": "icons/png-outline/multicloud.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/multicloud.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/multicloud.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/multicloud.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/multicloud.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/multicloud.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/multicloud.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/multicloud.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/multicloud.png"
       }
     },
     {
@@ -370,15 +410,19 @@
         "svg": "icons/svg/lakeflow.svg",
         "svgMono": "icons/svg-mono/lakeflow.svg",
         "svgTile": "icons/svg-tile/lakeflow.svg",
+        "svgOutline": "icons/svg-outline/lakeflow.svg",
         "png": "icons/png/lakeflow.png",
-        "pngTile": "icons/png-tile/lakeflow.png"
+        "pngTile": "icons/png-tile/lakeflow.png",
+        "pngOutline": "icons/png-outline/lakeflow.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakeflow.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakeflow.png"
       }
     },
     {
@@ -398,15 +442,19 @@
         "svg": "icons/svg/lakeflow-connect.svg",
         "svgMono": "icons/svg-mono/lakeflow-connect.svg",
         "svgTile": "icons/svg-tile/lakeflow-connect.svg",
+        "svgOutline": "icons/svg-outline/lakeflow-connect.svg",
         "png": "icons/png/lakeflow-connect.png",
-        "pngTile": "icons/png-tile/lakeflow-connect.png"
+        "pngTile": "icons/png-tile/lakeflow-connect.png",
+        "pngOutline": "icons/png-outline/lakeflow-connect.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow-connect.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow-connect.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow-connect.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakeflow-connect.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow-connect.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-connect.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-connect.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakeflow-connect.png"
       }
     },
     {
@@ -426,15 +474,19 @@
         "svg": "icons/svg/zerobus-ingest.svg",
         "svgMono": "icons/svg-mono/zerobus-ingest.svg",
         "svgTile": "icons/svg-tile/zerobus-ingest.svg",
+        "svgOutline": "icons/svg-outline/zerobus-ingest.svg",
         "png": "icons/png/zerobus-ingest.png",
-        "pngTile": "icons/png-tile/zerobus-ingest.png"
+        "pngTile": "icons/png-tile/zerobus-ingest.png",
+        "pngOutline": "icons/png-outline/zerobus-ingest.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/zerobus-ingest.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/zerobus-ingest.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/zerobus-ingest.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/zerobus-ingest.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/zerobus-ingest.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/zerobus-ingest.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/zerobus-ingest.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/zerobus-ingest.png"
       }
     },
     {
@@ -454,15 +506,19 @@
         "svg": "icons/svg/spark-declarative-pipelines.svg",
         "svgMono": "icons/svg-mono/spark-declarative-pipelines.svg",
         "svgTile": "icons/svg-tile/spark-declarative-pipelines.svg",
+        "svgOutline": "icons/svg-outline/spark-declarative-pipelines.svg",
         "png": "icons/png/spark-declarative-pipelines.png",
-        "pngTile": "icons/png-tile/spark-declarative-pipelines.png"
+        "pngTile": "icons/png-tile/spark-declarative-pipelines.png",
+        "pngOutline": "icons/png-outline/spark-declarative-pipelines.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/spark-declarative-pipelines.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/spark-declarative-pipelines.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/spark-declarative-pipelines.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/spark-declarative-pipelines.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/spark-declarative-pipelines.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/spark-declarative-pipelines.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/spark-declarative-pipelines.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/spark-declarative-pipelines.png"
       }
     },
     {
@@ -482,15 +538,19 @@
         "svg": "icons/svg/lakeflow-jobs.svg",
         "svgMono": "icons/svg-mono/lakeflow-jobs.svg",
         "svgTile": "icons/svg-tile/lakeflow-jobs.svg",
+        "svgOutline": "icons/svg-outline/lakeflow-jobs.svg",
         "png": "icons/png/lakeflow-jobs.png",
-        "pngTile": "icons/png-tile/lakeflow-jobs.png"
+        "pngTile": "icons/png-tile/lakeflow-jobs.png",
+        "pngOutline": "icons/png-outline/lakeflow-jobs.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow-jobs.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow-jobs.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow-jobs.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakeflow-jobs.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow-jobs.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-jobs.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-jobs.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakeflow-jobs.png"
       }
     },
     {
@@ -510,15 +570,19 @@
         "svg": "icons/svg/lakeflow-designer.svg",
         "svgMono": "icons/svg-mono/lakeflow-designer.svg",
         "svgTile": "icons/svg-tile/lakeflow-designer.svg",
+        "svgOutline": "icons/svg-outline/lakeflow-designer.svg",
         "png": "icons/png/lakeflow-designer.png",
-        "pngTile": "icons/png-tile/lakeflow-designer.png"
+        "pngTile": "icons/png-tile/lakeflow-designer.png",
+        "pngOutline": "icons/png-outline/lakeflow-designer.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakeflow-designer.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakeflow-designer.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakeflow-designer.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakeflow-designer.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakeflow-designer.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-designer.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakeflow-designer.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakeflow-designer.png"
       }
     },
     {
@@ -538,15 +602,19 @@
         "svg": "icons/svg/auto-loader.svg",
         "svgMono": "icons/svg-mono/auto-loader.svg",
         "svgTile": "icons/svg-tile/auto-loader.svg",
+        "svgOutline": "icons/svg-outline/auto-loader.svg",
         "png": "icons/png/auto-loader.png",
-        "pngTile": "icons/png-tile/auto-loader.png"
+        "pngTile": "icons/png-tile/auto-loader.png",
+        "pngOutline": "icons/png-outline/auto-loader.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/auto-loader.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/auto-loader.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/auto-loader.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/auto-loader.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/auto-loader.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/auto-loader.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/auto-loader.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/auto-loader.png"
       }
     },
     {
@@ -566,15 +634,19 @@
         "svg": "icons/svg/structured-streaming.svg",
         "svgMono": "icons/svg-mono/structured-streaming.svg",
         "svgTile": "icons/svg-tile/structured-streaming.svg",
+        "svgOutline": "icons/svg-outline/structured-streaming.svg",
         "png": "icons/png/structured-streaming.png",
-        "pngTile": "icons/png-tile/structured-streaming.png"
+        "pngTile": "icons/png-tile/structured-streaming.png",
+        "pngOutline": "icons/png-outline/structured-streaming.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/structured-streaming.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/structured-streaming.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/structured-streaming.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/structured-streaming.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/structured-streaming.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/structured-streaming.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/structured-streaming.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/structured-streaming.png"
       }
     },
     {
@@ -594,15 +666,19 @@
         "svg": "icons/svg/lakebridge.svg",
         "svgMono": "icons/svg-mono/lakebridge.svg",
         "svgTile": "icons/svg-tile/lakebridge.svg",
+        "svgOutline": "icons/svg-outline/lakebridge.svg",
         "png": "icons/png/lakebridge.png",
-        "pngTile": "icons/png-tile/lakebridge.png"
+        "pngTile": "icons/png-tile/lakebridge.png",
+        "pngOutline": "icons/png-outline/lakebridge.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakebridge.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakebridge.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakebridge.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakebridge.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakebridge.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakebridge.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakebridge.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakebridge.png"
       }
     },
     {
@@ -622,15 +698,19 @@
         "svg": "icons/svg/delta-lake.svg",
         "svgMono": "icons/svg-mono/delta-lake.svg",
         "svgTile": "icons/svg-tile/delta-lake.svg",
+        "svgOutline": "icons/svg-outline/delta-lake.svg",
         "png": "icons/png/delta-lake.png",
-        "pngTile": "icons/png-tile/delta-lake.png"
+        "pngTile": "icons/png-tile/delta-lake.png",
+        "pngOutline": "icons/png-outline/delta-lake.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/delta-lake.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/delta-lake.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/delta-lake.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/delta-lake.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/delta-lake.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/delta-lake.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/delta-lake.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/delta-lake.png"
       }
     },
     {
@@ -650,15 +730,19 @@
         "svg": "icons/svg/apache-iceberg.svg",
         "svgMono": "icons/svg-mono/apache-iceberg.svg",
         "svgTile": "icons/svg-tile/apache-iceberg.svg",
+        "svgOutline": "icons/svg-outline/apache-iceberg.svg",
         "png": "icons/png/apache-iceberg.png",
-        "pngTile": "icons/png-tile/apache-iceberg.png"
+        "pngTile": "icons/png-tile/apache-iceberg.png",
+        "pngOutline": "icons/png-outline/apache-iceberg.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/apache-iceberg.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/apache-iceberg.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/apache-iceberg.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/apache-iceberg.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/apache-iceberg.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/apache-iceberg.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/apache-iceberg.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/apache-iceberg.png"
       }
     },
     {
@@ -678,15 +762,19 @@
         "svg": "icons/svg/lakehouse-storage.svg",
         "svgMono": "icons/svg-mono/lakehouse-storage.svg",
         "svgTile": "icons/svg-tile/lakehouse-storage.svg",
+        "svgOutline": "icons/svg-outline/lakehouse-storage.svg",
         "png": "icons/png/lakehouse-storage.png",
-        "pngTile": "icons/png-tile/lakehouse-storage.png"
+        "pngTile": "icons/png-tile/lakehouse-storage.png",
+        "pngOutline": "icons/png-outline/lakehouse-storage.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse-storage.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse-storage.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse-storage.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakehouse-storage.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse-storage.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-storage.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-storage.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakehouse-storage.png"
       }
     },
     {
@@ -706,15 +794,19 @@
         "svg": "icons/svg/liquid-clustering.svg",
         "svgMono": "icons/svg-mono/liquid-clustering.svg",
         "svgTile": "icons/svg-tile/liquid-clustering.svg",
+        "svgOutline": "icons/svg-outline/liquid-clustering.svg",
         "png": "icons/png/liquid-clustering.png",
-        "pngTile": "icons/png-tile/liquid-clustering.png"
+        "pngTile": "icons/png-tile/liquid-clustering.png",
+        "pngOutline": "icons/png-outline/liquid-clustering.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/liquid-clustering.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/liquid-clustering.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/liquid-clustering.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/liquid-clustering.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/liquid-clustering.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/liquid-clustering.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/liquid-clustering.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/liquid-clustering.png"
       }
     },
     {
@@ -734,15 +826,19 @@
         "svg": "icons/svg/predictive-optimization.svg",
         "svgMono": "icons/svg-mono/predictive-optimization.svg",
         "svgTile": "icons/svg-tile/predictive-optimization.svg",
+        "svgOutline": "icons/svg-outline/predictive-optimization.svg",
         "png": "icons/png/predictive-optimization.png",
-        "pngTile": "icons/png-tile/predictive-optimization.png"
+        "pngTile": "icons/png-tile/predictive-optimization.png",
+        "pngOutline": "icons/png-outline/predictive-optimization.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/predictive-optimization.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/predictive-optimization.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/predictive-optimization.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/predictive-optimization.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/predictive-optimization.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/predictive-optimization.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/predictive-optimization.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/predictive-optimization.png"
       }
     },
     {
@@ -762,15 +858,19 @@
         "svg": "icons/svg/lakebase.svg",
         "svgMono": "icons/svg-mono/lakebase.svg",
         "svgTile": "icons/svg-tile/lakebase.svg",
+        "svgOutline": "icons/svg-outline/lakebase.svg",
         "png": "icons/png/lakebase.png",
-        "pngTile": "icons/png-tile/lakebase.png"
+        "pngTile": "icons/png-tile/lakebase.png",
+        "pngOutline": "icons/png-outline/lakebase.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakebase.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakebase.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakebase.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakebase.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakebase.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakebase.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakebase.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakebase.png"
       }
     },
     {
@@ -790,15 +890,19 @@
         "svg": "icons/svg/data-warehousing.svg",
         "svgMono": "icons/svg-mono/data-warehousing.svg",
         "svgTile": "icons/svg-tile/data-warehousing.svg",
+        "svgOutline": "icons/svg-outline/data-warehousing.svg",
         "png": "icons/png/data-warehousing.png",
-        "pngTile": "icons/png-tile/data-warehousing.png"
+        "pngTile": "icons/png-tile/data-warehousing.png",
+        "pngOutline": "icons/png-outline/data-warehousing.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-warehousing.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-warehousing.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-warehousing.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/data-warehousing.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-warehousing.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-warehousing.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-warehousing.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/data-warehousing.png"
       }
     },
     {
@@ -818,15 +922,19 @@
         "svg": "icons/svg/databricks-sql.svg",
         "svgMono": "icons/svg-mono/databricks-sql.svg",
         "svgTile": "icons/svg-tile/databricks-sql.svg",
+        "svgOutline": "icons/svg-outline/databricks-sql.svg",
         "png": "icons/png/databricks-sql.png",
-        "pngTile": "icons/png-tile/databricks-sql.png"
+        "pngTile": "icons/png-tile/databricks-sql.png",
+        "pngOutline": "icons/png-outline/databricks-sql.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-sql.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-sql.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-sql.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/databricks-sql.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-sql.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-sql.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-sql.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/databricks-sql.png"
       }
     },
     {
@@ -846,15 +954,19 @@
         "svg": "icons/svg/sql-warehouse.svg",
         "svgMono": "icons/svg-mono/sql-warehouse.svg",
         "svgTile": "icons/svg-tile/sql-warehouse.svg",
+        "svgOutline": "icons/svg-outline/sql-warehouse.svg",
         "png": "icons/png/sql-warehouse.png",
-        "pngTile": "icons/png-tile/sql-warehouse.png"
+        "pngTile": "icons/png-tile/sql-warehouse.png",
+        "pngOutline": "icons/png-outline/sql-warehouse.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/sql-warehouse.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/sql-warehouse.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/sql-warehouse.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/sql-warehouse.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/sql-warehouse.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/sql-warehouse.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/sql-warehouse.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/sql-warehouse.png"
       }
     },
     {
@@ -874,15 +986,19 @@
         "svg": "icons/svg/lakehouse-rt.svg",
         "svgMono": "icons/svg-mono/lakehouse-rt.svg",
         "svgTile": "icons/svg-tile/lakehouse-rt.svg",
+        "svgOutline": "icons/svg-outline/lakehouse-rt.svg",
         "png": "icons/png/lakehouse-rt.png",
-        "pngTile": "icons/png-tile/lakehouse-rt.png"
+        "pngTile": "icons/png-tile/lakehouse-rt.png",
+        "pngOutline": "icons/png-outline/lakehouse-rt.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse-rt.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse-rt.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse-rt.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakehouse-rt.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse-rt.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-rt.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-rt.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakehouse-rt.png"
       }
     },
     {
@@ -902,15 +1018,19 @@
         "svg": "icons/svg/ai-bi.svg",
         "svgMono": "icons/svg-mono/ai-bi.svg",
         "svgTile": "icons/svg-tile/ai-bi.svg",
+        "svgOutline": "icons/svg-outline/ai-bi.svg",
         "png": "icons/png/ai-bi.png",
-        "pngTile": "icons/png-tile/ai-bi.png"
+        "pngTile": "icons/png-tile/ai-bi.png",
+        "pngOutline": "icons/png-outline/ai-bi.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-bi.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-bi.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-bi.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/ai-bi.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-bi.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-bi.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-bi.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/ai-bi.png"
       }
     },
     {
@@ -930,15 +1050,19 @@
         "svg": "icons/svg/ai-bi-dashboards.svg",
         "svgMono": "icons/svg-mono/ai-bi-dashboards.svg",
         "svgTile": "icons/svg-tile/ai-bi-dashboards.svg",
+        "svgOutline": "icons/svg-outline/ai-bi-dashboards.svg",
         "png": "icons/png/ai-bi-dashboards.png",
-        "pngTile": "icons/png-tile/ai-bi-dashboards.png"
+        "pngTile": "icons/png-tile/ai-bi-dashboards.png",
+        "pngOutline": "icons/png-outline/ai-bi-dashboards.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-bi-dashboards.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-bi-dashboards.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-bi-dashboards.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/ai-bi-dashboards.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-bi-dashboards.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-bi-dashboards.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-bi-dashboards.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/ai-bi-dashboards.png"
       }
     },
     {
@@ -958,15 +1082,19 @@
         "svg": "icons/svg/lakehouse-federation.svg",
         "svgMono": "icons/svg-mono/lakehouse-federation.svg",
         "svgTile": "icons/svg-tile/lakehouse-federation.svg",
+        "svgOutline": "icons/svg-outline/lakehouse-federation.svg",
         "png": "icons/png/lakehouse-federation.png",
-        "pngTile": "icons/png-tile/lakehouse-federation.png"
+        "pngTile": "icons/png-tile/lakehouse-federation.png",
+        "pngOutline": "icons/png-outline/lakehouse-federation.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakehouse-federation.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakehouse-federation.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakehouse-federation.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakehouse-federation.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakehouse-federation.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-federation.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakehouse-federation.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakehouse-federation.png"
       }
     },
     {
@@ -986,15 +1114,19 @@
         "svg": "icons/svg/genie.svg",
         "svgMono": "icons/svg-mono/genie.svg",
         "svgTile": "icons/svg-tile/genie.svg",
+        "svgOutline": "icons/svg-outline/genie.svg",
         "png": "icons/png/genie.png",
-        "pngTile": "icons/png-tile/genie.png"
+        "pngTile": "icons/png-tile/genie.png",
+        "pngOutline": "icons/png-outline/genie.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/genie.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/genie.png"
       }
     },
     {
@@ -1014,15 +1146,19 @@
         "svg": "icons/svg/genie-one.svg",
         "svgMono": "icons/svg-mono/genie-one.svg",
         "svgTile": "icons/svg-tile/genie-one.svg",
+        "svgOutline": "icons/svg-outline/genie-one.svg",
         "png": "icons/png/genie-one.png",
-        "pngTile": "icons/png-tile/genie-one.png"
+        "pngTile": "icons/png-tile/genie-one.png",
+        "pngOutline": "icons/png-outline/genie-one.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-one.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-one.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-one.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/genie-one.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-one.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-one.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-one.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/genie-one.png"
       }
     },
     {
@@ -1042,15 +1178,19 @@
         "svg": "icons/svg/genie-agents.svg",
         "svgMono": "icons/svg-mono/genie-agents.svg",
         "svgTile": "icons/svg-tile/genie-agents.svg",
+        "svgOutline": "icons/svg-outline/genie-agents.svg",
         "png": "icons/png/genie-agents.png",
-        "pngTile": "icons/png-tile/genie-agents.png"
+        "pngTile": "icons/png-tile/genie-agents.png",
+        "pngOutline": "icons/png-outline/genie-agents.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-agents.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-agents.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-agents.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/genie-agents.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-agents.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-agents.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-agents.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/genie-agents.png"
       }
     },
     {
@@ -1070,15 +1210,19 @@
         "svg": "icons/svg/genie-code.svg",
         "svgMono": "icons/svg-mono/genie-code.svg",
         "svgTile": "icons/svg-tile/genie-code.svg",
+        "svgOutline": "icons/svg-outline/genie-code.svg",
         "png": "icons/png/genie-code.png",
-        "pngTile": "icons/png-tile/genie-code.png"
+        "pngTile": "icons/png-tile/genie-code.png",
+        "pngOutline": "icons/png-outline/genie-code.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-code.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-code.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-code.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/genie-code.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-code.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-code.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-code.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/genie-code.png"
       }
     },
     {
@@ -1098,15 +1242,19 @@
         "svg": "icons/svg/genie-deep-research.svg",
         "svgMono": "icons/svg-mono/genie-deep-research.svg",
         "svgTile": "icons/svg-tile/genie-deep-research.svg",
+        "svgOutline": "icons/svg-outline/genie-deep-research.svg",
         "png": "icons/png/genie-deep-research.png",
-        "pngTile": "icons/png-tile/genie-deep-research.png"
+        "pngTile": "icons/png-tile/genie-deep-research.png",
+        "pngOutline": "icons/png-outline/genie-deep-research.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/genie-deep-research.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/genie-deep-research.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/genie-deep-research.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/genie-deep-research.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/genie-deep-research.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-deep-research.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/genie-deep-research.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/genie-deep-research.png"
       }
     },
     {
@@ -1126,15 +1274,19 @@
         "svg": "icons/svg/agent-bricks.svg",
         "svgMono": "icons/svg-mono/agent-bricks.svg",
         "svgTile": "icons/svg-tile/agent-bricks.svg",
+        "svgOutline": "icons/svg-outline/agent-bricks.svg",
         "png": "icons/png/agent-bricks.png",
-        "pngTile": "icons/png-tile/agent-bricks.png"
+        "pngTile": "icons/png-tile/agent-bricks.png",
+        "pngOutline": "icons/png-outline/agent-bricks.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/agent-bricks.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/agent-bricks.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/agent-bricks.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/agent-bricks.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/agent-bricks.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/agent-bricks.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/agent-bricks.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/agent-bricks.png"
       }
     },
     {
@@ -1154,15 +1306,19 @@
         "svg": "icons/svg/ai-search.svg",
         "svgMono": "icons/svg-mono/ai-search.svg",
         "svgTile": "icons/svg-tile/ai-search.svg",
+        "svgOutline": "icons/svg-outline/ai-search.svg",
         "png": "icons/png/ai-search.png",
-        "pngTile": "icons/png-tile/ai-search.png"
+        "pngTile": "icons/png-tile/ai-search.png",
+        "pngOutline": "icons/png-outline/ai-search.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-search.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-search.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-search.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/ai-search.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-search.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-search.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-search.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/ai-search.png"
       }
     },
     {
@@ -1182,15 +1338,19 @@
         "svg": "icons/svg/unity-ai-gateway.svg",
         "svgMono": "icons/svg-mono/unity-ai-gateway.svg",
         "svgTile": "icons/svg-tile/unity-ai-gateway.svg",
+        "svgOutline": "icons/svg-outline/unity-ai-gateway.svg",
         "png": "icons/png/unity-ai-gateway.png",
-        "pngTile": "icons/png-tile/unity-ai-gateway.png"
+        "pngTile": "icons/png-tile/unity-ai-gateway.png",
+        "pngOutline": "icons/png-outline/unity-ai-gateway.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/unity-ai-gateway.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/unity-ai-gateway.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/unity-ai-gateway.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/unity-ai-gateway.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/unity-ai-gateway.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-ai-gateway.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-ai-gateway.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/unity-ai-gateway.png"
       }
     },
     {
@@ -1210,15 +1370,19 @@
         "svg": "icons/svg/document-intelligence.svg",
         "svgMono": "icons/svg-mono/document-intelligence.svg",
         "svgTile": "icons/svg-tile/document-intelligence.svg",
+        "svgOutline": "icons/svg-outline/document-intelligence.svg",
         "png": "icons/png/document-intelligence.png",
-        "pngTile": "icons/png-tile/document-intelligence.png"
+        "pngTile": "icons/png-tile/document-intelligence.png",
+        "pngOutline": "icons/png-outline/document-intelligence.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/document-intelligence.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/document-intelligence.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/document-intelligence.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/document-intelligence.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/document-intelligence.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/document-intelligence.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/document-intelligence.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/document-intelligence.png"
       }
     },
     {
@@ -1238,15 +1402,19 @@
         "svg": "icons/svg/model-serving.svg",
         "svgMono": "icons/svg-mono/model-serving.svg",
         "svgTile": "icons/svg-tile/model-serving.svg",
+        "svgOutline": "icons/svg-outline/model-serving.svg",
         "png": "icons/png/model-serving.png",
-        "pngTile": "icons/png-tile/model-serving.png"
+        "pngTile": "icons/png-tile/model-serving.png",
+        "pngOutline": "icons/png-outline/model-serving.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/model-serving.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/model-serving.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/model-serving.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/model-serving.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/model-serving.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/model-serving.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/model-serving.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/model-serving.png"
       }
     },
     {
@@ -1266,15 +1434,19 @@
         "svg": "icons/svg/model-training.svg",
         "svgMono": "icons/svg-mono/model-training.svg",
         "svgTile": "icons/svg-tile/model-training.svg",
+        "svgOutline": "icons/svg-outline/model-training.svg",
         "png": "icons/png/model-training.png",
-        "pngTile": "icons/png-tile/model-training.png"
+        "pngTile": "icons/png-tile/model-training.png",
+        "pngOutline": "icons/png-outline/model-training.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/model-training.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/model-training.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/model-training.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/model-training.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/model-training.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/model-training.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/model-training.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/model-training.png"
       }
     },
     {
@@ -1294,15 +1466,19 @@
         "svg": "icons/svg/mlflow.svg",
         "svgMono": "icons/svg-mono/mlflow.svg",
         "svgTile": "icons/svg-tile/mlflow.svg",
+        "svgOutline": "icons/svg-outline/mlflow.svg",
         "png": "icons/png/mlflow.png",
-        "pngTile": "icons/png-tile/mlflow.png"
+        "pngTile": "icons/png-tile/mlflow.png",
+        "pngOutline": "icons/png-outline/mlflow.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/mlflow.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/mlflow.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/mlflow.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/mlflow.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/mlflow.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/mlflow.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/mlflow.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/mlflow.png"
       }
     },
     {
@@ -1322,15 +1498,19 @@
         "svg": "icons/svg/feature-store.svg",
         "svgMono": "icons/svg-mono/feature-store.svg",
         "svgTile": "icons/svg-tile/feature-store.svg",
+        "svgOutline": "icons/svg-outline/feature-store.svg",
         "png": "icons/png/feature-store.png",
-        "pngTile": "icons/png-tile/feature-store.png"
+        "pngTile": "icons/png-tile/feature-store.png",
+        "pngOutline": "icons/png-outline/feature-store.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/feature-store.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/feature-store.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/feature-store.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/feature-store.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/feature-store.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/feature-store.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/feature-store.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/feature-store.png"
       }
     },
     {
@@ -1350,15 +1530,19 @@
         "svg": "icons/svg/ai-functions.svg",
         "svgMono": "icons/svg-mono/ai-functions.svg",
         "svgTile": "icons/svg-tile/ai-functions.svg",
+        "svgOutline": "icons/svg-outline/ai-functions.svg",
         "png": "icons/png/ai-functions.png",
-        "pngTile": "icons/png-tile/ai-functions.png"
+        "pngTile": "icons/png-tile/ai-functions.png",
+        "pngOutline": "icons/png-outline/ai-functions.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ai-functions.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ai-functions.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ai-functions.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/ai-functions.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ai-functions.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-functions.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ai-functions.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/ai-functions.png"
       }
     },
     {
@@ -1378,15 +1562,19 @@
         "svg": "icons/svg/automl.svg",
         "svgMono": "icons/svg-mono/automl.svg",
         "svgTile": "icons/svg-tile/automl.svg",
+        "svgOutline": "icons/svg-outline/automl.svg",
         "png": "icons/png/automl.png",
-        "pngTile": "icons/png-tile/automl.png"
+        "pngTile": "icons/png-tile/automl.png",
+        "pngOutline": "icons/png-outline/automl.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/automl.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/automl.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/automl.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/automl.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/automl.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/automl.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/automl.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/automl.png"
       }
     },
     {
@@ -1406,15 +1594,19 @@
         "svg": "icons/svg/customerlake.svg",
         "svgMono": "icons/svg-mono/customerlake.svg",
         "svgTile": "icons/svg-tile/customerlake.svg",
+        "svgOutline": "icons/svg-outline/customerlake.svg",
         "png": "icons/png/customerlake.png",
-        "pngTile": "icons/png-tile/customerlake.png"
+        "pngTile": "icons/png-tile/customerlake.png",
+        "pngOutline": "icons/png-outline/customerlake.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/customerlake.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/customerlake.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/customerlake.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/customerlake.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/customerlake.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/customerlake.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/customerlake.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/customerlake.png"
       }
     },
     {
@@ -1434,15 +1626,19 @@
         "svg": "icons/svg/unity-catalog.svg",
         "svgMono": "icons/svg-mono/unity-catalog.svg",
         "svgTile": "icons/svg-tile/unity-catalog.svg",
+        "svgOutline": "icons/svg-outline/unity-catalog.svg",
         "png": "icons/png/unity-catalog.png",
-        "pngTile": "icons/png-tile/unity-catalog.png"
+        "pngTile": "icons/png-tile/unity-catalog.png",
+        "pngOutline": "icons/png-outline/unity-catalog.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/unity-catalog.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/unity-catalog.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/unity-catalog.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/unity-catalog.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/unity-catalog.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-catalog.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-catalog.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/unity-catalog.png"
       }
     },
     {
@@ -1462,15 +1658,19 @@
         "svg": "icons/svg/unity-catalog-semantics.svg",
         "svgMono": "icons/svg-mono/unity-catalog-semantics.svg",
         "svgTile": "icons/svg-tile/unity-catalog-semantics.svg",
+        "svgOutline": "icons/svg-outline/unity-catalog-semantics.svg",
         "png": "icons/png/unity-catalog-semantics.png",
-        "pngTile": "icons/png-tile/unity-catalog-semantics.png"
+        "pngTile": "icons/png-tile/unity-catalog-semantics.png",
+        "pngOutline": "icons/png-outline/unity-catalog-semantics.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/unity-catalog-semantics.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/unity-catalog-semantics.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/unity-catalog-semantics.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/unity-catalog-semantics.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/unity-catalog-semantics.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-catalog-semantics.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/unity-catalog-semantics.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/unity-catalog-semantics.png"
       }
     },
     {
@@ -1490,15 +1690,19 @@
         "svg": "icons/svg/data-lineage.svg",
         "svgMono": "icons/svg-mono/data-lineage.svg",
         "svgTile": "icons/svg-tile/data-lineage.svg",
+        "svgOutline": "icons/svg-outline/data-lineage.svg",
         "png": "icons/png/data-lineage.png",
-        "pngTile": "icons/png-tile/data-lineage.png"
+        "pngTile": "icons/png-tile/data-lineage.png",
+        "pngOutline": "icons/png-outline/data-lineage.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-lineage.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-lineage.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-lineage.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/data-lineage.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-lineage.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-lineage.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-lineage.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/data-lineage.png"
       }
     },
     {
@@ -1518,15 +1722,19 @@
         "svg": "icons/svg/abac.svg",
         "svgMono": "icons/svg-mono/abac.svg",
         "svgTile": "icons/svg-tile/abac.svg",
+        "svgOutline": "icons/svg-outline/abac.svg",
         "png": "icons/png/abac.png",
-        "pngTile": "icons/png-tile/abac.png"
+        "pngTile": "icons/png-tile/abac.png",
+        "pngOutline": "icons/png-outline/abac.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/abac.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/abac.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/abac.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/abac.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/abac.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/abac.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/abac.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/abac.png"
       }
     },
     {
@@ -1546,15 +1754,19 @@
         "svg": "icons/svg/data-quality-monitoring.svg",
         "svgMono": "icons/svg-mono/data-quality-monitoring.svg",
         "svgTile": "icons/svg-tile/data-quality-monitoring.svg",
+        "svgOutline": "icons/svg-outline/data-quality-monitoring.svg",
         "png": "icons/png/data-quality-monitoring.png",
-        "pngTile": "icons/png-tile/data-quality-monitoring.png"
+        "pngTile": "icons/png-tile/data-quality-monitoring.png",
+        "pngOutline": "icons/png-outline/data-quality-monitoring.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/data-quality-monitoring.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/data-quality-monitoring.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/data-quality-monitoring.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/data-quality-monitoring.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/data-quality-monitoring.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-quality-monitoring.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/data-quality-monitoring.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/data-quality-monitoring.png"
       }
     },
     {
@@ -1574,15 +1786,19 @@
         "svg": "icons/svg/lakewatch.svg",
         "svgMono": "icons/svg-mono/lakewatch.svg",
         "svgTile": "icons/svg-tile/lakewatch.svg",
+        "svgOutline": "icons/svg-outline/lakewatch.svg",
         "png": "icons/png/lakewatch.png",
-        "pngTile": "icons/png-tile/lakewatch.png"
+        "pngTile": "icons/png-tile/lakewatch.png",
+        "pngOutline": "icons/png-outline/lakewatch.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/lakewatch.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/lakewatch.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/lakewatch.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/lakewatch.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/lakewatch.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakewatch.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/lakewatch.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/lakewatch.png"
       }
     },
     {
@@ -1602,15 +1818,19 @@
         "svg": "icons/svg/system-tables.svg",
         "svgMono": "icons/svg-mono/system-tables.svg",
         "svgTile": "icons/svg-tile/system-tables.svg",
+        "svgOutline": "icons/svg-outline/system-tables.svg",
         "png": "icons/png/system-tables.png",
-        "pngTile": "icons/png-tile/system-tables.png"
+        "pngTile": "icons/png-tile/system-tables.png",
+        "pngOutline": "icons/png-outline/system-tables.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/system-tables.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/system-tables.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/system-tables.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/system-tables.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/system-tables.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/system-tables.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/system-tables.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/system-tables.png"
       }
     },
     {
@@ -1630,15 +1850,19 @@
         "svg": "icons/svg/enterprise-security.svg",
         "svgMono": "icons/svg-mono/enterprise-security.svg",
         "svgTile": "icons/svg-tile/enterprise-security.svg",
+        "svgOutline": "icons/svg-outline/enterprise-security.svg",
         "png": "icons/png/enterprise-security.png",
-        "pngTile": "icons/png-tile/enterprise-security.png"
+        "pngTile": "icons/png-tile/enterprise-security.png",
+        "pngOutline": "icons/png-outline/enterprise-security.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/enterprise-security.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/enterprise-security.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/enterprise-security.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/enterprise-security.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/enterprise-security.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/enterprise-security.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/enterprise-security.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/enterprise-security.png"
       }
     },
     {
@@ -1658,15 +1882,19 @@
         "svg": "icons/svg/delta-sharing.svg",
         "svgMono": "icons/svg-mono/delta-sharing.svg",
         "svgTile": "icons/svg-tile/delta-sharing.svg",
+        "svgOutline": "icons/svg-outline/delta-sharing.svg",
         "png": "icons/png/delta-sharing.png",
-        "pngTile": "icons/png-tile/delta-sharing.png"
+        "pngTile": "icons/png-tile/delta-sharing.png",
+        "pngOutline": "icons/png-outline/delta-sharing.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/delta-sharing.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/delta-sharing.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/delta-sharing.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/delta-sharing.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/delta-sharing.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/delta-sharing.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/delta-sharing.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/delta-sharing.png"
       }
     },
     {
@@ -1686,15 +1914,19 @@
         "svg": "icons/svg/opensharing.svg",
         "svgMono": "icons/svg-mono/opensharing.svg",
         "svgTile": "icons/svg-tile/opensharing.svg",
+        "svgOutline": "icons/svg-outline/opensharing.svg",
         "png": "icons/png/opensharing.png",
-        "pngTile": "icons/png-tile/opensharing.png"
+        "pngTile": "icons/png-tile/opensharing.png",
+        "pngOutline": "icons/png-outline/opensharing.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/opensharing.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/opensharing.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/opensharing.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/opensharing.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/opensharing.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/opensharing.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/opensharing.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/opensharing.png"
       }
     },
     {
@@ -1714,15 +1946,19 @@
         "svg": "icons/svg/marketplace.svg",
         "svgMono": "icons/svg-mono/marketplace.svg",
         "svgTile": "icons/svg-tile/marketplace.svg",
+        "svgOutline": "icons/svg-outline/marketplace.svg",
         "png": "icons/png/marketplace.png",
-        "pngTile": "icons/png-tile/marketplace.png"
+        "pngTile": "icons/png-tile/marketplace.png",
+        "pngOutline": "icons/png-outline/marketplace.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/marketplace.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/marketplace.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/marketplace.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/marketplace.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/marketplace.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/marketplace.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/marketplace.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/marketplace.png"
       }
     },
     {
@@ -1742,15 +1978,19 @@
         "svg": "icons/svg/clean-rooms.svg",
         "svgMono": "icons/svg-mono/clean-rooms.svg",
         "svgTile": "icons/svg-tile/clean-rooms.svg",
+        "svgOutline": "icons/svg-outline/clean-rooms.svg",
         "png": "icons/png/clean-rooms.png",
-        "pngTile": "icons/png-tile/clean-rooms.png"
+        "pngTile": "icons/png-tile/clean-rooms.png",
+        "pngOutline": "icons/png-outline/clean-rooms.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/clean-rooms.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/clean-rooms.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/clean-rooms.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/clean-rooms.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/clean-rooms.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/clean-rooms.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/clean-rooms.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/clean-rooms.png"
       }
     },
     {
@@ -1770,15 +2010,19 @@
         "svg": "icons/svg/partner-connect.svg",
         "svgMono": "icons/svg-mono/partner-connect.svg",
         "svgTile": "icons/svg-tile/partner-connect.svg",
+        "svgOutline": "icons/svg-outline/partner-connect.svg",
         "png": "icons/png/partner-connect.png",
-        "pngTile": "icons/png-tile/partner-connect.png"
+        "pngTile": "icons/png-tile/partner-connect.png",
+        "pngOutline": "icons/png-outline/partner-connect.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/partner-connect.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/partner-connect.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/partner-connect.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/partner-connect.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/partner-connect.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/partner-connect.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/partner-connect.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/partner-connect.png"
       }
     },
     {
@@ -1798,15 +2042,19 @@
         "svg": "icons/svg/databricks-apps.svg",
         "svgMono": "icons/svg-mono/databricks-apps.svg",
         "svgTile": "icons/svg-tile/databricks-apps.svg",
+        "svgOutline": "icons/svg-outline/databricks-apps.svg",
         "png": "icons/png/databricks-apps.png",
-        "pngTile": "icons/png-tile/databricks-apps.png"
+        "pngTile": "icons/png-tile/databricks-apps.png",
+        "pngOutline": "icons/png-outline/databricks-apps.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-apps.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-apps.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-apps.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/databricks-apps.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-apps.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-apps.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-apps.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/databricks-apps.png"
       }
     },
     {
@@ -1826,15 +2074,19 @@
         "svg": "icons/svg/notebooks.svg",
         "svgMono": "icons/svg-mono/notebooks.svg",
         "svgTile": "icons/svg-tile/notebooks.svg",
+        "svgOutline": "icons/svg-outline/notebooks.svg",
         "png": "icons/png/notebooks.png",
-        "pngTile": "icons/png-tile/notebooks.png"
+        "pngTile": "icons/png-tile/notebooks.png",
+        "pngOutline": "icons/png-outline/notebooks.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/notebooks.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/notebooks.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/notebooks.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/notebooks.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/notebooks.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/notebooks.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/notebooks.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/notebooks.png"
       }
     },
     {
@@ -1854,15 +2106,19 @@
         "svg": "icons/svg/workspace.svg",
         "svgMono": "icons/svg-mono/workspace.svg",
         "svgTile": "icons/svg-tile/workspace.svg",
+        "svgOutline": "icons/svg-outline/workspace.svg",
         "png": "icons/png/workspace.png",
-        "pngTile": "icons/png-tile/workspace.png"
+        "pngTile": "icons/png-tile/workspace.png",
+        "pngOutline": "icons/png-outline/workspace.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/workspace.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/workspace.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/workspace.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/workspace.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/workspace.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/workspace.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/workspace.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/workspace.png"
       }
     },
     {
@@ -1882,15 +2138,19 @@
         "svg": "icons/svg/git-folders.svg",
         "svgMono": "icons/svg-mono/git-folders.svg",
         "svgTile": "icons/svg-tile/git-folders.svg",
+        "svgOutline": "icons/svg-outline/git-folders.svg",
         "png": "icons/png/git-folders.png",
-        "pngTile": "icons/png-tile/git-folders.png"
+        "pngTile": "icons/png-tile/git-folders.png",
+        "pngOutline": "icons/png-outline/git-folders.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/git-folders.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/git-folders.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/git-folders.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/git-folders.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/git-folders.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/git-folders.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/git-folders.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/git-folders.png"
       }
     },
     {
@@ -1910,15 +2170,19 @@
         "svg": "icons/svg/asset-bundles.svg",
         "svgMono": "icons/svg-mono/asset-bundles.svg",
         "svgTile": "icons/svg-tile/asset-bundles.svg",
+        "svgOutline": "icons/svg-outline/asset-bundles.svg",
         "png": "icons/png/asset-bundles.png",
-        "pngTile": "icons/png-tile/asset-bundles.png"
+        "pngTile": "icons/png-tile/asset-bundles.png",
+        "pngOutline": "icons/png-outline/asset-bundles.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/asset-bundles.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/asset-bundles.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/asset-bundles.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/asset-bundles.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/asset-bundles.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/asset-bundles.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/asset-bundles.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/asset-bundles.png"
       }
     },
     {
@@ -1938,15 +2202,19 @@
         "svg": "icons/svg/databricks-cli.svg",
         "svgMono": "icons/svg-mono/databricks-cli.svg",
         "svgTile": "icons/svg-tile/databricks-cli.svg",
+        "svgOutline": "icons/svg-outline/databricks-cli.svg",
         "png": "icons/png/databricks-cli.png",
-        "pngTile": "icons/png-tile/databricks-cli.png"
+        "pngTile": "icons/png-tile/databricks-cli.png",
+        "pngOutline": "icons/png-outline/databricks-cli.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-cli.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-cli.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-cli.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/databricks-cli.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-cli.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-cli.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-cli.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/databricks-cli.png"
       }
     },
     {
@@ -1966,15 +2234,19 @@
         "svg": "icons/svg/databricks-connect.svg",
         "svgMono": "icons/svg-mono/databricks-connect.svg",
         "svgTile": "icons/svg-tile/databricks-connect.svg",
+        "svgOutline": "icons/svg-outline/databricks-connect.svg",
         "png": "icons/png/databricks-connect.png",
-        "pngTile": "icons/png-tile/databricks-connect.png"
+        "pngTile": "icons/png-tile/databricks-connect.png",
+        "pngOutline": "icons/png-outline/databricks-connect.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/databricks-connect.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/databricks-connect.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/databricks-connect.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/databricks-connect.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/databricks-connect.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-connect.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/databricks-connect.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/databricks-connect.png"
       }
     },
     {
@@ -1994,15 +2266,19 @@
         "svg": "icons/svg/ide-integrations.svg",
         "svgMono": "icons/svg-mono/ide-integrations.svg",
         "svgTile": "icons/svg-tile/ide-integrations.svg",
+        "svgOutline": "icons/svg-outline/ide-integrations.svg",
         "png": "icons/png/ide-integrations.png",
-        "pngTile": "icons/png-tile/ide-integrations.png"
+        "pngTile": "icons/png-tile/ide-integrations.png",
+        "pngOutline": "icons/png-outline/ide-integrations.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/ide-integrations.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/ide-integrations.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/ide-integrations.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/ide-integrations.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/ide-integrations.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ide-integrations.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/ide-integrations.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/ide-integrations.png"
       }
     },
     {
@@ -2022,15 +2298,19 @@
         "svg": "icons/svg/rest-api.svg",
         "svgMono": "icons/svg-mono/rest-api.svg",
         "svgTile": "icons/svg-tile/rest-api.svg",
+        "svgOutline": "icons/svg-outline/rest-api.svg",
         "png": "icons/png/rest-api.png",
-        "pngTile": "icons/png-tile/rest-api.png"
+        "pngTile": "icons/png-tile/rest-api.png",
+        "pngOutline": "icons/png-outline/rest-api.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/rest-api.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/rest-api.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/rest-api.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/rest-api.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/rest-api.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/rest-api.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/rest-api.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/rest-api.png"
       }
     },
     {
@@ -2050,15 +2330,19 @@
         "svg": "icons/svg/terraform-provider.svg",
         "svgMono": "icons/svg-mono/terraform-provider.svg",
         "svgTile": "icons/svg-tile/terraform-provider.svg",
+        "svgOutline": "icons/svg-outline/terraform-provider.svg",
         "png": "icons/png/terraform-provider.png",
-        "pngTile": "icons/png-tile/terraform-provider.png"
+        "pngTile": "icons/png-tile/terraform-provider.png",
+        "pngOutline": "icons/png-outline/terraform-provider.png"
       },
       "urls": {
         "svg": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg/terraform-provider.svg",
         "svgMono": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-mono/terraform-provider.svg",
         "svgTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-tile/terraform-provider.svg",
+        "svgOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/svg-outline/terraform-provider.svg",
         "png": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png/terraform-provider.png",
-        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/terraform-provider.png"
+        "pngTile": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-tile/terraform-provider.png",
+        "pngOutline": "https://oieduardorabelo.github.io/databricks-architecture-icons/icons/png-outline/terraform-provider.png"
       }
     }
   ]

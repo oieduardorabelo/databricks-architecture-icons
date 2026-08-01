@@ -40,7 +40,8 @@ const hasPng = () =>
   PRODUCTS.every(
     (p) =>
       fs.existsSync(path.join(ROOT, 'icons', 'png', `${p.slug}.png`)) &&
-      fs.existsSync(path.join(ROOT, 'icons', 'png-tile', `${p.slug}.png`)),
+      fs.existsSync(path.join(ROOT, 'icons', 'png-tile', `${p.slug}.png`)) &&
+      fs.existsSync(path.join(ROOT, 'icons', 'png-outline', `${p.slug}.png`)),
   );
 const PNG_AVAILABLE = hasPng();
 const fresh = (dir) => {
@@ -247,30 +248,27 @@ ${inner}
 `;
 }
 
-// ------------------------------------------------------- outline candidates
+// ------------------------------------------------------------- outline spec
 
 // A pattern the Databricks community uses often: the artwork centered in a
-// white rounded square with a lava border. Three candidates, for a choice.
-// They are not in the catalog, the archives or the website yet. Pick one, then
-// wire it in and delete the rest.
-const OUTLINE_VARIANTS = [
-  { id: 'a', label: 'Light', stroke: 2, radius: 10, scale: 0.62, color: '#FF3621' },
-  { id: 'b', label: 'Diagram', stroke: 3, radius: 10, scale: 0.68, color: '#FF5F46' },
-  { id: 'c', label: 'Bold', stroke: 4, radius: 12, scale: 0.72, color: '#FF3621' },
-];
+// white rounded square with a thin lava border. It reads on any background,
+// which the category tile does not: a solid category color goes muddy on a
+// dark canvas.
+const OUTLINE = { stroke: 1, radius: 10, scale: 0.62, color: BRAND.lava };
 
 // -------------------------------------------------------------------- build
 
 fresh('icons/svg');
 fresh('icons/svg-mono');
 fresh('icons/svg-tile');
-for (const v of OUTLINE_VARIANTS) fresh(`icons/outline/${v.id}`);
+fresh('icons/svg-outline');
 fresh('icons/logos');
 // Not fresh(): mermaid/index.html is hand-written and lives beside the packs.
 fs.mkdirSync(out('mermaid'), { recursive: true });
 if (sharp) {
   fresh('icons/png');
   fresh('icons/png-tile');
+  fresh('icons/png-outline');
 }
 
 // sources/MANIFEST.md records the URL each file came from. Parsing it here
@@ -335,20 +333,18 @@ for (const p of PRODUCTS) {
   );
   fs.writeFileSync(out('icons/svg-tile', `${p.slug}.svg`), tileSvg);
 
-  // 3b. outline candidates - the published artwork, centered in a white
-  // rounded square with a lava border. The stroke is drawn inside the canvas,
-  // so the box is inset by half its width and never clips.
-  for (const v of OUTLINE_VARIANTS) {
-    const inset = v.stroke / 2;
-    const outlineSvg = wrap(
-      `<rect x="${inset}" y="${inset}" width="${CANVAS - v.stroke}" height="${CANVAS - v.stroke}" rx="${v.radius}" fill="#FFFFFF" stroke="${v.color}" stroke-width="${v.stroke}"/>
-<g transform="translate(${CANVAS / 2} ${CANVAS / 2}) scale(${v.scale}) translate(${-CANVAS / 2} ${-CANVAS / 2})"><g transform="${transform}">${body}</g></g>`,
-      { title: `${p.name} (outline ${v.id})` },
-    );
-    fs.writeFileSync(out(`icons/outline/${v.id}`, `${p.slug}.svg`), outlineSvg);
-  }
+  // 4. outline variant - the published artwork centered in a white rounded
+  // square with a lava hairline. The stroke is drawn inside the canvas, so the
+  // box is inset by half its width and never clips.
+  const inset = OUTLINE.stroke / 2;
+  const outlineSvg = wrap(
+    `<rect x="${inset}" y="${inset}" width="${CANVAS - OUTLINE.stroke}" height="${CANVAS - OUTLINE.stroke}" rx="${OUTLINE.radius}" fill="${BRAND.white}" stroke="${OUTLINE.color}" stroke-width="${OUTLINE.stroke}"/>
+<g transform="translate(${CANVAS / 2} ${CANVAS / 2}) scale(${OUTLINE.scale}) translate(${-CANVAS / 2} ${-CANVAS / 2})"><g transform="${transform}">${body}</g></g>`,
+    { title: `${p.name} (outline)` },
+  );
+  fs.writeFileSync(out('icons/svg-outline', `${p.slug}.svg`), outlineSvg);
 
-  // 4. Iconify / Mermaid pack entry (mono, so Mermaid can color it)
+  // 5. Iconify / Mermaid pack entry (mono, so Mermaid can color it)
   // Two packs from the same geometry. The mono pack inherits currentColor, so
   // Mermaid paints it with the text color of the diagram. The color pack keeps
   // the Databricks artwork, so the icons stay Lava in any theme.
@@ -369,6 +365,10 @@ for (const p of PRODUCTS) {
         .resize(PNG_SIZE, PNG_SIZE)
         .png()
         .toFile(out('icons/png-tile', `${p.slug}.png`)),
+      sharp(Buffer.from(outlineSvg))
+        .resize(PNG_SIZE, PNG_SIZE)
+        .png({ compressionLevel: 9 })
+        .toFile(out('icons/png-outline', `${p.slug}.png`)),
     );
   }
 
@@ -378,8 +378,13 @@ for (const p of PRODUCTS) {
     svg: `icons/svg/${p.slug}.svg`,
     svgMono: `icons/svg-mono/${p.slug}.svg`,
     svgTile: `icons/svg-tile/${p.slug}.svg`,
+    svgOutline: `icons/svg-outline/${p.slug}.svg`,
     ...(PNG_AVAILABLE
-      ? { png: `icons/png/${p.slug}.png`, pngTile: `icons/png-tile/${p.slug}.png` }
+      ? {
+          png: `icons/png/${p.slug}.png`,
+          pngTile: `icons/png-tile/${p.slug}.png`,
+          pngOutline: `icons/png-outline/${p.slug}.png`,
+        }
       : {}),
   };
 
@@ -621,12 +626,14 @@ const VARIANT_HINTS = {
   'icons/svg': 'Official color artwork',
   'icons/svg-mono': 'currentColor, themeable',
   'icons/svg-tile': 'White glyph on a category tile',
+  'icons/svg-outline': 'Artwork in a white box, lava hairline',
   'icons/png': `${PNG_SIZE}px transparent`,
   'icons/png-tile': `${PNG_SIZE}px tiles`,
+  'icons/png-outline': `${PNG_SIZE}px outline boxes`,
   'icons/logos': 'Full-color brand lockups',
 };
-const VARIANT_DIRS = ['icons/svg', 'icons/svg-mono', 'icons/svg-tile',
-  ...(PNG_AVAILABLE ? ['icons/png', 'icons/png-tile'] : []), 'icons/logos'];
+const VARIANT_DIRS = ['icons/svg', 'icons/svg-mono', 'icons/svg-tile', 'icons/svg-outline',
+  ...(PNG_AVAILABLE ? ['icons/png', 'icons/png-tile', 'icons/png-outline'] : []), 'icons/logos'];
 
 const readDir = (dir) =>
   fs
@@ -675,104 +682,6 @@ for (const c of byCategory) {
   );
 }
 
-// ------------------------------------------------- outline comparison page
-
-// A page to judge the three candidates. It is not linked from the website.
-{
-  const SAMPLE = ['databricks', 'lakeflow', 'unity-catalog', 'delta-lake', 'databricks-sql',
-    'genie', 'mlflow', 'apache-spark', 'lakebase', 'model-serving'];
-  const sample = SAMPLE.map((sl) => catalog.find((p) => p.slug === sl)).filter(Boolean);
-  const cell = (v, p, size) =>
-    `<figure><img src="${v}/${p.slug}.svg" width="${size}" height="${size}" alt="${esc(p.name)}"><figcaption>${esc(p.name)}</figcaption></figure>`;
-
-  fs.writeFileSync(
-    out('icons/outline', 'compare.html'),
-    `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Outline candidates</title>
-<style>
-  body{margin:0;padding:32px;background:#F9F7F4;color:#1B3139;
-       font:15px/1.6 "DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-  h1{font-size:20px;margin:0 0 4px} h1 b{color:#FF3621}
-  p.sub{margin:0 0 24px;color:#5b6b73;font-size:13px}
-  h2{font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin:32px 0 12px}
-  table.spec{border-collapse:collapse;margin:0 0 24px;font-size:13px}
-  table.spec th,table.spec td{border:1px solid #dcd8d1;padding:6px 12px;text-align:left}
-  table.spec th{background:#EEEDE9}
-  .bar{display:flex;gap:8px;margin:0 0 20px}
-  .bar button{font:13px/1 "DM Sans",sans-serif;padding:8px 14px;border:1px solid #dcd8d1;
-              border-radius:8px;background:#fff;color:#1B3139;cursor:pointer}
-  .bar button[aria-pressed=true]{border-color:#FF3621;color:#FF3621}
-  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:0 0 32px}
-  .col{border:1px solid #dcd8d1;border-radius:14px;padding:18px;background:#fff}
-  .col h3{margin:0 0 2px;font-size:14px}
-  .col p{margin:0 0 16px;font:400 12px/1.4 "DM Mono",ui-monospace,Menlo,monospace;color:#5b6b73}
-  .set{display:flex;flex-wrap:wrap;gap:14px}
-  figure{margin:0;width:76px;text-align:center}
-  figure img{display:block;margin:0 auto}
-  figcaption{margin-top:6px;font-size:10px;line-height:1.25;color:#5b6b73;
-             overflow-wrap:anywhere}
-  .grid figure{width:60px}
-  body[data-bg=oat] .col{background:#EEEDE9}
-  body[data-bg=navy]{background:#0B2026;color:#EEEDE9}
-  body[data-bg=navy] .col{background:#1B3139;border-color:#143D4A}
-  body[data-bg=navy] figcaption,body[data-bg=navy] .col p{color:#90A5B1}
-  body[data-bg=navy] table.spec th{background:#143D4A}
-  body[data-bg=navy] table.spec th,body[data-bg=navy] table.spec td{border-color:#143D4A}
-  body[data-bg=navy] .bar button{background:#1B3139;color:#EEEDE9;border-color:#143D4A}
-</style>
-</head>
-<body data-bg="oat">
-<h1>Outline <b>candidates</b></h1>
-<p class="sub">The artwork centered in a white rounded square with a lava border. Three options.
-  Nothing here is in the catalog, the archives or the website yet.</p>
-
-<table class="spec">
-  <tr><th>Variant</th><th>Border</th><th>Hex</th><th>Radius</th><th>Icon scale</th></tr>
-  ${OUTLINE_VARIANTS.map((v) => `<tr><td><b>${v.id.toUpperCase()}</b> &middot; ${v.label}</td><td>${v.stroke} px</td><td><code>${v.color}</code></td><td>${v.radius} px</td><td>${Math.round(v.scale * 100)} %</td></tr>`).join('\n  ')}
-</table>
-
-<div class="bar">
-  <button data-bg="oat" aria-pressed="true">Oat background</button>
-  <button data-bg="white" aria-pressed="false">White background</button>
-  <button data-bg="navy" aria-pressed="false">Navy background</button>
-</div>
-
-<h2>Side by side, 64 px</h2>
-<div class="row">
-  ${OUTLINE_VARIANTS.map((v) => `<div class="col">
-    <h3>${v.id.toUpperCase()} &middot; ${v.label}</h3>
-    <p>${v.stroke}px ${v.color} &middot; r${v.radius} &middot; ${Math.round(v.scale * 100)}%</p>
-    <div class="set">${sample.map((p) => cell(v.id, p, 64)).join('')}</div>
-  </div>`).join('\n  ')}
-</div>
-
-${OUTLINE_VARIANTS.map((v) => `<h2>${v.id.toUpperCase()} &middot; ${v.label} &middot; all ${catalog.length} icons at 48 px</h2>
-<div class="col grid"><div class="set">${catalog.map((p) => cell(v.id, p, 48)).join('')}</div></div>`).join('\n')}
-
-<script>
-  // ?bg=navy makes a background choice shareable
-  const wanted = new URLSearchParams(location.search).get('bg');
-  if (wanted) document.body.dataset.bg = wanted;
-  for (const b of document.querySelectorAll('.bar button')) {
-    b.setAttribute('aria-pressed', String(b.dataset.bg === document.body.dataset.bg));
-    b.addEventListener('click', () => {
-      document.body.dataset.bg = b.dataset.bg;
-      for (const o of document.querySelectorAll('.bar button')) {
-        o.setAttribute('aria-pressed', String(o === b));
-      }
-    });
-  }
-</script>
-</body>
-</html>
-`,
-  );
-}
-
 // ------------------------------------------------------------------- index.html
 
 // Order matters: this is the order the download links appear on every card.
@@ -780,8 +689,10 @@ const VARIANT_LABELS = [
   ['svg', 'SVG'],
   ['svgMono', 'Mono'],
   ['svgTile', 'Tile'],
+  ['svgOutline', 'Outline'],
   ['png', 'PNG'],
   ['pngTile', 'PNG tile'],
+  ['pngOutline', 'PNG outline'],
 ];
 
 // The grid shows the PNG renders, so a thumbnail matches what most people drop
@@ -1255,7 +1166,7 @@ if (sharp) {
       svg += `<text x="${PADX + 18}" y="${b.y + 19}" font-family="DM Sans,Helvetica,sans-serif" font-size="14" font-weight="600" letter-spacing="1.4" fill="${BRAND.navy800}">${esc(b.head.label.toUpperCase())}</text>`;
       continue;
     }
-    const data = fs.readFileSync(out('svg-tile', `${b.product.slug}.svg`)).toString('base64');
+    const data = fs.readFileSync(out('icons/svg-tile', `${b.product.slug}.svg`)).toString('base64');
     svg += `<image x="${b.x}" y="${b.y}" width="${TILE}" height="${TILE}" xlink:href="data:image/svg+xml;base64,${data}"/>`;
     const words = b.product.slug.split('-');
     const lines = [''];
@@ -1276,7 +1187,9 @@ if (sharp) {
 if (sharp) await Promise.all(pngJobs);
 
 console.log(`${PROJECT.name}: built ${catalog.length} products`);
-console.log(`  icons/ (svg svg-mono svg-tile${PNG_AVAILABLE ? ' png png-tile' : ''} logos sources catalog)`);
+console.log(
+  `  icons/ (svg svg-mono svg-tile svg-outline${PNG_AVAILABLE ? ' png png-tile png-outline' : ''} logos sources catalog)`,
+);
 console.log(`  mermaid/ (two Iconify packs, a classic script and the demo page)`);
 if (!sharp && PNG_AVAILABLE) console.log('  (PNG files kept from the last build - sharp is only needed to rebuild them)');
 console.log(`  index.html${sharp ? ' preview.png' : ''} .nojekyll`);

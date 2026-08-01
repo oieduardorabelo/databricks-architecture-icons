@@ -54,12 +54,17 @@ folder, so you can repeat the work or extend it.
 
 ### Inside `icons/`
 
+`tile` and `outline` are the two boxed variants. A tile puts a white glyph on the category color,
+so the color says which category the product is in. An outline puts the artwork in a white box
+with a lava hairline, so it reads on a light background and on a dark one.
+
 | Directory | Holds |
 |---|---|
 | `svg/` | the published artwork. Use this one |
 | `svg-mono/` | one color, `fill="currentColor"`, for a theme |
 | `svg-tile/` | a white glyph on a category-colored rounded square |
-| `png/`, `png-tile/` | 256px, for a tool that rejects SVG |
+| `svg-outline/` | the artwork in a white rounded square with a lava hairline |
+| `png/`, `png-tile/`, `png-outline/` | 256px, for a tool that rejects SVG |
 | `logos/` | full-color brand lockups |
 | `sources/` | the original Databricks files and their manifest |
 | `catalog.json`, `catalog.csv`, `CATALOG.md` | the index, for a program and for a person |
