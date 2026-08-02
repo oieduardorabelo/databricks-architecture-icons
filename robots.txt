@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oieduardorabelo.github.io/databricks-architecture-icons/sitemap.xml
