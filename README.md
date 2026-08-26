@@ -145,12 +145,12 @@ To add a product, read [icons/HANDOVER.md](icons/HANDOVER.md).
 
 ---
 
-## Terms
+## License and trademarks
+
+This repository, including its generated icon variants and integration packs, is released under
+the [MIT License](LICENSE).
 
 Databricks, the Databricks logo and the product names are trademarks of Databricks, Inc. Apache
 Spark and Apache Iceberg are trademarks of the Apache Software Foundation. Mermaid and draw.io are
-the marks of their own projects.
-
-This project claims no rights over the artwork. It gives the artwork the structure that a diagram
-tool needs. Read the Databricks brand guidelines before you use a mark in a commercial document.
-The code in `tools/` is free to use.
+the marks of their own projects. The MIT License grants no trademark rights. Read the applicable
+brand guidelines before using a mark in a commercial document.

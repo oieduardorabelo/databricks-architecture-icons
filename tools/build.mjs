@@ -442,6 +442,7 @@ fs.writeFileSync(
       official: false,
       url: PROJECT.url,
       repository: PROJECT.repository,
+      license: PROJECT.license,
       generated: process.env.SOURCE_DATE ?? null,
       canvas: `${CANVAS}x${CANVAS}`,
       pngSize: PNG_SIZE,
@@ -498,7 +499,7 @@ const makePack = (prefix, name, icons) => ({
   info: {
     name,
     author: { name: 'Databricks (artwork)', url: 'https://www.databricks.com/' },
-    license: { title: 'Databricks artwork - see README.md' },
+    license: PROJECT.license,
     total: Object.keys(icons).length,
   },
   width: CANVAS,
@@ -682,7 +683,11 @@ const readDir = (dir) =>
 const downloads = [];
 function addZip(group, id, label, hint, entries) {
   const file = `zips/${ZIP_PREFIX}-${id}.zip`;
-  const buf = createZip(entries);
+  const archiveEntries = [
+    ...entries,
+    { name: 'LICENSE', data: fs.readFileSync(out('LICENSE')) },
+  ];
+  const buf = createZip(archiveEntries);
   fs.writeFileSync(out(file), buf);
   downloads.push({ group, id, label, hint, file, count: entries.length, bytes: buf.length });
   return file;
@@ -793,15 +798,49 @@ fs.writeFileSync(
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${PROJECT.name}</title>
+<title>${PROJECT.name}: SVG, PNG, Mermaid, draw.io</title>
 <meta name="description" content="${esc(PROJECT.tagline)} Build architecture diagrams for ${catalog.length} Databricks products. SVG files and PNG files for any diagram tool, and an Iconify pack for Mermaid. An unofficial community resource.">
-<meta property="og:title" content="${PROJECT.name}">
+<meta property="og:title" content="${PROJECT.name}: SVG, PNG, Mermaid, draw.io">
 <meta property="og:description" content="${esc(PROJECT.tagline)} ${catalog.length} products, official Databricks artwork.">
-<meta property="og:image" content="${PROJECT.url}preview.png">
+<meta property="og:image" content="${PROJECT.url}social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Databricks Architecture Icons: an unofficial set of icons for architecture diagrams, with downloads for SVG, PNG, Mermaid and draw.io.">
 <meta property="og:url" content="${PROJECT.url}">
+<meta property="og:site_name" content="${PROJECT.name}">
 <link rel="canonical" href="${PROJECT.url}">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${PROJECT.name}: SVG, PNG, Mermaid, draw.io">
+<meta name="twitter:description" content="${esc(PROJECT.tagline)} ${catalog.length} products, official Databricks artwork.">
+<meta name="twitter:image" content="${PROJECT.url}social-preview.png">
+<meta name="twitter:image:alt" content="Databricks Architecture Icons: an unofficial set of icons for architecture diagrams, with downloads for SVG, PNG, Mermaid and draw.io.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "${PROJECT.name}",
+  "description": "${esc(PROJECT.tagline)} ${catalog.length} Databricks products in ${byCategory.filter((c) => c.products.length).length} categories, with SVG, PNG, Mermaid and draw.io packs. An unofficial community resource.",
+  "url": "${PROJECT.url}",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Person",
+    "name": "Eduardo Rabelo",
+    "url": "https://github.com/oieduardorabelo"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": ${catalog.length},
+    "itemListElement": [
+${byCategory
+  .filter((c) => c.products.length)
+  .map((c, i) => `      {"@type": "ListItem", "position": ${i + 1}, "name": ${JSON.stringify(c.label)}}`)
+  .join(',\n')}
+    ]
+  }
+}
+</script>
 <!-- Neutral favicon: a Lava 600 tile. The Databricks mark is deliberately not
      used as this site's icon, to avoid implying an official association. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%23FF3621'/%3E%3C/svg%3E">
@@ -1084,6 +1123,10 @@ ${cards}
       public material, read the
       <a href="https://brandguides.brandfolder.com/databricks-extended-brand-guidelines">brand
       guidelines</a> and speak to Databricks.</p>
+
+    <h4>License</h4>
+    <p>This repository, including its generated icon variants and integration packs, is released
+      under the <a href="LICENSE">MIT License</a>. The license grants no trademark rights.</p>
 
     <hr class="rule">
     <p class="fine">The product names, the descriptions and the groups come from research on

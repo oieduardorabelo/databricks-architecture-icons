@@ -4,6 +4,11 @@
   "official": false,
   "url": "https://oieduardorabelo.github.io/databricks-architecture-icons/",
   "repository": "https://github.com/oieduardorabelo/databricks-architecture-icons",
+  "license": {
+    "title": "MIT",
+    "spdx": "MIT",
+    "url": "https://github.com/oieduardorabelo/databricks-architecture-icons/blob/main/LICENSE"
+  },
   "generated": null,
   "canvas": "48x48",
   "pngSize": 256,

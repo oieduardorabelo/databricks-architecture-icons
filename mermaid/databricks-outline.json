@@ -7,7 +7,9 @@
       "url": "https://www.databricks.com/"
     },
     "license": {
-      "title": "Databricks artwork - see README.md"
+      "title": "MIT",
+      "spdx": "MIT",
+      "url": "https://github.com/oieduardorabelo/databricks-architecture-icons/blob/main/LICENSE"
     },
     "total": 71
   },

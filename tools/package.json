@@ -2,6 +2,7 @@
   "name": "databricks-architecture-icons-build",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "description": "Build script for the Databricks Architecture Icons set.",
   "scripts": {

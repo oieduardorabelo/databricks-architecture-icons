@@ -22,6 +22,11 @@ export const PROJECT = {
   // the canonical link and the social card, which all need a full URL.
   url: 'https://oieduardorabelo.github.io/databricks-architecture-icons/',
   repository: 'https://github.com/oieduardorabelo/databricks-architecture-icons',
+  license: {
+    title: 'MIT',
+    spdx: 'MIT',
+    url: 'https://github.com/oieduardorabelo/databricks-architecture-icons/blob/main/LICENSE',
+  },
 };
 
 /**
