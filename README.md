@@ -145,6 +145,13 @@ To add a product, read [icons/HANDOVER.md](icons/HANDOVER.md).
 
 ---
 
+## Contributing
+
+Open an issue or a pull request if an icon is missing, out of date, or assigned to the wrong
+product.
+
+---
+
 ## License and trademarks
 
 This repository, including its generated icon variants and integration packs, is released under
